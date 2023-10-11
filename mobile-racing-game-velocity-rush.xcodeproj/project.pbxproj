@@ -1,0 +1,655 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2AC3872D2AD6BE5C005082DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3872C2AD6BE5C005082DA /* AppDelegate.swift */; };
+		2AC3872F2AD6BE5C005082DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3872E2AD6BE5C005082DA /* SceneDelegate.swift */; };
+		2AC387312AD6BE5C005082DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC387302AD6BE5C005082DA /* ViewController.swift */; };
+		2AC387342AD6BE5C005082DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AC387322AD6BE5C005082DA /* Main.storyboard */; };
+		2AC387362AD6BE5D005082DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AC387352AD6BE5D005082DA /* Assets.xcassets */; };
+		2AC387392AD6BE5D005082DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AC387372AD6BE5D005082DA /* LaunchScreen.storyboard */; };
+		2AC387442AD6BE5E005082DA /* mobile_racing_game_velocity_rushTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC387432AD6BE5E005082DA /* mobile_racing_game_velocity_rushTests.swift */; };
+		2AC3874E2AD6BE5E005082DA /* mobile_racing_game_velocity_rushUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3874D2AD6BE5E005082DA /* mobile_racing_game_velocity_rushUITests.swift */; };
+		2AC387502AD6BE5E005082DA /* mobile_racing_game_velocity_rushUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3874F2AD6BE5E005082DA /* mobile_racing_game_velocity_rushUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2AC387402AD6BE5E005082DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2AC387212AD6BE5C005082DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2AC387282AD6BE5C005082DA;
+			remoteInfo = "mobile-racing-game-velocity-rush";
+		};
+		2AC3874A2AD6BE5E005082DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2AC387212AD6BE5C005082DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2AC387282AD6BE5C005082DA;
+			remoteInfo = "mobile-racing-game-velocity-rush";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2AC387292AD6BE5C005082DA /* mobile-racing-game-velocity-rush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mobile-racing-game-velocity-rush.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AC3872C2AD6BE5C005082DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2AC3872E2AD6BE5C005082DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2AC387302AD6BE5C005082DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2AC387332AD6BE5C005082DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2AC387352AD6BE5D005082DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2AC387382AD6BE5D005082DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2AC3873A2AD6BE5D005082DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2AC3873F2AD6BE5E005082DA /* mobile-racing-game-velocity-rushTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mobile-racing-game-velocity-rushTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AC387432AD6BE5E005082DA /* mobile_racing_game_velocity_rushTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobile_racing_game_velocity_rushTests.swift; sourceTree = "<group>"; };
+		2AC387492AD6BE5E005082DA /* mobile-racing-game-velocity-rushUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mobile-racing-game-velocity-rushUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AC3874D2AD6BE5E005082DA /* mobile_racing_game_velocity_rushUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobile_racing_game_velocity_rushUITests.swift; sourceTree = "<group>"; };
+		2AC3874F2AD6BE5E005082DA /* mobile_racing_game_velocity_rushUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobile_racing_game_velocity_rushUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2AC387262AD6BE5C005082DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AC3873C2AD6BE5E005082DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AC387462AD6BE5E005082DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2AC387202AD6BE5C005082DA = {
+			isa = PBXGroup;
+			children = (
+				2AC3872B2AD6BE5C005082DA /* mobile-racing-game-velocity-rush */,
+				2AC387422AD6BE5E005082DA /* mobile-racing-game-velocity-rushTests */,
+				2AC3874C2AD6BE5E005082DA /* mobile-racing-game-velocity-rushUITests */,
+				2AC3872A2AD6BE5C005082DA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2AC3872A2AD6BE5C005082DA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2AC387292AD6BE5C005082DA /* mobile-racing-game-velocity-rush.app */,
+				2AC3873F2AD6BE5E005082DA /* mobile-racing-game-velocity-rushTests.xctest */,
+				2AC387492AD6BE5E005082DA /* mobile-racing-game-velocity-rushUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2AC3872B2AD6BE5C005082DA /* mobile-racing-game-velocity-rush */ = {
+			isa = PBXGroup;
+			children = (
+				2AC3875F2AD6BFB2005082DA /* Views */,
+				2AC387302AD6BE5C005082DA /* ViewController.swift */,
+				2AC3875E2AD6BF93005082DA /* Presentors */,
+				2AC3875D2AD6BF8A005082DA /* Models */,
+				2AC3875C2AD6BF75005082DA /* Application */,
+				2AC387352AD6BE5D005082DA /* Assets.xcassets */,
+				2AC3873A2AD6BE5D005082DA /* Info.plist */,
+			);
+			path = "mobile-racing-game-velocity-rush";
+			sourceTree = "<group>";
+		};
+		2AC387422AD6BE5E005082DA /* mobile-racing-game-velocity-rushTests */ = {
+			isa = PBXGroup;
+			children = (
+				2AC387432AD6BE5E005082DA /* mobile_racing_game_velocity_rushTests.swift */,
+			);
+			path = "mobile-racing-game-velocity-rushTests";
+			sourceTree = "<group>";
+		};
+		2AC3874C2AD6BE5E005082DA /* mobile-racing-game-velocity-rushUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2AC3874D2AD6BE5E005082DA /* mobile_racing_game_velocity_rushUITests.swift */,
+				2AC3874F2AD6BE5E005082DA /* mobile_racing_game_velocity_rushUITestsLaunchTests.swift */,
+			);
+			path = "mobile-racing-game-velocity-rushUITests";
+			sourceTree = "<group>";
+		};
+		2AC3875C2AD6BF75005082DA /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				2AC3872C2AD6BE5C005082DA /* AppDelegate.swift */,
+				2AC3872E2AD6BE5C005082DA /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		2AC3875D2AD6BF8A005082DA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2AC3875E2AD6BF93005082DA /* Presentors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentors;
+			sourceTree = "<group>";
+		};
+		2AC3875F2AD6BFB2005082DA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2AC387602AD6BFBD005082DA /* Storyboards */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2AC387602AD6BFBD005082DA /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				2AC387322AD6BE5C005082DA /* Main.storyboard */,
+				2AC387372AD6BE5D005082DA /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2AC387282AD6BE5C005082DA /* mobile-racing-game-velocity-rush */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2AC387532AD6BE5E005082DA /* Build configuration list for PBXNativeTarget "mobile-racing-game-velocity-rush" */;
+			buildPhases = (
+				2AC387252AD6BE5C005082DA /* Sources */,
+				2AC387262AD6BE5C005082DA /* Frameworks */,
+				2AC387272AD6BE5C005082DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "mobile-racing-game-velocity-rush";
+			productName = "mobile-racing-game-velocity-rush";
+			productReference = 2AC387292AD6BE5C005082DA /* mobile-racing-game-velocity-rush.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2AC3873E2AD6BE5E005082DA /* mobile-racing-game-velocity-rushTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2AC387562AD6BE5E005082DA /* Build configuration list for PBXNativeTarget "mobile-racing-game-velocity-rushTests" */;
+			buildPhases = (
+				2AC3873B2AD6BE5E005082DA /* Sources */,
+				2AC3873C2AD6BE5E005082DA /* Frameworks */,
+				2AC3873D2AD6BE5E005082DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2AC387412AD6BE5E005082DA /* PBXTargetDependency */,
+			);
+			name = "mobile-racing-game-velocity-rushTests";
+			productName = "mobile-racing-game-velocity-rushTests";
+			productReference = 2AC3873F2AD6BE5E005082DA /* mobile-racing-game-velocity-rushTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2AC387482AD6BE5E005082DA /* mobile-racing-game-velocity-rushUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2AC387592AD6BE5E005082DA /* Build configuration list for PBXNativeTarget "mobile-racing-game-velocity-rushUITests" */;
+			buildPhases = (
+				2AC387452AD6BE5E005082DA /* Sources */,
+				2AC387462AD6BE5E005082DA /* Frameworks */,
+				2AC387472AD6BE5E005082DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2AC3874B2AD6BE5E005082DA /* PBXTargetDependency */,
+			);
+			name = "mobile-racing-game-velocity-rushUITests";
+			productName = "mobile-racing-game-velocity-rushUITests";
+			productReference = 2AC387492AD6BE5E005082DA /* mobile-racing-game-velocity-rushUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2AC387212AD6BE5C005082DA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					2AC387282AD6BE5C005082DA = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					2AC3873E2AD6BE5E005082DA = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 2AC387282AD6BE5C005082DA;
+					};
+					2AC387482AD6BE5E005082DA = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 2AC387282AD6BE5C005082DA;
+					};
+				};
+			};
+			buildConfigurationList = 2AC387242AD6BE5C005082DA /* Build configuration list for PBXProject "mobile-racing-game-velocity-rush" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2AC387202AD6BE5C005082DA;
+			productRefGroup = 2AC3872A2AD6BE5C005082DA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2AC387282AD6BE5C005082DA /* mobile-racing-game-velocity-rush */,
+				2AC3873E2AD6BE5E005082DA /* mobile-racing-game-velocity-rushTests */,
+				2AC387482AD6BE5E005082DA /* mobile-racing-game-velocity-rushUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2AC387272AD6BE5C005082DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AC387392AD6BE5D005082DA /* LaunchScreen.storyboard in Resources */,
+				2AC387362AD6BE5D005082DA /* Assets.xcassets in Resources */,
+				2AC387342AD6BE5C005082DA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AC3873D2AD6BE5E005082DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AC387472AD6BE5E005082DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2AC387252AD6BE5C005082DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AC387312AD6BE5C005082DA /* ViewController.swift in Sources */,
+				2AC3872D2AD6BE5C005082DA /* AppDelegate.swift in Sources */,
+				2AC3872F2AD6BE5C005082DA /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AC3873B2AD6BE5E005082DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AC387442AD6BE5E005082DA /* mobile_racing_game_velocity_rushTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AC387452AD6BE5E005082DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AC3874E2AD6BE5E005082DA /* mobile_racing_game_velocity_rushUITests.swift in Sources */,
+				2AC387502AD6BE5E005082DA /* mobile_racing_game_velocity_rushUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2AC387412AD6BE5E005082DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2AC387282AD6BE5C005082DA /* mobile-racing-game-velocity-rush */;
+			targetProxy = 2AC387402AD6BE5E005082DA /* PBXContainerItemProxy */;
+		};
+		2AC3874B2AD6BE5E005082DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2AC387282AD6BE5C005082DA /* mobile-racing-game-velocity-rush */;
+			targetProxy = 2AC3874A2AD6BE5E005082DA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2AC387322AD6BE5C005082DA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2AC387332AD6BE5C005082DA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2AC387372AD6BE5D005082DA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2AC387382AD6BE5D005082DA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2AC387512AD6BE5E005082DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2AC387522AD6BE5E005082DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2AC387542AD6BE5E005082DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RJQ8UQR22D;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "mobile-racing-game-velocity-rush/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iveram.mobile-racing-game-velocity-rush";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		2AC387552AD6BE5E005082DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RJQ8UQR22D;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "mobile-racing-game-velocity-rush/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iveram.mobile-racing-game-velocity-rush";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		2AC387572AD6BE5E005082DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RJQ8UQR22D;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iveram.mobile-racing-game-velocity-rushTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mobile-racing-game-velocity-rush.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/mobile-racing-game-velocity-rush";
+			};
+			name = Debug;
+		};
+		2AC387582AD6BE5E005082DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RJQ8UQR22D;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iveram.mobile-racing-game-velocity-rushTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mobile-racing-game-velocity-rush.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/mobile-racing-game-velocity-rush";
+			};
+			name = Release;
+		};
+		2AC3875A2AD6BE5E005082DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RJQ8UQR22D;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iveram.mobile-racing-game-velocity-rushUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "mobile-racing-game-velocity-rush";
+			};
+			name = Debug;
+		};
+		2AC3875B2AD6BE5E005082DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RJQ8UQR22D;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iveram.mobile-racing-game-velocity-rushUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "mobile-racing-game-velocity-rush";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2AC387242AD6BE5C005082DA /* Build configuration list for PBXProject "mobile-racing-game-velocity-rush" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AC387512AD6BE5E005082DA /* Debug */,
+				2AC387522AD6BE5E005082DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2AC387532AD6BE5E005082DA /* Build configuration list for PBXNativeTarget "mobile-racing-game-velocity-rush" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AC387542AD6BE5E005082DA /* Debug */,
+				2AC387552AD6BE5E005082DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2AC387562AD6BE5E005082DA /* Build configuration list for PBXNativeTarget "mobile-racing-game-velocity-rushTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AC387572AD6BE5E005082DA /* Debug */,
+				2AC387582AD6BE5E005082DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2AC387592AD6BE5E005082DA /* Build configuration list for PBXNativeTarget "mobile-racing-game-velocity-rushUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AC3875A2AD6BE5E005082DA /* Debug */,
+				2AC3875B2AD6BE5E005082DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2AC387212AD6BE5C005082DA /* Project object */;
+}
