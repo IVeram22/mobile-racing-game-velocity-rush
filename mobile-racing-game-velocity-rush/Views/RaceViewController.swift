@@ -18,7 +18,10 @@ class RaceViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        road.runAllAnimation()
+        road.runLinesAnimation()
+        Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { [self] _ in
+            road.runCarsAnimation()
+        }
     }
     
 }
