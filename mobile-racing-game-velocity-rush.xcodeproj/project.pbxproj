@@ -21,6 +21,9 @@
 		2AC3876B2AD6D1FA005082DA /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3876A2AD6D1FA005082DA /* Router.swift */; };
 		2AC3876D2AD6D2E9005082DA /* StartMenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3876C2AD6D2E9005082DA /* StartMenuRouter.swift */; };
 		2AC3876F2AD6D486005082DA /* ViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3876E2AD6D486005082DA /* ViewControllerDelegate.swift */; };
+		2AC387722AD6D93D005082DA /* RoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC387712AD6D93D005082DA /* RoadView.swift */; };
+		2AC387742AD6DC1C005082DA /* WhiteDottedLinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC387732AD6DC1C005082DA /* WhiteDottedLinesView.swift */; };
+		2AC387762AD6F9A5005082DA /* RaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC387752AD6F9A5005082DA /* RaceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		2AC3876A2AD6D1FA005082DA /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		2AC3876C2AD6D2E9005082DA /* StartMenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMenuRouter.swift; sourceTree = "<group>"; };
 		2AC3876E2AD6D486005082DA /* ViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDelegate.swift; sourceTree = "<group>"; };
+		2AC387712AD6D93D005082DA /* RoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadView.swift; sourceTree = "<group>"; };
+		2AC387732AD6DC1C005082DA /* WhiteDottedLinesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteDottedLinesView.swift; sourceTree = "<group>"; };
+		2AC387752AD6F9A5005082DA /* RaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				2AC3875F2AD6BFB2005082DA /* Views */,
-				2AC387302AD6BE5C005082DA /* ViewController.swift */,
 				2AC3875E2AD6BF93005082DA /* Presentors */,
 				2AC3875D2AD6BF8A005082DA /* Models */,
 				2AC387652AD6CB98005082DA /* Helpers */,
@@ -164,9 +169,12 @@
 		2AC3875F2AD6BFB2005082DA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2AC387702AD6D934005082DA /* RoadView */,
 				2AC387622AD6C358005082DA /* MenuView */,
 				2AC387602AD6BFBD005082DA /* Storyboards */,
+				2AC387302AD6BE5C005082DA /* ViewController.swift */,
 				2AC3876E2AD6D486005082DA /* ViewControllerDelegate.swift */,
+				2AC387752AD6F9A5005082DA /* RaceViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -212,6 +220,15 @@
 				2AC3876C2AD6D2E9005082DA /* StartMenuRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		2AC387702AD6D934005082DA /* RoadView */ = {
+			isa = PBXGroup;
+			children = (
+				2AC387712AD6D93D005082DA /* RoadView.swift */,
+				2AC387732AD6DC1C005082DA /* WhiteDottedLinesView.swift */,
+			);
+			path = RoadView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,9 +366,12 @@
 				2AC3876F2AD6D486005082DA /* ViewControllerDelegate.swift in Sources */,
 				2AC3872D2AD6BE5C005082DA /* AppDelegate.swift in Sources */,
 				2AC387642AD6C37B005082DA /* MenuView.swift in Sources */,
+				2AC387742AD6DC1C005082DA /* WhiteDottedLinesView.swift in Sources */,
 				2AC3876D2AD6D2E9005082DA /* StartMenuRouter.swift in Sources */,
+				2AC387762AD6F9A5005082DA /* RaceViewController.swift in Sources */,
 				2AC387682AD6CBCB005082DA /* UIButtons+extensions.swift in Sources */,
 				2AC3876B2AD6D1FA005082DA /* Router.swift in Sources */,
+				2AC387722AD6D93D005082DA /* RoadView.swift in Sources */,
 				2AC3872F2AD6BE5C005082DA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
