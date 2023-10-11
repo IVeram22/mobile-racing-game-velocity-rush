@@ -8,7 +8,7 @@
 import UIKit
 
 protocol StartMenuRouter {
-    func startPlaying(from viewController: ViewController)
-    func openSettings(from viewController: ViewController)
-    func seeRecords(from viewController: ViewController)
+    func startPlaying(from viewController: UIViewController)
+    func openSettings(from viewController: UIViewController)
+    func seeRecords(from viewController: UIViewController)
 }
