@@ -24,6 +24,9 @@
 		2AC387722AD6D93D005082DA /* RoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC387712AD6D93D005082DA /* RoadView.swift */; };
 		2AC387742AD6DC1C005082DA /* WhiteDottedLinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC387732AD6DC1C005082DA /* WhiteDottedLinesView.swift */; };
 		2AC387762AD6F9A5005082DA /* RaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC387752AD6F9A5005082DA /* RaceViewController.swift */; };
+		2AC387782AD6FDD7005082DA /* EnemyCarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC387772AD6FDD7005082DA /* EnemyCarsView.swift */; };
+		2AC3877A2AD6FE1B005082DA /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC387792AD6FE1B005082DA /* GlobalConstants.swift */; };
+		2AC3877C2AD703C9005082DA /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3877B2AD703C9005082DA /* UIView+extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,9 @@
 		2AC387712AD6D93D005082DA /* RoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadView.swift; sourceTree = "<group>"; };
 		2AC387732AD6DC1C005082DA /* WhiteDottedLinesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteDottedLinesView.swift; sourceTree = "<group>"; };
 		2AC387752AD6F9A5005082DA /* RaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceViewController.swift; sourceTree = "<group>"; };
+		2AC387772AD6FDD7005082DA /* EnemyCarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyCarsView.swift; sourceTree = "<group>"; };
+		2AC387792AD6FE1B005082DA /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
+		2AC3877B2AD703C9005082DA /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +207,7 @@
 			children = (
 				2AC387692AD6D1E7005082DA /* Router */,
 				2AC387662AD6CBB3005082DA /* Extensions */,
+				2AC387792AD6FE1B005082DA /* GlobalConstants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -209,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				2AC387672AD6CBCB005082DA /* UIButtons+extensions.swift */,
+				2AC3877B2AD703C9005082DA /* UIView+extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -227,6 +235,7 @@
 			children = (
 				2AC387712AD6D93D005082DA /* RoadView.swift */,
 				2AC387732AD6DC1C005082DA /* WhiteDottedLinesView.swift */,
+				2AC387772AD6FDD7005082DA /* EnemyCarsView.swift */,
 			);
 			path = RoadView;
 			sourceTree = "<group>";
@@ -362,10 +371,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AC3877C2AD703C9005082DA /* UIView+extensions.swift in Sources */,
 				2AC387312AD6BE5C005082DA /* ViewController.swift in Sources */,
 				2AC3876F2AD6D486005082DA /* ViewControllerDelegate.swift in Sources */,
 				2AC3872D2AD6BE5C005082DA /* AppDelegate.swift in Sources */,
 				2AC387642AD6C37B005082DA /* MenuView.swift in Sources */,
+				2AC387782AD6FDD7005082DA /* EnemyCarsView.swift in Sources */,
+				2AC3877A2AD6FE1B005082DA /* GlobalConstants.swift in Sources */,
 				2AC387742AD6DC1C005082DA /* WhiteDottedLinesView.swift in Sources */,
 				2AC3876D2AD6D2E9005082DA /* StartMenuRouter.swift in Sources */,
 				2AC387762AD6F9A5005082DA /* RaceViewController.swift in Sources */,

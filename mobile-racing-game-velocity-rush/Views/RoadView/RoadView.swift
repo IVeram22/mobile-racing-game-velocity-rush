@@ -32,16 +32,19 @@ final class RoadView: UIView {
     }()
     
     private var lines: WhiteDottedLinesView!
+    private var cars: EnemyCarsView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = Constants.backgroundColor
         
         lines = WhiteDottedLinesView(frame: frame)
+        cars = EnemyCarsView(frame: frame)
         
         addSubview(leftRoadside)
         addSubview(rightRoadside)
         addSubview(lines)
+        addSubview(cars)
         
         NSLayoutConstraint.activate([
             leftRoadside.leftAnchor.constraint(equalTo: leftAnchor, constant: 0),
@@ -61,6 +64,15 @@ final class RoadView: UIView {
     
     func runAllAnimation() {
         lines.runAnimation()
-        
+        cars.runAnimation()
     }
+    
+    func runLinesAnimation() {
+        lines.runAnimation()
+    }
+    
+    func runCarsAnimation() {
+        cars.runAnimation()
+    }
+    
 }
