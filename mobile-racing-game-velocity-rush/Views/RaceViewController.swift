@@ -10,6 +10,7 @@ import UIKit
 class RaceViewController: UIViewController {
     private var road: RoadView!
     private var player: PlayerCarView!
+    private var control: ButtonsControlView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,11 +42,8 @@ class RaceViewController: UIViewController {
     }
     
     private func addControl() {
-//        let control = ButtonsControlView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
-//        let control = SwipesControlView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
-        let control = AccelerometerControlView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
+        control = ButtonsControlView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
         control.delegate = self
-        
         view.addSubview(control)
     }
     

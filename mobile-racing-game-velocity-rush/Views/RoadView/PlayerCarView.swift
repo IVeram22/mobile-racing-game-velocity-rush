@@ -7,6 +7,11 @@
 
 import UIKit
 
+private enum Constants {
+    static let shift: CGFloat = 50
+    static let duration: TimeInterval = 0.3
+}
+
 final class PlayerCarView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,15 +25,15 @@ final class PlayerCarView: UIView {
     }
     
     func moveToLeft() {
-        moveToX(with: -50)
+        moveToX(with: -Constants.shift)
     }
     
     func moveToRight() {
-        moveToX(with: 50)
+        moveToX(with: Constants.shift)
     }
     
     private func moveToX(with x: CGFloat) {
-        UIView.animate(withDuration: 0.3) { [self] in
+        UIView.animate(withDuration: Constants.duration) { [self] in
             frame.origin.x += x
         } 
     }
