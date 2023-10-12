@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A9CB5F92AD7C41800F0B3C3 /* ButtonsControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB5F82AD7C41800F0B3C3 /* ButtonsControlView.swift */; };
+		2A9CB5FB2AD7C53300F0B3C3 /* PlayerControlDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB5FA2AD7C53300F0B3C3 /* PlayerControlDelegate.swift */; };
+		2A9CB5FD2AD7C70D00F0B3C3 /* SwipesControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB5FC2AD7C70D00F0B3C3 /* SwipesControlView.swift */; };
+		2A9CB5FF2AD7C83B00F0B3C3 /* AccelerometerControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB5FE2AD7C83B00F0B3C3 /* AccelerometerControlView.swift */; };
 		2AC3872D2AD6BE5C005082DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3872C2AD6BE5C005082DA /* AppDelegate.swift */; };
 		2AC3872F2AD6BE5C005082DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3872E2AD6BE5C005082DA /* SceneDelegate.swift */; };
 		2AC387312AD6BE5C005082DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC387302AD6BE5C005082DA /* ViewController.swift */; };
@@ -27,6 +31,7 @@
 		2AC387782AD6FDD7005082DA /* EnemyCarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC387772AD6FDD7005082DA /* EnemyCarsView.swift */; };
 		2AC3877A2AD6FE1B005082DA /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC387792AD6FE1B005082DA /* GlobalConstants.swift */; };
 		2AC3877C2AD703C9005082DA /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3877B2AD703C9005082DA /* UIView+extensions.swift */; };
+		2AC387802AD7BED3005082DA /* PlayerCarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3877F2AD7BED3005082DA /* PlayerCarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A9CB5F82AD7C41800F0B3C3 /* ButtonsControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsControlView.swift; sourceTree = "<group>"; };
+		2A9CB5FA2AD7C53300F0B3C3 /* PlayerControlDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerControlDelegate.swift; sourceTree = "<group>"; };
+		2A9CB5FC2AD7C70D00F0B3C3 /* SwipesControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipesControlView.swift; sourceTree = "<group>"; };
+		2A9CB5FE2AD7C83B00F0B3C3 /* AccelerometerControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerometerControlView.swift; sourceTree = "<group>"; };
 		2AC387292AD6BE5C005082DA /* mobile-racing-game-velocity-rush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mobile-racing-game-velocity-rush.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AC3872C2AD6BE5C005082DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AC3872E2AD6BE5C005082DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +80,7 @@
 		2AC387772AD6FDD7005082DA /* EnemyCarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyCarsView.swift; sourceTree = "<group>"; };
 		2AC387792AD6FE1B005082DA /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 		2AC3877B2AD703C9005082DA /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
+		2AC3877F2AD7BED3005082DA /* PlayerCarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +108,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A9CB5F72AD7C3D600F0B3C3 /* ControlView */ = {
+			isa = PBXGroup;
+			children = (
+				2A9CB5FA2AD7C53300F0B3C3 /* PlayerControlDelegate.swift */,
+				2A9CB5FE2AD7C83B00F0B3C3 /* AccelerometerControlView.swift */,
+				2A9CB5F82AD7C41800F0B3C3 /* ButtonsControlView.swift */,
+				2A9CB5FC2AD7C70D00F0B3C3 /* SwipesControlView.swift */,
+			);
+			path = ControlView;
+			sourceTree = "<group>";
+		};
 		2AC387202AD6BE5C005082DA = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +196,7 @@
 		2AC3875F2AD6BFB2005082DA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2A9CB5F72AD7C3D600F0B3C3 /* ControlView */,
 				2AC387702AD6D934005082DA /* RoadView */,
 				2AC387622AD6C358005082DA /* MenuView */,
 				2AC387602AD6BFBD005082DA /* Storyboards */,
@@ -236,6 +258,7 @@
 				2AC387712AD6D93D005082DA /* RoadView.swift */,
 				2AC387732AD6DC1C005082DA /* WhiteDottedLinesView.swift */,
 				2AC387772AD6FDD7005082DA /* EnemyCarsView.swift */,
+				2AC3877F2AD7BED3005082DA /* PlayerCarView.swift */,
 			);
 			path = RoadView;
 			sourceTree = "<group>";
@@ -371,8 +394,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A9CB5FF2AD7C83B00F0B3C3 /* AccelerometerControlView.swift in Sources */,
+				2A9CB5FB2AD7C53300F0B3C3 /* PlayerControlDelegate.swift in Sources */,
 				2AC3877C2AD703C9005082DA /* UIView+extensions.swift in Sources */,
 				2AC387312AD6BE5C005082DA /* ViewController.swift in Sources */,
+				2A9CB5FD2AD7C70D00F0B3C3 /* SwipesControlView.swift in Sources */,
 				2AC3876F2AD6D486005082DA /* ViewControllerDelegate.swift in Sources */,
 				2AC3872D2AD6BE5C005082DA /* AppDelegate.swift in Sources */,
 				2AC387642AD6C37B005082DA /* MenuView.swift in Sources */,
@@ -382,8 +408,10 @@
 				2AC3876D2AD6D2E9005082DA /* StartMenuRouter.swift in Sources */,
 				2AC387762AD6F9A5005082DA /* RaceViewController.swift in Sources */,
 				2AC387682AD6CBCB005082DA /* UIButtons+extensions.swift in Sources */,
+				2AC387802AD7BED3005082DA /* PlayerCarView.swift in Sources */,
 				2AC3876B2AD6D1FA005082DA /* Router.swift in Sources */,
 				2AC387722AD6D93D005082DA /* RoadView.swift in Sources */,
+				2A9CB5F92AD7C41800F0B3C3 /* ButtonsControlView.swift in Sources */,
 				2AC3872F2AD6BE5C005082DA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

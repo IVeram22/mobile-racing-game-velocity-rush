@@ -17,7 +17,6 @@ private enum Constants {
     static let yStep: CGFloat = 2000
     static let xRange: ClosedRange<CGFloat> = 80.1...UIScreen.main.bounds.width - 80.1
     static let yRange: ClosedRange<CGFloat> = GlobalConstants.Car.height * 1.5...GlobalConstants.Car.height * 5
-
 }
 
 final class EnemyCarsView: UIView {
