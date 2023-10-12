@@ -11,6 +11,7 @@ enum GlobalConstants {
     enum Car {
         static let width: CGFloat = 40
         static let height: CGFloat = 75
+        static let colors: [UIColor] = [ .red, .green, .orange, .black, .gray, .blue]
     }
-    
+
 }
