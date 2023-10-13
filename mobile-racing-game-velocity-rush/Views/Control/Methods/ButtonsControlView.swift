@@ -46,14 +46,3 @@ final class ButtonsControlView: BaseControlView {
     }
     
 }
-
-//extension ButtonsControlView: PlayerControl {
-//    @objc func turnRight() {
-//        delegate?.turnRight()
-//    }
-//
-//    @objc func turnLeft() {
-//        delegate?.turnLeft()
-//    }
-//
-//}

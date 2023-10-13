@@ -26,15 +26,3 @@ class SwipesControlView: BaseControlView {
     }
         
 }
-//
-//extension SwipesControlView: PlayerControl {
-//    @objc func turnRight() {
-//        delegate?.turnRight()
-//    }
-//
-//    @objc func turnLeft() {
-//        delegate?.turnLeft()
-//    }
-//
-//
-//}

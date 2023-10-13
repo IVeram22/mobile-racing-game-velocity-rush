@@ -42,5 +42,4 @@ extension Router: GameOverRouter {
         open(from: viewController, to: ViewController())
     }
     
-    
 }

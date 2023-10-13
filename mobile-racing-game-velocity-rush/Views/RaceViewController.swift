@@ -126,6 +126,7 @@ class RaceViewController: UIViewController {
         
         present(alert, animated: true, completion: nil)
     }
+
 }
 
 extension RaceViewController: ControlRacerDelegate {

@@ -15,6 +15,7 @@ final class RacePresentor {
 
 extension RacePresentor: RaceOutputDelegate {
     func getCounter() -> String {
+        // TODO: need to make a model for the counter
         counter += step
         return String(format: "%.1f", counter)
     }
@@ -22,4 +23,5 @@ extension RacePresentor: RaceOutputDelegate {
     func saveRecord() {
         
     }
+    
 }

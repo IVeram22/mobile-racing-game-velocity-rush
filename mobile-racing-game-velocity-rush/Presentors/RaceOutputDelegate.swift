@@ -5,7 +5,7 @@
 //  Created by Ivan Veramyou on 12.10.23.
 //
 
-import Foundation
+import UIKit
 
 protocol RaceOutputDelegate: AnyObject {
     func getCounter() -> String

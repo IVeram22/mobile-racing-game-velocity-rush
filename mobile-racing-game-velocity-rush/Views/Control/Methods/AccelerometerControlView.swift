@@ -29,14 +29,3 @@ final class AccelerometerControlView: BaseControlView {
     }
 
 }
-
-//extension AccelerometerControlView: PlayerControl {
-//    @objc func turnRight() {
-//        delegate?.turnRight()
-//    }
-//
-//    @objc func turnLeft() {
-//        delegate?.turnLeft()
-//    }
-//
-//}
