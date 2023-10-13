@@ -13,7 +13,6 @@ class RaceViewController: UIViewController {
     private var control: BaseControlView!
     private var counter: UILabel!
     private var roadTimer: Timer!
-    private var counterTimer: Timer!
     private let router: GameOverRouter = Router.shared
     
     private let presenter = RacePresentor()
@@ -32,11 +31,10 @@ class RaceViewController: UIViewController {
         road.runLinesAnimation()
         Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { [self] _ in
             road.runCarsAnimation()
+            raceOutputDelegate?.startCounter()
         }
         roadTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [self] _ in
             checkCollision()
-        }
-        counterTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [self] _ in
             updateCounter()
         }
     }
@@ -51,7 +49,6 @@ class RaceViewController: UIViewController {
         counter.translatesAutoresizingMaskIntoConstraints = false
         counter.font = UIFont.systemFont(ofSize: 21)
         counter.textColor = .white
-        counter.text = "0.0 points"
         
         view.addSubview(counter)
         NSLayoutConstraint.activate([
@@ -97,20 +94,19 @@ class RaceViewController: UIViewController {
     
     private func updateCounter() {
         if let raceOutputDelegate {
-            counter.text = "\(raceOutputDelegate.getCounter()) points"
+            counter.text = "\(raceOutputDelegate.getScore()) points"
         }
     }
     
     private func gameOver() {
         roadTimer?.invalidate()
         roadTimer = nil
-        counterTimer?.invalidate()
-        counterTimer = nil
+        raceOutputDelegate?.stopCounter()
         road.stopAllAnimation()
         view.addBlackBackground()
         
         guard let raceOutputDelegate = raceOutputDelegate else { return }
-        let alert = UIAlertController(title: "Game Over", message: "You have scored \(raceOutputDelegate.getCounter()) points!", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Game Over", message: "You have scored \(raceOutputDelegate.getScore()) points!", preferredStyle: .alert)
         
         let restartAction = UIAlertAction(title: "Restart", style: .default) { [self] _ in
             raceOutputDelegate.saveRecord()
