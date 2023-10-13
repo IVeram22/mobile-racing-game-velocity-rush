@@ -1,5 +1,5 @@
 //
-//  MenuView.swift
+//  StartMenuView.swift
 //  mobile-racing-game-velocity-rush
 //
 //  Created by Ivan Veramyou on 11.10.23.
@@ -26,7 +26,7 @@ private enum Constants {
     }
 }
 
-final class MenuView: UIView {
+final class StartMenuView: UIView {
     private let startGameButton: UIButton = {
         let button = UIButton()
         button.setTitle("Start game", for: .normal)

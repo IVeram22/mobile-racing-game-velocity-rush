@@ -9,9 +9,8 @@ import UIKit
 import CoreMotion
 
 // TODO: Can't test this with simulator
-class AccelerometerControlView: UIView {
+final class AccelerometerControlView: BaseControlView {
     private let manager = CMMotionManager()
-    var delegate: ControlRacerDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -19,7 +18,7 @@ class AccelerometerControlView: UIView {
         
         Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { _ in
             if let data = self.manager.accelerometerData {
-                let x = data.acceleration.x
+                let _ = data.acceleration.x
             }
         }
         
@@ -28,13 +27,16 @@ class AccelerometerControlView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    @objc func turnLeft() {
-        delegate?.turnLeft()
-    }
-    
-    @objc func turnRight() {
-        delegate?.turnRight()
-    }
-    
+
 }
+
+//extension AccelerometerControlView: PlayerControl {
+//    @objc func turnRight() {
+//        delegate?.turnRight()
+//    }
+//
+//    @objc func turnLeft() {
+//        delegate?.turnLeft()
+//    }
+//
+//}

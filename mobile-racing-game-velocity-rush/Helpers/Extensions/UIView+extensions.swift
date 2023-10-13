@@ -8,15 +8,19 @@
 import UIKit
 
 private enum Constants {
-
     static let radius: CGFloat = 10
-    
-    
+
     enum Shadow {
         static let shadowColor: CGColor = UIColor.black.cgColor
         static let shadowOpacity: Float = 0.5
         static let shadowOffset: CGSize = CGSize(width: 10, height: 10)
     }
+    
+    enum Background {
+        static let color: UIColor = .black
+        static let alpha: CGFloat = 0.7
+    }
+    
 }
 
 extension UIView {
@@ -31,6 +35,16 @@ extension UIView {
         layer.shadowOffset = Constants.Shadow.shadowOffset
         layer.shadowRadius = radius
         layer.shadowPath = UIBezierPath(rect: bounds).cgPath
+    }
+    
+    func addBlackBackground() {
+        let background = UIView(frame: self.frame)
+        background.layer.cornerRadius = Constants.radius
+        background.backgroundColor = Constants.Background.color
+        background.alpha = Constants.Background.alpha
+        
+        addSubview(background)
+        
     }
     
 }

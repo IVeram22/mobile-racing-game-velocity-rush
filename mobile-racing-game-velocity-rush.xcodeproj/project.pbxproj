@@ -11,6 +11,11 @@
 		2A9CB5FB2AD7C53300F0B3C3 /* PlayerControlDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB5FA2AD7C53300F0B3C3 /* PlayerControlDelegate.swift */; };
 		2A9CB5FD2AD7C70D00F0B3C3 /* SwipesControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB5FC2AD7C70D00F0B3C3 /* SwipesControlView.swift */; };
 		2A9CB5FF2AD7C83B00F0B3C3 /* AccelerometerControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB5FE2AD7C83B00F0B3C3 /* AccelerometerControlView.swift */; };
+		2A9CB6072AD827B900F0B3C3 /* RacePresentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6062AD827B900F0B3C3 /* RacePresentor.swift */; };
+		2A9CB6092AD828BF00F0B3C3 /* RaceOutputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6082AD828BF00F0B3C3 /* RaceOutputDelegate.swift */; };
+		2A9CB6112AD969E500F0B3C3 /* PlayerControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6102AD969E500F0B3C3 /* PlayerControl.swift */; };
+		2A9CB6132AD96BFC00F0B3C3 /* BaseControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6122AD96BFC00F0B3C3 /* BaseControlView.swift */; };
+		2A9CB6182AD973B100F0B3C3 /* GameOverRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6172AD973B100F0B3C3 /* GameOverRouter.swift */; };
 		2AC3872D2AD6BE5C005082DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3872C2AD6BE5C005082DA /* AppDelegate.swift */; };
 		2AC3872F2AD6BE5C005082DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3872E2AD6BE5C005082DA /* SceneDelegate.swift */; };
 		2AC387312AD6BE5C005082DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC387302AD6BE5C005082DA /* ViewController.swift */; };
@@ -20,7 +25,7 @@
 		2AC387442AD6BE5E005082DA /* mobile_racing_game_velocity_rushTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC387432AD6BE5E005082DA /* mobile_racing_game_velocity_rushTests.swift */; };
 		2AC3874E2AD6BE5E005082DA /* mobile_racing_game_velocity_rushUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3874D2AD6BE5E005082DA /* mobile_racing_game_velocity_rushUITests.swift */; };
 		2AC387502AD6BE5E005082DA /* mobile_racing_game_velocity_rushUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3874F2AD6BE5E005082DA /* mobile_racing_game_velocity_rushUITestsLaunchTests.swift */; };
-		2AC387642AD6C37B005082DA /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC387632AD6C37B005082DA /* MenuView.swift */; };
+		2AC387642AD6C37B005082DA /* StartMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC387632AD6C37B005082DA /* StartMenuView.swift */; };
 		2AC387682AD6CBCB005082DA /* UIButtons+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC387672AD6CBCB005082DA /* UIButtons+extensions.swift */; };
 		2AC3876B2AD6D1FA005082DA /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3876A2AD6D1FA005082DA /* Router.swift */; };
 		2AC3876D2AD6D2E9005082DA /* StartMenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3876C2AD6D2E9005082DA /* StartMenuRouter.swift */; };
@@ -56,6 +61,11 @@
 		2A9CB5FA2AD7C53300F0B3C3 /* PlayerControlDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerControlDelegate.swift; sourceTree = "<group>"; };
 		2A9CB5FC2AD7C70D00F0B3C3 /* SwipesControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipesControlView.swift; sourceTree = "<group>"; };
 		2A9CB5FE2AD7C83B00F0B3C3 /* AccelerometerControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerometerControlView.swift; sourceTree = "<group>"; };
+		2A9CB6062AD827B900F0B3C3 /* RacePresentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacePresentor.swift; sourceTree = "<group>"; };
+		2A9CB6082AD828BF00F0B3C3 /* RaceOutputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceOutputDelegate.swift; sourceTree = "<group>"; };
+		2A9CB6102AD969E500F0B3C3 /* PlayerControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerControl.swift; sourceTree = "<group>"; };
+		2A9CB6122AD96BFC00F0B3C3 /* BaseControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseControlView.swift; sourceTree = "<group>"; };
+		2A9CB6172AD973B100F0B3C3 /* GameOverRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverRouter.swift; sourceTree = "<group>"; };
 		2AC387292AD6BE5C005082DA /* mobile-racing-game-velocity-rush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mobile-racing-game-velocity-rush.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AC3872C2AD6BE5C005082DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AC3872E2AD6BE5C005082DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,7 +79,7 @@
 		2AC387492AD6BE5E005082DA /* mobile-racing-game-velocity-rushUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mobile-racing-game-velocity-rushUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AC3874D2AD6BE5E005082DA /* mobile_racing_game_velocity_rushUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobile_racing_game_velocity_rushUITests.swift; sourceTree = "<group>"; };
 		2AC3874F2AD6BE5E005082DA /* mobile_racing_game_velocity_rushUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobile_racing_game_velocity_rushUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		2AC387632AD6C37B005082DA /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		2AC387632AD6C37B005082DA /* StartMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMenuView.swift; sourceTree = "<group>"; };
 		2AC387672AD6CBCB005082DA /* UIButtons+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButtons+extensions.swift"; sourceTree = "<group>"; };
 		2AC3876A2AD6D1FA005082DA /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		2AC3876C2AD6D2E9005082DA /* StartMenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMenuRouter.swift; sourceTree = "<group>"; };
@@ -108,15 +118,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2A9CB5F72AD7C3D600F0B3C3 /* ControlView */ = {
+		2A9CB5F72AD7C3D600F0B3C3 /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				2A9CB6142AD96DFE00F0B3C3 /* Methods */,
+				2A9CB6102AD969E500F0B3C3 /* PlayerControl.swift */,
 				2A9CB5FA2AD7C53300F0B3C3 /* PlayerControlDelegate.swift */,
+				2A9CB6122AD96BFC00F0B3C3 /* BaseControlView.swift */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		2A9CB6142AD96DFE00F0B3C3 /* Methods */ = {
+			isa = PBXGroup;
+			children = (
 				2A9CB5FE2AD7C83B00F0B3C3 /* AccelerometerControlView.swift */,
 				2A9CB5F82AD7C41800F0B3C3 /* ButtonsControlView.swift */,
 				2A9CB5FC2AD7C70D00F0B3C3 /* SwipesControlView.swift */,
 			);
-			path = ControlView;
+			path = Methods;
+			sourceTree = "<group>";
+		};
+		2A9CB6192AD9753C00F0B3C3 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				2AC387732AD6DC1C005082DA /* WhiteDottedLinesView.swift */,
+				2AC387772AD6FDD7005082DA /* EnemyCarsView.swift */,
+				2AC3877F2AD7BED3005082DA /* PlayerCarView.swift */,
+			);
+			path = Elements;
 			sourceTree = "<group>";
 		};
 		2AC387202AD6BE5C005082DA = {
@@ -189,6 +219,8 @@
 		2AC3875E2AD6BF93005082DA /* Presentors */ = {
 			isa = PBXGroup;
 			children = (
+				2A9CB6062AD827B900F0B3C3 /* RacePresentor.swift */,
+				2A9CB6082AD828BF00F0B3C3 /* RaceOutputDelegate.swift */,
 			);
 			path = Presentors;
 			sourceTree = "<group>";
@@ -196,9 +228,9 @@
 		2AC3875F2AD6BFB2005082DA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2A9CB5F72AD7C3D600F0B3C3 /* ControlView */,
-				2AC387702AD6D934005082DA /* RoadView */,
-				2AC387622AD6C358005082DA /* MenuView */,
+				2A9CB5F72AD7C3D600F0B3C3 /* Control */,
+				2AC387702AD6D934005082DA /* Road */,
+				2AC387622AD6C358005082DA /* Menu */,
 				2AC387602AD6BFBD005082DA /* Storyboards */,
 				2AC387302AD6BE5C005082DA /* ViewController.swift */,
 				2AC3876E2AD6D486005082DA /* ViewControllerDelegate.swift */,
@@ -216,12 +248,12 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		2AC387622AD6C358005082DA /* MenuView */ = {
+		2AC387622AD6C358005082DA /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				2AC387632AD6C37B005082DA /* MenuView.swift */,
+				2AC387632AD6C37B005082DA /* StartMenuView.swift */,
 			);
-			path = MenuView;
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		2AC387652AD6CB98005082DA /* Helpers */ = {
@@ -248,19 +280,18 @@
 			children = (
 				2AC3876A2AD6D1FA005082DA /* Router.swift */,
 				2AC3876C2AD6D2E9005082DA /* StartMenuRouter.swift */,
+				2A9CB6172AD973B100F0B3C3 /* GameOverRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
 		};
-		2AC387702AD6D934005082DA /* RoadView */ = {
+		2AC387702AD6D934005082DA /* Road */ = {
 			isa = PBXGroup;
 			children = (
+				2A9CB6192AD9753C00F0B3C3 /* Elements */,
 				2AC387712AD6D93D005082DA /* RoadView.swift */,
-				2AC387732AD6DC1C005082DA /* WhiteDottedLinesView.swift */,
-				2AC387772AD6FDD7005082DA /* EnemyCarsView.swift */,
-				2AC3877F2AD7BED3005082DA /* PlayerCarView.swift */,
 			);
-			path = RoadView;
+			path = Road;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,13 +426,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A9CB5FF2AD7C83B00F0B3C3 /* AccelerometerControlView.swift in Sources */,
+				2A9CB6182AD973B100F0B3C3 /* GameOverRouter.swift in Sources */,
 				2A9CB5FB2AD7C53300F0B3C3 /* PlayerControlDelegate.swift in Sources */,
+				2A9CB6112AD969E500F0B3C3 /* PlayerControl.swift in Sources */,
 				2AC3877C2AD703C9005082DA /* UIView+extensions.swift in Sources */,
+				2A9CB6092AD828BF00F0B3C3 /* RaceOutputDelegate.swift in Sources */,
 				2AC387312AD6BE5C005082DA /* ViewController.swift in Sources */,
+				2A9CB6132AD96BFC00F0B3C3 /* BaseControlView.swift in Sources */,
 				2A9CB5FD2AD7C70D00F0B3C3 /* SwipesControlView.swift in Sources */,
 				2AC3876F2AD6D486005082DA /* ViewControllerDelegate.swift in Sources */,
 				2AC3872D2AD6BE5C005082DA /* AppDelegate.swift in Sources */,
-				2AC387642AD6C37B005082DA /* MenuView.swift in Sources */,
+				2AC387642AD6C37B005082DA /* StartMenuView.swift in Sources */,
 				2AC387782AD6FDD7005082DA /* EnemyCarsView.swift in Sources */,
 				2AC3877A2AD6FE1B005082DA /* GlobalConstants.swift in Sources */,
 				2AC387742AD6DC1C005082DA /* WhiteDottedLinesView.swift in Sources */,
@@ -409,6 +444,7 @@
 				2AC387762AD6F9A5005082DA /* RaceViewController.swift in Sources */,
 				2AC387682AD6CBCB005082DA /* UIButtons+extensions.swift in Sources */,
 				2AC387802AD7BED3005082DA /* PlayerCarView.swift in Sources */,
+				2A9CB6072AD827B900F0B3C3 /* RacePresentor.swift in Sources */,
 				2AC3876B2AD6D1FA005082DA /* Router.swift in Sources */,
 				2AC387722AD6D93D005082DA /* RoadView.swift in Sources */,
 				2A9CB5F92AD7C41800F0B3C3 /* ButtonsControlView.swift in Sources */,

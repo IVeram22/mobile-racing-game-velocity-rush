@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ButtonsControlView: UIView {
+final class ButtonsControlView: BaseControlView {
     private let leftButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -19,8 +19,6 @@ class ButtonsControlView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    
-    var delegate: ControlRacerDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,8 +36,8 @@ class ButtonsControlView: UIView {
             rightButton.heightAnchor.constraint(equalToConstant: frame.height)
         ])
         
-        leftButton.addTarget(self, action: #selector(leftButtonTapped), for: .touchUpInside)
-        rightButton.addTarget(self, action: #selector(rightButtonTapped), for: .touchUpInside)
+        leftButton.addTarget(self, action: #selector(turnLeft), for: .touchUpInside)
+        rightButton.addTarget(self, action: #selector(turnRight), for: .touchUpInside)
         
     }
     
@@ -47,12 +45,15 @@ class ButtonsControlView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc func leftButtonTapped() {
-        delegate?.turnLeft()
-    }
-    
-    @objc func rightButtonTapped() {
-        delegate?.turnRight()
-    }
-    
 }
+
+//extension ButtonsControlView: PlayerControl {
+//    @objc func turnRight() {
+//        delegate?.turnRight()
+//    }
+//
+//    @objc func turnLeft() {
+//        delegate?.turnLeft()
+//    }
+//
+//}
