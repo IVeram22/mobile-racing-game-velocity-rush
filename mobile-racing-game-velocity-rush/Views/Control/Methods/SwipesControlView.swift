@@ -7,16 +7,15 @@
 
 import UIKit
 
-class SwipesControlView: UIView {
-    var delegate: ControlRacerDelegate?
+class SwipesControlView: BaseControlView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        let swipeLeftGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeLeft))
+        let swipeLeftGesture = UISwipeGestureRecognizer(target: self, action: #selector(turnLeft))
         swipeLeftGesture.direction = .left
         addGestureRecognizer(swipeLeftGesture)
         
-        let swipeRightGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeRight))
+        let swipeRightGesture = UISwipeGestureRecognizer(target: self, action: #selector(turnRight))
         swipeRightGesture.direction = .right
         addGestureRecognizer(swipeRightGesture)
         
@@ -25,13 +24,5 @@ class SwipesControlView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    @objc func handleSwipeLeft() {
-        delegate?.turnLeft()
-    }
-    
-    @objc func handleSwipeRight() {
-        delegate?.turnRight()
-    }
-    
+        
 }

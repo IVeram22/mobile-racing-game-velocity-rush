@@ -32,3 +32,14 @@ extension Router: StartMenuRouter {
     }
     
 }
+
+extension Router: GameOverRouter {
+    func restartGame(from viewController: UIViewController) {
+        open(from: viewController, to: RaceViewController())
+    }
+    
+    func comeBack(from viewController: UIViewController) {
+        open(from: viewController, to: ViewController())
+    }
+    
+}

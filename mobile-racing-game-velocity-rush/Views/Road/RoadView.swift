@@ -67,6 +67,11 @@ final class RoadView: UIView {
         cars.runAnimation()
     }
     
+    func stopAllAnimation() {
+        lines.stopAnimation()
+        cars.stopAnimation()
+    }
+    
     func runLinesAnimation() {
         lines.runAnimation()
     }
@@ -75,4 +80,9 @@ final class RoadView: UIView {
         cars.runAnimation()
     }
     
+    
+    
+    func getEnemyCars() -> [UIView] {
+        cars.cars
+    }
 }

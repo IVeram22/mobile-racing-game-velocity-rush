@@ -15,14 +15,14 @@ private enum Constants {
 }
 
 class ViewController: UIViewController {
-    private var menu: MenuView!
+    private var menu: StartMenuView!
     private var road: RoadView!
     private let router: StartMenuRouter = Router.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
         road = RoadView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
-        menu = MenuView(frame: CGRect(x: 0, y: 0, width: Constants.Menu.width, height: Constants.Menu.height))
+        menu = StartMenuView(frame: CGRect(x: 0, y: 0, width: Constants.Menu.width, height: Constants.Menu.height))
         menu.delegate = self
 
         view.addSubview(road)
