@@ -26,15 +26,15 @@ class ViewController: UIViewController {
         menu.delegate = self
 
         view.addSubview(road)
-        
+        view.addBlackBackground()
         view.addSubview(menu)
+        
         NSLayoutConstraint.activate([
             menu.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             menu.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             menu.widthAnchor.constraint(equalToConstant: Constants.Menu.width),
             menu.heightAnchor.constraint(equalToConstant: Constants.Menu.height),
         ])
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {

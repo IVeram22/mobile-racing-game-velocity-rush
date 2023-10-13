@@ -8,6 +8,8 @@
 import UIKit
 
 protocol RaceOutputDelegate: AnyObject {
-    func getCounter() -> String
+    func startCounter()
+    func stopCounter()
+    func getScore() -> String
     func saveRecord()
 }

@@ -8,16 +8,21 @@
 import UIKit
 
 final class RacePresentor {
-    private var counter: Double = 0
-    private let step = 0.1
+    private let counter: CounterModel = CounterModel()
     
 }
 
 extension RacePresentor: RaceOutputDelegate {
-    func getCounter() -> String {
-        // TODO: need to make a model for the counter
-        counter += step
-        return String(format: "%.1f", counter)
+    func startCounter() {
+        counter.start()
+    }
+    
+    func stopCounter() {
+        counter.stop()
+    }
+    
+    func getScore() -> String {
+        return String(format: "%.1f", counter.getScore())
     }
     
     func saveRecord() {
