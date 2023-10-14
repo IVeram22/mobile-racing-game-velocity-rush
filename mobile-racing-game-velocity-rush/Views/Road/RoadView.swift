@@ -14,6 +14,7 @@ private enum Constants {
         static let backgroundColor: UIColor = .systemBrown
         static let width: CGFloat = 51.5
     }
+    
 }
 
 final class RoadView: UIView {
@@ -33,18 +34,21 @@ final class RoadView: UIView {
     
     private var lines: WhiteDottedLinesView!
     private var cars: EnemyCarsView!
+    private var hindrances: HindrancesView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = Constants.backgroundColor
         
         lines = WhiteDottedLinesView(frame: frame)
-        cars = EnemyCarsView(frame: frame)
+        cars = EnemyCarsView(frame: frame, size: 2)
+        hindrances = HindrancesView(frame: frame, type: .SummerTree, size: 5)
         
         addSubview(leftRoadside)
         addSubview(rightRoadside)
         addSubview(lines)
         addSubview(cars)
+        addSubview(hindrances)
         
         NSLayoutConstraint.activate([
             leftRoadside.leftAnchor.constraint(equalTo: leftAnchor, constant: 0),
@@ -65,11 +69,13 @@ final class RoadView: UIView {
     func runAllAnimation() {
         lines.runAnimation()
         cars.runAnimation()
+        hindrances.runAnimation()
     }
     
     func stopAllAnimation() {
         lines.stopAnimation()
         cars.stopAnimation()
+        hindrances.stopAnimation()
     }
     
     func runLinesAnimation() {
@@ -80,9 +86,16 @@ final class RoadView: UIView {
         cars.runAnimation()
     }
     
-    
-    
-    func getEnemyCars() -> [UIView] {
-        cars.cars
+    func runHindrancesAnimation() {
+        hindrances.runAnimation()
     }
+
+    func getEnemyCars() -> [UIView] {
+        cars.elements
+    }
+
+    func getHindrances() -> [UIView] {
+        hindrances.elements
+    }
+    
 }
