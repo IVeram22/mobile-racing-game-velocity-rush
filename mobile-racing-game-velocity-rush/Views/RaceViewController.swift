@@ -31,6 +31,7 @@ class RaceViewController: UIViewController {
         road.runLinesAnimation()
         Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { [self] _ in
             road.runCarsAnimation()
+            road.runHindrancesAnimation()
             raceOutputDelegate?.startCounter()
         }
         roadTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [self] _ in
@@ -77,6 +78,7 @@ class RaceViewController: UIViewController {
     
     private func checkCollision() {
         checkCollision(with: road.getEnemyCars())
+        checkCollision(with: road.getHindrances())
     }
     
     private func checkCollision(with elements: [UIView]) {

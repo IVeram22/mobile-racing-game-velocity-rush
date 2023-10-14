@@ -17,6 +17,13 @@
 		2A9CB6132AD96BFC00F0B3C3 /* BaseControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6122AD96BFC00F0B3C3 /* BaseControlView.swift */; };
 		2A9CB6182AD973B100F0B3C3 /* GameOverRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6172AD973B100F0B3C3 /* GameOverRouter.swift */; };
 		2A9CB61B2AD997B200F0B3C3 /* CounterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB61A2AD997B200F0B3C3 /* CounterModel.swift */; };
+		2A9CB61D2AD99C5C00F0B3C3 /* HindranceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB61C2AD99C5C00F0B3C3 /* HindranceFactory.swift */; };
+		2A9CB6202AD9B07700F0B3C3 /* BaseHindranceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB61F2AD9B07700F0B3C3 /* BaseHindranceView.swift */; };
+		2A9CB6232AD9B1B400F0B3C3 /* SummerTreeHindranceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6222AD9B1B400F0B3C3 /* SummerTreeHindranceView.swift */; };
+		2A9CB6252AD9BA4000F0B3C3 /* HindrancesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6242AD9BA4000F0B3C3 /* HindrancesView.swift */; };
+		2A9CB6272ADA940E00F0B3C3 /* AutumnTreeHindranceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6262ADA940E00F0B3C3 /* AutumnTreeHindranceView.swift */; };
+		2A9CB6292ADA94CE00F0B3C3 /* SpringTreeHindranceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6282ADA94CE00F0B3C3 /* SpringTreeHindranceView.swift */; };
+		2A9CB62B2ADA957600F0B3C3 /* WinterTreeHindranceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB62A2ADA957600F0B3C3 /* WinterTreeHindranceView.swift */; };
 		2AC3872D2AD6BE5C005082DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3872C2AD6BE5C005082DA /* AppDelegate.swift */; };
 		2AC3872F2AD6BE5C005082DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3872E2AD6BE5C005082DA /* SceneDelegate.swift */; };
 		2AC387312AD6BE5C005082DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC387302AD6BE5C005082DA /* ViewController.swift */; };
@@ -68,6 +75,13 @@
 		2A9CB6122AD96BFC00F0B3C3 /* BaseControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseControlView.swift; sourceTree = "<group>"; };
 		2A9CB6172AD973B100F0B3C3 /* GameOverRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverRouter.swift; sourceTree = "<group>"; };
 		2A9CB61A2AD997B200F0B3C3 /* CounterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterModel.swift; sourceTree = "<group>"; };
+		2A9CB61C2AD99C5C00F0B3C3 /* HindranceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HindranceFactory.swift; sourceTree = "<group>"; };
+		2A9CB61F2AD9B07700F0B3C3 /* BaseHindranceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHindranceView.swift; sourceTree = "<group>"; };
+		2A9CB6222AD9B1B400F0B3C3 /* SummerTreeHindranceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummerTreeHindranceView.swift; sourceTree = "<group>"; };
+		2A9CB6242AD9BA4000F0B3C3 /* HindrancesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HindrancesView.swift; sourceTree = "<group>"; };
+		2A9CB6262ADA940E00F0B3C3 /* AutumnTreeHindranceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutumnTreeHindranceView.swift; sourceTree = "<group>"; };
+		2A9CB6282ADA94CE00F0B3C3 /* SpringTreeHindranceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringTreeHindranceView.swift; sourceTree = "<group>"; };
+		2A9CB62A2ADA957600F0B3C3 /* WinterTreeHindranceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinterTreeHindranceView.swift; sourceTree = "<group>"; };
 		2AC387292AD6BE5C005082DA /* mobile-racing-game-velocity-rush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mobile-racing-game-velocity-rush.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AC3872C2AD6BE5C005082DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AC3872E2AD6BE5C005082DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,9 +158,32 @@
 		2A9CB6192AD9753C00F0B3C3 /* Elements */ = {
 			isa = PBXGroup;
 			children = (
+				2A9CB61E2AD99EED00F0B3C3 /* Hindrances */,
 				2AC387732AD6DC1C005082DA /* WhiteDottedLinesView.swift */,
 				2AC387772AD6FDD7005082DA /* EnemyCarsView.swift */,
 				2AC3877F2AD7BED3005082DA /* PlayerCarView.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		2A9CB61E2AD99EED00F0B3C3 /* Hindrances */ = {
+			isa = PBXGroup;
+			children = (
+				2A9CB6212AD9B18900F0B3C3 /* Elements */,
+				2A9CB6242AD9BA4000F0B3C3 /* HindrancesView.swift */,
+				2A9CB61C2AD99C5C00F0B3C3 /* HindranceFactory.swift */,
+			);
+			path = Hindrances;
+			sourceTree = "<group>";
+		};
+		2A9CB6212AD9B18900F0B3C3 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				2A9CB61F2AD9B07700F0B3C3 /* BaseHindranceView.swift */,
+				2A9CB6222AD9B1B400F0B3C3 /* SummerTreeHindranceView.swift */,
+				2A9CB6262ADA940E00F0B3C3 /* AutumnTreeHindranceView.swift */,
+				2A9CB6282ADA94CE00F0B3C3 /* SpringTreeHindranceView.swift */,
+				2A9CB62A2ADA957600F0B3C3 /* WinterTreeHindranceView.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -429,21 +466,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A9CB5FF2AD7C83B00F0B3C3 /* AccelerometerControlView.swift in Sources */,
+				2A9CB6232AD9B1B400F0B3C3 /* SummerTreeHindranceView.swift in Sources */,
+				2A9CB61D2AD99C5C00F0B3C3 /* HindranceFactory.swift in Sources */,
 				2A9CB6182AD973B100F0B3C3 /* GameOverRouter.swift in Sources */,
 				2A9CB5FB2AD7C53300F0B3C3 /* PlayerControlDelegate.swift in Sources */,
 				2A9CB6112AD969E500F0B3C3 /* PlayerControl.swift in Sources */,
 				2A9CB61B2AD997B200F0B3C3 /* CounterModel.swift in Sources */,
+				2A9CB6202AD9B07700F0B3C3 /* BaseHindranceView.swift in Sources */,
+				2A9CB62B2ADA957600F0B3C3 /* WinterTreeHindranceView.swift in Sources */,
 				2AC3877C2AD703C9005082DA /* UIView+extensions.swift in Sources */,
 				2A9CB6092AD828BF00F0B3C3 /* RaceOutputDelegate.swift in Sources */,
 				2AC387312AD6BE5C005082DA /* ViewController.swift in Sources */,
 				2A9CB6132AD96BFC00F0B3C3 /* BaseControlView.swift in Sources */,
 				2A9CB5FD2AD7C70D00F0B3C3 /* SwipesControlView.swift in Sources */,
+				2A9CB6272ADA940E00F0B3C3 /* AutumnTreeHindranceView.swift in Sources */,
 				2AC3876F2AD6D486005082DA /* ViewControllerDelegate.swift in Sources */,
 				2AC3872D2AD6BE5C005082DA /* AppDelegate.swift in Sources */,
+				2A9CB6252AD9BA4000F0B3C3 /* HindrancesView.swift in Sources */,
 				2AC387642AD6C37B005082DA /* StartMenuView.swift in Sources */,
 				2AC387782AD6FDD7005082DA /* EnemyCarsView.swift in Sources */,
 				2AC3877A2AD6FE1B005082DA /* GlobalConstants.swift in Sources */,
 				2AC387742AD6DC1C005082DA /* WhiteDottedLinesView.swift in Sources */,
+				2A9CB6292ADA94CE00F0B3C3 /* SpringTreeHindranceView.swift in Sources */,
 				2AC3876D2AD6D2E9005082DA /* StartMenuRouter.swift in Sources */,
 				2AC387762AD6F9A5005082DA /* RaceViewController.swift in Sources */,
 				2AC387682AD6CBCB005082DA /* UIButtons+extensions.swift in Sources */,

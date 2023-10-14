@@ -8,7 +8,6 @@
 import UIKit
 
 private enum Constants {
-    static let size: Int = 2
     static let alpha: CGFloat = 0.7
     static let delay: CGFloat = 0.3
     static let withDuration: CGFloat = 3.5
@@ -20,16 +19,13 @@ private enum Constants {
 }
 
 final class EnemyCarsView: UIView {
-    var cars: [UIView] = []
+    var elements: [UIView] = []
+    private var size: Int!
     
-    override init(frame: CGRect) {
+    init(frame: CGRect, size: Int = 2) {
         super.init(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
-        for _ in 1...Constants.size {
-            let car = createCar()
-            if let car {
-                cars.append(car)
-            }
-        }
+        self.size = size
+        addCars()
     }
     
     required init?(coder: NSCoder) {
@@ -37,16 +33,25 @@ final class EnemyCarsView: UIView {
     }
     
     func runAnimation() {
-        for element in cars {
+        for element in elements {
             animateCar(with: element)
         }
     }
     
     func stopAnimation() {
-        for element in cars {
+        for element in elements {
             let pausedTime = element.layer.convertTime(CACurrentMediaTime(), from: nil)
             element.layer.speed = 0.0
             element.layer.timeOffset = pausedTime
+        }
+    }
+    
+    private func addCars() {
+        for _ in 1...size {
+            let car = createCar()
+            if let car {
+                elements.append(car)
+            }
         }
     }
     
@@ -73,7 +78,7 @@ final class EnemyCarsView: UIView {
             let newDelay: TimeInterval = delay + Constants.delay
             let newCar = createCar()
             if let newCar {
-                cars.append(newCar)
+                elements.append(newCar)
                 animateCar(with: newCar, delay: Bool.random() ? newDelay : -newDelay)
             }
         })
@@ -81,13 +86,13 @@ final class EnemyCarsView: UIView {
     
     private func removeCar(_ car: UIView) {
         car.removeFromSuperview()
-        if let index = cars.firstIndex(of: car) {
-            cars.remove(at: index)
+        if let index = elements.firstIndex(of: car) {
+            elements.remove(at: index)
         }
     }
     
     private func addRandomCar() -> UIView? {
-        if cars.count == Constants.size {
+        if elements.count == size {
             return nil
         }
         
@@ -99,7 +104,7 @@ final class EnemyCarsView: UIView {
     
     private func getX() -> CGFloat {
         let x: CGFloat = CGFloat.random(in: Constants.xRange)
-        for element in cars {
+        for element in elements {
             if element.frame.intersects(CGRect(x: x, y: element.frame.origin.y, width: element.frame.width, height: element.frame.height)) {
                 return getX()
             }
@@ -109,7 +114,7 @@ final class EnemyCarsView: UIView {
     
     private func getY() -> CGFloat {
         let y: CGFloat = CGFloat.random(in: Constants.yRange)
-        for element in cars {
+        for element in elements {
             if element.frame.intersects(CGRect(x: element.frame.origin.x, y: y, width: element.frame.width, height: element.frame.height)) {
                 return getY()
             }

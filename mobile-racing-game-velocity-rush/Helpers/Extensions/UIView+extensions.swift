@@ -18,7 +18,7 @@ private enum Constants {
     
     enum Background {
         static let color: UIColor = .black
-        static let alpha: CGFloat = 0.7
+        static let alpha: CGFloat = 0.5
     }
     
 }
