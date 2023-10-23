@@ -15,7 +15,7 @@ private enum Constants {
     static let relativeDuration: CGFloat = 0.5
     static let yStep: CGFloat = 2000
     static let xRange: ClosedRange<CGFloat> = 80.1...UIScreen.main.bounds.width - 80.1
-    static let yRange: ClosedRange<CGFloat> = GlobalConstants.Car.height * 1.5...GlobalConstants.Car.height * 5
+    static let yRange: ClosedRange<CGFloat> = GlobalConstants.Cars.height * 1.5...GlobalConstants.Cars.height * 5
 }
 
 final class EnemyCarsView: UIView {
@@ -126,8 +126,8 @@ final class EnemyCarsView: UIView {
         let car = UIView(frame: CGRect(
             x: x,
             y: y,
-            width: GlobalConstants.Car.width,
-            height: GlobalConstants.Car.height
+            width: GlobalConstants.Cars.width,
+            height: GlobalConstants.Cars.height
         ))
         car.backgroundColor = UIColor(
             red: CGFloat.random(in: 0...1),
