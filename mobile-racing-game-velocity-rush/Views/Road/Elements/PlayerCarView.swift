@@ -13,9 +13,9 @@ private enum Constants {
 }
 
 final class PlayerCarView: UIView {
-    override init(frame: CGRect) {
+    init(frame: CGRect, with index: Int = 0) {
         super.init(frame: frame)
-        backgroundColor = GlobalConstants.Car.colors[0]
+        backgroundColor = GlobalConstants.Cars.colors[index]
         dropShadow()
         cornerRadius()
     }

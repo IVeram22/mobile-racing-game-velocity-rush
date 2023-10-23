@@ -24,7 +24,7 @@ extension Router: StartMenuRouter {
     }
     
     func openSettings(from viewController: UIViewController) {
-        print(#function)
+        open(from: viewController, to: SettingsViewController())
     }
     
     func seeRecords(from viewController: UIViewController) {
@@ -38,6 +38,9 @@ extension Router: GameOverRouter {
         open(from: viewController, to: RaceViewController())
     }
     
+}
+
+extension Router: BackRouter {
     func comeBack(from viewController: UIViewController) {
         open(from: viewController, to: ViewController())
     }

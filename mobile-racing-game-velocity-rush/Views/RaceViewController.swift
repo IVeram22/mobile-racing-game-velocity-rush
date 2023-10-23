@@ -62,10 +62,10 @@ class RaceViewController: UIViewController {
     
     private func addPlayer() {
         player = PlayerCarView(frame: CGRect(
-            x: view.frame.width / 2 - GlobalConstants.Car.width / 2,
-            y: view.frame.height / 1.5 - GlobalConstants.Car.height / 2,
-            width: GlobalConstants.Car.width,
-            height: GlobalConstants.Car.height
+            x: view.frame.width / 2 - GlobalConstants.Cars.width / 2,
+            y: view.frame.height / 1.5 - GlobalConstants.Cars.height / 2,
+            width: GlobalConstants.Cars.width,
+            height: GlobalConstants.Cars.height
         ))
         view.addSubview(player)
     }
