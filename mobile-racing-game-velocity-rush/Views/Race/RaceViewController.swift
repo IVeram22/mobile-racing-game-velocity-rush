@@ -7,17 +7,26 @@
 
 import UIKit
 
+private enum Constants {
+    static let pauseIntervalBeforeGame: TimeInterval = 3.0
+    static let checkCollisionInterval: TimeInterval = 0.1
+    
+    enum Counter {
+        static let fontSize: CGFloat = 21
+        static let topAnchor: CGFloat = 75
+        static let heightAnchor: CGFloat = 35
+    }
+    
+    enum PlayerCar {
+        static let x: CGFloat = 2
+        static let y: CGFloat = 1.5
+        static let half: CGFloat = 2
+    }
+    
+}
+
 class RaceViewController: UIViewController {
-    private var road: RoadView!
-    private var player: PlayerCarView!
-    private var control: BaseControlView!
-    private var counter: UILabel!
-    private var roadTimer: Timer!
-    private let router: GameOverRouter = Router.shared
-    
-    private let presenter = RacePresentor()
-    weak private var raceOutputDelegate: RaceOutputDelegate?
-    
+    // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         addRoad()
@@ -28,17 +37,30 @@ class RaceViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        road.setHindrances(index: gameSettings.hindranceIndex)
         road.runLinesAnimation()
-        Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { [self] _ in
+        Timer.scheduledTimer(withTimeInterval: Constants.pauseIntervalBeforeGame, repeats: false) { [self] _ in
             road.runCarsAnimation()
             road.runHindrancesAnimation()
             raceOutputDelegate?.startCounter()
         }
-        roadTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [self] _ in
+        roadTimer = Timer.scheduledTimer(withTimeInterval: Constants.checkCollisionInterval, repeats: true) { [self] _ in
             checkCollision()
             updateCounter()
         }
     }
+    
+    // MARK: - Private
+    private var road: RoadView!
+    private var player: PlayerCarView!
+    private var control: BaseControlView!
+    private var counter: UILabel!
+    private var roadTimer: Timer!
+    private let router: GameOverRouter = Router.shared
+    
+    private var gameSettings: GameSettingsModel = GameSettingsManager.shared.getGameSettingsModel()
+    private let presenter = RacePresentor()
+    weak private var raceOutputDelegate: RaceOutputDelegate?
     
     private func addRoad() {
         road = RoadView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
@@ -48,25 +70,25 @@ class RaceViewController: UIViewController {
     private func addCounter() {
         counter = UILabel()
         counter.translatesAutoresizingMaskIntoConstraints = false
-        counter.font = UIFont.systemFont(ofSize: 21)
+        counter.font = UIFont.systemFont(ofSize: Constants.Counter.fontSize)
         counter.textColor = .white
         
         view.addSubview(counter)
         NSLayoutConstraint.activate([
             counter.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            counter.topAnchor.constraint(equalTo: view.topAnchor, constant: 75),
-            counter.heightAnchor.constraint(equalToConstant: 35),
+            counter.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.Counter.topAnchor),
+            counter.heightAnchor.constraint(equalToConstant: Constants.Counter.heightAnchor),
         ])
         
     }
     
     private func addPlayer() {
         player = PlayerCarView(frame: CGRect(
-            x: view.frame.width / 2 - GlobalConstants.Cars.width / 2,
-            y: view.frame.height / 1.5 - GlobalConstants.Cars.height / 2,
+            x: view.frame.width / Constants.PlayerCar.x - GlobalConstants.Cars.width / Constants.PlayerCar.half,
+            y: view.frame.height / Constants.PlayerCar.y - GlobalConstants.Cars.height / Constants.PlayerCar.half,
             width: GlobalConstants.Cars.width,
             height: GlobalConstants.Cars.height
-        ))
+        ), with: gameSettings.carColorIndex)
         view.addSubview(player)
     }
     
@@ -100,15 +122,21 @@ class RaceViewController: UIViewController {
         }
     }
     
-    private func gameOver() {
+    private func stopEverything() {
         roadTimer?.invalidate()
         roadTimer = nil
         raceOutputDelegate?.stopCounter()
         road.stopAllAnimation()
         view.addBlackBackground()
-        
+    }
+    
+    private func openAlert() {
         guard let raceOutputDelegate = raceOutputDelegate else { return }
-        let alert = UIAlertController(title: "Game Over", message: "You have scored \(raceOutputDelegate.getScore()) points!", preferredStyle: .alert)
+        let alert = UIAlertController(
+            title: "Game Over",
+            message: "You have scored \(raceOutputDelegate.getScore()) points!",
+            preferredStyle: .alert
+        )
         
         let restartAction = UIAlertAction(title: "Restart", style: .default) { [self] _ in
             raceOutputDelegate.saveRecord()
@@ -124,9 +152,16 @@ class RaceViewController: UIViewController {
         
         present(alert, animated: true, completion: nil)
     }
+    
+    private func gameOver() {
+        stopEverything()
+        raceOutputDelegate?.saveRecord()
+        openAlert()
+    }
 
 }
 
+// MARK: - Extensions
 extension RaceViewController: ControlRacerDelegate {
     func turnLeft() {
         player.moveToLeft()
