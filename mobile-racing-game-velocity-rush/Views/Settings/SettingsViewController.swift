@@ -12,9 +12,61 @@ private enum Constants {
         static let width: CGFloat = 271
         static let height: CGFloat = 271
     }
+    
+    enum ScrollView {
+        static let width: CGFloat = 301
+        static let height: CGFloat = 1501
+    }
+
 }
 
 class SettingsViewController: UIViewController {
+    // MARK: - View lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        scrollView = UIScrollView(frame: CGRect(
+            x: 0,
+            y: 0,
+            width: view.frame.width,
+            height: view.frame.height
+        ))
+        scrollView.contentSize = CGSize(
+            width: Constants.ScrollView.width,
+            height: Constants.ScrollView.height
+        )
+
+        road = RoadView(frame: CGRect(
+            x: 0,
+            y: 0,
+            width: view.frame.width,
+            height: view.frame.height
+        ))
+
+        view.addSubview(road)
+        view.addBlackBackground()
+        
+        view.addSubview(scrollView)
+        addUserSettingsView()
+        addCarColorView()
+        addHindranceView()
+        addLevelView()
+        addControlView()
+        addBackButton()
+        
+        presenter.setSettingsInputDelegate(delegate: self)
+        settingsOutputDelegate = presenter
+        settingsOutputDelegate?.getData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        road.runAllAnimation()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        saveData()
+    }
+    
+    // MARK: - Private
     private var road: RoadView!
     private var scrollView = UIScrollView()
     private var userSettingsView: UserSettingsView!
@@ -24,33 +76,11 @@ class SettingsViewController: UIViewController {
     private var controlView: ControlsSliderSettingsView!
     private var backButton: BackButton!
     
+    private var gameSettings: GameSettingsModel!
+    private let presenter = SettingsPresentor()
+    weak private var settingsOutputDelegate: SettingsOutputDelegate?
+    
     private let router: BackRouter = Router.shared
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let height: CGFloat = 1500
-        scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
-        scrollView.contentSize = CGSize(width: 300, height: height)
-
-        road = RoadView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: height))
-
-        view.addSubview(road)
-        view.addBlackBackground()
-        
-        
-        view.addSubview(scrollView)
-        addUserSettingsView()
-        addCarColorView()
-        addHindranceView()
-        addLevelView()
-        addControlView()
-        addBackButton()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        road.runAllAnimation()
-    }
     
     private func addUserSettingsView() {
         userSettingsView = UserSettingsView(frame: CGRect(
@@ -59,22 +89,14 @@ class SettingsViewController: UIViewController {
             width: Constants.Cell.width,
             height: Constants.Cell.height
         ))
-        
         userSettingsView.addDelegate(with: self)
-        userSettingsView.setFoto(UIImage(named: "Racer")!)
-        userSettingsView.setName("Ivan V.")
-        
-        
-        
         scrollView.addSubview(userSettingsView)
         NSLayoutConstraint.activate([
             userSettingsView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             userSettingsView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             userSettingsView.widthAnchor.constraint(equalToConstant: Constants.Cell.width),
             userSettingsView.heightAnchor.constraint(equalToConstant: Constants.Cell.height),
-            
         ])
-        
     }
     
     private func addCarColorView() {
@@ -85,19 +107,13 @@ class SettingsViewController: UIViewController {
             height: Constants.Cell.height
         ))
         carColorView.setTitle("Player Car Colors")
-        carColorView.addCar()
-        
         scrollView.addSubview(carColorView)
-        
         NSLayoutConstraint.activate([
             carColorView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             carColorView.topAnchor.constraint(equalTo: userSettingsView.bottomAnchor, constant: 25),
             carColorView.widthAnchor.constraint(equalToConstant: Constants.Cell.width),
             carColorView.heightAnchor.constraint(equalToConstant: Constants.Cell.height),
-            
         ])
-        
-        
     }
     
     private func addHindranceView() {
@@ -108,19 +124,13 @@ class SettingsViewController: UIViewController {
             height: Constants.Cell.height
         ))
         hindranceView.setTitle("Hindrances")
-        hindranceView.addHindrance(with: 0)
-        
         scrollView.addSubview(hindranceView)
-        
         NSLayoutConstraint.activate([
             hindranceView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             hindranceView.topAnchor.constraint(equalTo: carColorView.bottomAnchor, constant: 25),
             hindranceView.widthAnchor.constraint(equalToConstant: Constants.Cell.width),
             hindranceView.heightAnchor.constraint(equalToConstant: Constants.Cell.height),
-            
         ])
-        
-        
     }
     
     private func addLevelView() {
@@ -131,19 +141,13 @@ class SettingsViewController: UIViewController {
             height: Constants.Cell.height
         ))
         levelView.setTitle("Levels")
-        levelView.addLevel(with: 0)
-        
         scrollView.addSubview(levelView)
-        
         NSLayoutConstraint.activate([
             levelView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             levelView.topAnchor.constraint(equalTo: hindranceView.bottomAnchor, constant: 25),
             levelView.widthAnchor.constraint(equalToConstant: Constants.Cell.width),
             levelView.heightAnchor.constraint(equalToConstant: Constants.Cell.height),
-            
         ])
-        
-        
     }
     
     private func addControlView() {
@@ -154,19 +158,13 @@ class SettingsViewController: UIViewController {
             height: Constants.Cell.height
         ))
         controlView.setTitle("Player Controls")
-        controlView.addControl(with: 0)
-        
         scrollView.addSubview(controlView)
-        
         NSLayoutConstraint.activate([
             controlView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             controlView.topAnchor.constraint(equalTo: levelView.bottomAnchor, constant: 25),
             controlView.widthAnchor.constraint(equalToConstant: Constants.Cell.width),
             controlView.heightAnchor.constraint(equalToConstant: Constants.Cell.height),
-            
         ])
-        
-        
     }
     
     private func addBackButton() {
@@ -176,32 +174,40 @@ class SettingsViewController: UIViewController {
             width: GlobalConstants.BackButton.width,
             height: GlobalConstants.BackButton.height
         ))
-       
         backButton.setDelegate(with: self)
-        
         scrollView.addSubview(backButton)
-        
         NSLayoutConstraint.activate([
             backButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             backButton.topAnchor.constraint(equalTo: controlView.bottomAnchor, constant: 5),
             backButton.widthAnchor.constraint(equalToConstant: GlobalConstants.BackButton.width),
             backButton.heightAnchor.constraint(equalToConstant: GlobalConstants.BackButton.height),
-            
         ])
-        
-        
+    }
+
+    private func saveData() {
+        if let name = userSettingsView.getName() {
+            gameSettings.user.name = name
+        }
+        if let foto = userSettingsView.getFoto() {
+            gameSettings.user.foto = foto
+        }
+        gameSettings.carColorIndex = carColorView.getCurrentIndex()
+        gameSettings.hindranceIndex = hindranceView.getCurrentIndex()
+        gameSettings.levelIndex = levelView.getCurrentIndex()
+        gameSettings.controlIndex = controlView.getCurrentIndex()
+        settingsOutputDelegate?.setData(with: gameSettings)
     }
     
 }
 
+// MARK: - Extensions
 extension SettingsViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true)
 
-        // No image found
+        // MARK: No image found
         guard let image = info[.editedImage] as? UIImage else { return }
         userSettingsView.setFoto(image)
-        
     }
     
 }
@@ -244,9 +250,30 @@ extension SettingsViewController: UITextFieldDelegate {
 
 }
 
-extension SettingsViewController: SettingsViewControllerBackDelegate {
+extension SettingsViewController: BackButtonDelegate {
     func comeBack() {
         router.comeBack(from: self)
     }
     
+}
+
+extension SettingsViewController: SettingsInputDelegate {
+    func setupInitialState() {
+        displayData()
+    }
+    
+    func setupData(with data: GameSettingsModel) {
+        gameSettings = data
+    }
+    
+    func displayData() {
+        userSettingsView.setName(gameSettings.user.name)
+        userSettingsView.setFoto(gameSettings.user.foto!)
+        carColorView.addCar(with: gameSettings.carColorIndex)
+        hindranceView.addHindrance(with: gameSettings.hindranceIndex)
+        levelView.addLevel(with: gameSettings.levelIndex)
+        controlView.addControl(with: gameSettings.controlIndex)
+        
+    }
+
 }

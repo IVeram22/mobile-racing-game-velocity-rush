@@ -1,5 +1,5 @@
 //
-//  SettingsViewControllerBackDelegate.swift
+//  BackButtonDelegate.swift
 //  mobile-racing-game-velocity-rush
 //
 //  Created by Ivan Veramyou on 23.10.23.
@@ -7,6 +7,6 @@
 
 import UIKit
 
-protocol SettingsViewControllerBackDelegate: AnyObject {
+protocol BackButtonDelegate: AnyObject {
     func comeBack()
 }

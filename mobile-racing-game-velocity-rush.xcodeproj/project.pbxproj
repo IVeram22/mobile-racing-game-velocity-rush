@@ -31,11 +31,17 @@
 		2A9CB6532AE405FE00F0B3C3 /* SliderSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6522AE405FE00F0B3C3 /* SliderSettingsView.swift */; };
 		2A9CB6562AE6578200F0B3C3 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6552AE6578200F0B3C3 /* BackButton.swift */; };
 		2A9CB6582AE65A8800F0B3C3 /* BackRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6572AE65A8800F0B3C3 /* BackRouter.swift */; };
-		2A9CB65A2AE663CC00F0B3C3 /* SettingsViewControllerBackDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6592AE663CC00F0B3C3 /* SettingsViewControllerBackDelegate.swift */; };
+		2A9CB65A2AE663CC00F0B3C3 /* BackButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6592AE663CC00F0B3C3 /* BackButtonDelegate.swift */; };
 		2A9CB65D2AE664A600F0B3C3 /* ControlsSliderSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB65C2AE664A500F0B3C3 /* ControlsSliderSettingsView.swift */; };
 		2A9CB65F2AE6652700F0B3C3 /* LevelsSliderSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB65E2AE6652700F0B3C3 /* LevelsSliderSettingsView.swift */; };
 		2A9CB6612AE666E900F0B3C3 /* HindrancesSliderSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6602AE666E900F0B3C3 /* HindrancesSliderSettingsView.swift */; };
 		2A9CB6632AE6671C00F0B3C3 /* CarColorsSliderSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6622AE6671C00F0B3C3 /* CarColorsSliderSettingsView.swift */; };
+		2A9CB6652AE8F9CA00F0B3C3 /* GameSettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6642AE8F9CA00F0B3C3 /* GameSettingsModel.swift */; };
+		2A9CB6672AE8FB4E00F0B3C3 /* UserDefaults+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6662AE8FB4E00F0B3C3 /* UserDefaults+extensions.swift */; };
+		2A9CB6692AE8FC5000F0B3C3 /* GameSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6682AE8FC5000F0B3C3 /* GameSettingsManager.swift */; };
+		2A9CB66B2AE9110800F0B3C3 /* SettingsPresentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB66A2AE9110800F0B3C3 /* SettingsPresentor.swift */; };
+		2A9CB66E2AE92E8900F0B3C3 /* SettingsOutputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB66D2AE92E8900F0B3C3 /* SettingsOutputDelegate.swift */; };
+		2A9CB6702AE92EB300F0B3C3 /* SettingsInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB66F2AE92EB300F0B3C3 /* SettingsInputDelegate.swift */; };
 		2AC3872D2AD6BE5C005082DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3872C2AD6BE5C005082DA /* AppDelegate.swift */; };
 		2AC3872F2AD6BE5C005082DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3872E2AD6BE5C005082DA /* SceneDelegate.swift */; };
 		2AC387312AD6BE5C005082DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC387302AD6BE5C005082DA /* ViewController.swift */; };
@@ -101,11 +107,17 @@
 		2A9CB6522AE405FE00F0B3C3 /* SliderSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderSettingsView.swift; sourceTree = "<group>"; };
 		2A9CB6552AE6578200F0B3C3 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		2A9CB6572AE65A8800F0B3C3 /* BackRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackRouter.swift; sourceTree = "<group>"; };
-		2A9CB6592AE663CC00F0B3C3 /* SettingsViewControllerBackDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewControllerBackDelegate.swift; sourceTree = "<group>"; };
+		2A9CB6592AE663CC00F0B3C3 /* BackButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonDelegate.swift; sourceTree = "<group>"; };
 		2A9CB65C2AE664A500F0B3C3 /* ControlsSliderSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsSliderSettingsView.swift; sourceTree = "<group>"; };
 		2A9CB65E2AE6652700F0B3C3 /* LevelsSliderSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsSliderSettingsView.swift; sourceTree = "<group>"; };
 		2A9CB6602AE666E900F0B3C3 /* HindrancesSliderSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HindrancesSliderSettingsView.swift; sourceTree = "<group>"; };
 		2A9CB6622AE6671C00F0B3C3 /* CarColorsSliderSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarColorsSliderSettingsView.swift; sourceTree = "<group>"; };
+		2A9CB6642AE8F9CA00F0B3C3 /* GameSettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettingsModel.swift; sourceTree = "<group>"; };
+		2A9CB6662AE8FB4E00F0B3C3 /* UserDefaults+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+extensions.swift"; sourceTree = "<group>"; };
+		2A9CB6682AE8FC5000F0B3C3 /* GameSettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettingsManager.swift; sourceTree = "<group>"; };
+		2A9CB66A2AE9110800F0B3C3 /* SettingsPresentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresentor.swift; sourceTree = "<group>"; };
+		2A9CB66D2AE92E8900F0B3C3 /* SettingsOutputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsOutputDelegate.swift; sourceTree = "<group>"; };
+		2A9CB66F2AE92EB300F0B3C3 /* SettingsInputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInputDelegate.swift; sourceTree = "<group>"; };
 		2AC387292AD6BE5C005082DA /* mobile-racing-game-velocity-rush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mobile-racing-game-velocity-rush.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AC3872C2AD6BE5C005082DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AC3872E2AD6BE5C005082DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -215,9 +227,9 @@
 		2A9CB64A2AE3AD1300F0B3C3 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				2A9CB65B2AE6648500F0B3C3 /* Sliders */,
-				2A9CB64B2AE3AD3F00F0B3C3 /* UserSettingsView.swift */,
-				2A9CB6522AE405FE00F0B3C3 /* SliderSettingsView.swift */,
+				2A9CB6712AE9304800F0B3C3 /* Elements */,
+				2A9CB6482AE3AB8500F0B3C3 /* SettingsViewController.swift */,
+				2A9CB64D2AE3CA9200F0B3C3 /* SettingsViewControllerDelegate.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -226,6 +238,8 @@
 			isa = PBXGroup;
 			children = (
 				2A9CB6502AE3D0FB00F0B3C3 /* UserModel.swift */,
+				2A9CB6642AE8F9CA00F0B3C3 /* GameSettingsModel.swift */,
+				2A9CB6682AE8FC5000F0B3C3 /* GameSettingsManager.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -233,7 +247,7 @@
 		2A9CB6542AE6576000F0B3C3 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				2A9CB6552AE6578200F0B3C3 /* BackButton.swift */,
+				2A9CB6722AE9312600F0B3C3 /* Back */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -247,6 +261,35 @@
 				2A9CB6622AE6671C00F0B3C3 /* CarColorsSliderSettingsView.swift */,
 			);
 			path = Sliders;
+			sourceTree = "<group>";
+		};
+		2A9CB66C2AE92E6600F0B3C3 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2A9CB66A2AE9110800F0B3C3 /* SettingsPresentor.swift */,
+				2A9CB66D2AE92E8900F0B3C3 /* SettingsOutputDelegate.swift */,
+				2A9CB66F2AE92EB300F0B3C3 /* SettingsInputDelegate.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		2A9CB6712AE9304800F0B3C3 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				2A9CB65B2AE6648500F0B3C3 /* Sliders */,
+				2A9CB64B2AE3AD3F00F0B3C3 /* UserSettingsView.swift */,
+				2A9CB6522AE405FE00F0B3C3 /* SliderSettingsView.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		2A9CB6722AE9312600F0B3C3 /* Back */ = {
+			isa = PBXGroup;
+			children = (
+				2A9CB6552AE6578200F0B3C3 /* BackButton.swift */,
+				2A9CB6592AE663CC00F0B3C3 /* BackButtonDelegate.swift */,
+			);
+			path = Back;
 			sourceTree = "<group>";
 		};
 		2AC387202AD6BE5C005082DA = {
@@ -321,6 +364,7 @@
 		2AC3875E2AD6BF93005082DA /* Presentors */ = {
 			isa = PBXGroup;
 			children = (
+				2A9CB66C2AE92E6600F0B3C3 /* Settings */,
 				2A9CB6062AD827B900F0B3C3 /* RacePresentor.swift */,
 				2A9CB6082AD828BF00F0B3C3 /* RaceOutputDelegate.swift */,
 			);
@@ -339,9 +383,6 @@
 				2AC387302AD6BE5C005082DA /* ViewController.swift */,
 				2AC3876E2AD6D486005082DA /* ViewControllerDelegate.swift */,
 				2AC387752AD6F9A5005082DA /* RaceViewController.swift */,
-				2A9CB6482AE3AB8500F0B3C3 /* SettingsViewController.swift */,
-				2A9CB64D2AE3CA9200F0B3C3 /* SettingsViewControllerDelegate.swift */,
-				2A9CB6592AE663CC00F0B3C3 /* SettingsViewControllerBackDelegate.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -378,6 +419,7 @@
 			children = (
 				2AC387672AD6CBCB005082DA /* UIButtons+extensions.swift */,
 				2AC3877B2AD703C9005082DA /* UIView+extensions.swift */,
+				2A9CB6662AE8FB4E00F0B3C3 /* UserDefaults+extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -538,17 +580,20 @@
 				2A9CB6232AD9B1B400F0B3C3 /* SummerTreeHindranceView.swift in Sources */,
 				2A9CB6492AE3AB8500F0B3C3 /* SettingsViewController.swift in Sources */,
 				2A9CB6532AE405FE00F0B3C3 /* SliderSettingsView.swift in Sources */,
+				2A9CB66B2AE9110800F0B3C3 /* SettingsPresentor.swift in Sources */,
 				2A9CB6582AE65A8800F0B3C3 /* BackRouter.swift in Sources */,
 				2A9CB61D2AD99C5C00F0B3C3 /* HindranceFactory.swift in Sources */,
 				2A9CB6182AD973B100F0B3C3 /* GameOverRouter.swift in Sources */,
 				2A9CB5FB2AD7C53300F0B3C3 /* PlayerControlDelegate.swift in Sources */,
 				2A9CB64C2AE3AD3F00F0B3C3 /* UserSettingsView.swift in Sources */,
 				2A9CB6112AD969E500F0B3C3 /* PlayerControl.swift in Sources */,
+				2A9CB6702AE92EB300F0B3C3 /* SettingsInputDelegate.swift in Sources */,
 				2A9CB61B2AD997B200F0B3C3 /* CounterModel.swift in Sources */,
 				2A9CB6202AD9B07700F0B3C3 /* BaseHindranceView.swift in Sources */,
 				2A9CB62B2ADA957600F0B3C3 /* WinterTreeHindranceView.swift in Sources */,
 				2AC3877C2AD703C9005082DA /* UIView+extensions.swift in Sources */,
-				2A9CB65A2AE663CC00F0B3C3 /* SettingsViewControllerBackDelegate.swift in Sources */,
+				2A9CB65A2AE663CC00F0B3C3 /* BackButtonDelegate.swift in Sources */,
+				2A9CB6692AE8FC5000F0B3C3 /* GameSettingsManager.swift in Sources */,
 				2A9CB6092AD828BF00F0B3C3 /* RaceOutputDelegate.swift in Sources */,
 				2AC387312AD6BE5C005082DA /* ViewController.swift in Sources */,
 				2A9CB65D2AE664A600F0B3C3 /* ControlsSliderSettingsView.swift in Sources */,
@@ -569,10 +614,13 @@
 				2A9CB6292ADA94CE00F0B3C3 /* SpringTreeHindranceView.swift in Sources */,
 				2AC3876D2AD6D2E9005082DA /* StartMenuRouter.swift in Sources */,
 				2AC387762AD6F9A5005082DA /* RaceViewController.swift in Sources */,
+				2A9CB66E2AE92E8900F0B3C3 /* SettingsOutputDelegate.swift in Sources */,
+				2A9CB6672AE8FB4E00F0B3C3 /* UserDefaults+extensions.swift in Sources */,
 				2AC387682AD6CBCB005082DA /* UIButtons+extensions.swift in Sources */,
 				2AC387802AD7BED3005082DA /* PlayerCarView.swift in Sources */,
 				2A9CB6072AD827B900F0B3C3 /* RacePresentor.swift in Sources */,
 				2AC3876B2AD6D1FA005082DA /* Router.swift in Sources */,
+				2A9CB6652AE8F9CA00F0B3C3 /* GameSettingsModel.swift in Sources */,
 				2AC387722AD6D93D005082DA /* RoadView.swift in Sources */,
 				2A9CB5F92AD7C41800F0B3C3 /* ButtonsControlView.swift in Sources */,
 				2A9CB6512AE3D0FB00F0B3C3 /* UserModel.swift in Sources */,

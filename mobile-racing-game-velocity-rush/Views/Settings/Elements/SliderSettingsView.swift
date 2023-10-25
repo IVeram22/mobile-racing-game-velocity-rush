@@ -101,4 +101,8 @@ class SliderSettingsView: UIView {
         mainElement.removeFromSuperview()
     }
     
+    func getCurrentIndex() -> Int {
+        index
+    }
+    
 }

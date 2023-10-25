@@ -8,7 +8,7 @@
 import UIKit
 
 final class BackButton: UIButton {
-    private weak var settingsViewControllerBackDelegate: SettingsViewControllerBackDelegate?
+    private weak var settingsViewControllerBackDelegate: BackButtonDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,7 +25,7 @@ final class BackButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setDelegate(with delegate: SettingsViewControllerBackDelegate) {
+    func setDelegate(with delegate: BackButtonDelegate) {
         settingsViewControllerBackDelegate = delegate
     }
     

@@ -100,16 +100,21 @@ final class UserSettingsView: UIView {
         settingsViewControllerDelegate = delegate
         nameTextField.delegate = delegate
     }
-    
-    
-    func setFoto(_ image: UIImage) {
-        fotoImageView.image = image
-    }
-    
+  
     func setName(_ name: String) {
         nameTextField.text = name
     }
     
-    
+    func getName() -> String? {
+        nameTextField.text
+    }
+
+    func setFoto(_ image: UIImage) {
+        fotoImageView.image = image
+    }
+
+    func getFoto() -> UIImage? {
+        fotoImageView.image
+    }
     
 }
