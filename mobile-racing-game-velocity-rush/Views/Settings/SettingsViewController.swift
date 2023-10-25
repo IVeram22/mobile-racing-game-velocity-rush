@@ -59,6 +59,7 @@ class SettingsViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        road.setHindrances(index: gameSettings.hindranceIndex)
         road.runAllAnimation()
     }
     
@@ -273,7 +274,6 @@ extension SettingsViewController: SettingsInputDelegate {
         hindranceView.addHindrance(with: gameSettings.hindranceIndex)
         levelView.addLevel(with: gameSettings.levelIndex)
         controlView.addControl(with: gameSettings.controlIndex)
-        
     }
 
 }
