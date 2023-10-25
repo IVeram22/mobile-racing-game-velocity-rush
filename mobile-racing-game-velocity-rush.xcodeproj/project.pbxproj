@@ -45,6 +45,9 @@
 		2A9CB6752AE93FF100F0B3C3 /* StartPresentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6742AE93FF100F0B3C3 /* StartPresentor.swift */; };
 		2A9CB6772AE945DB00F0B3C3 /* StartOutputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6762AE945DB00F0B3C3 /* StartOutputDelegate.swift */; };
 		2A9CB6792AE945EF00F0B3C3 /* StartInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6782AE945EF00F0B3C3 /* StartInputDelegate.swift */; };
+		2A9CB67B2AE95F7500F0B3C3 /* RecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB67A2AE95F7500F0B3C3 /* RecordModel.swift */; };
+		2A9CB67D2AE9637400F0B3C3 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB67C2AE9637400F0B3C3 /* DateManager.swift */; };
+		2A9CB6802AE964A000F0B3C3 /* RecordsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB67F2AE964A000F0B3C3 /* RecordsManager.swift */; };
 		2AC3872D2AD6BE5C005082DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3872C2AD6BE5C005082DA /* AppDelegate.swift */; };
 		2AC3872F2AD6BE5C005082DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3872E2AD6BE5C005082DA /* SceneDelegate.swift */; };
 		2AC387312AD6BE5C005082DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC387302AD6BE5C005082DA /* ViewController.swift */; };
@@ -124,6 +127,9 @@
 		2A9CB6742AE93FF100F0B3C3 /* StartPresentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPresentor.swift; sourceTree = "<group>"; };
 		2A9CB6762AE945DB00F0B3C3 /* StartOutputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartOutputDelegate.swift; sourceTree = "<group>"; };
 		2A9CB6782AE945EF00F0B3C3 /* StartInputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartInputDelegate.swift; sourceTree = "<group>"; };
+		2A9CB67A2AE95F7500F0B3C3 /* RecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordModel.swift; sourceTree = "<group>"; };
+		2A9CB67C2AE9637400F0B3C3 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
+		2A9CB67F2AE964A000F0B3C3 /* RecordsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsManager.swift; sourceTree = "<group>"; };
 		2AC387292AD6BE5C005082DA /* mobile-racing-game-velocity-rush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mobile-racing-game-velocity-rush.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AC3872C2AD6BE5C005082DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AC3872E2AD6BE5C005082DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -243,7 +249,6 @@
 		2A9CB64F2AE3D0ED00F0B3C3 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				2A9CB6502AE3D0FB00F0B3C3 /* UserModel.swift */,
 				2A9CB6642AE8F9CA00F0B3C3 /* GameSettingsModel.swift */,
 				2A9CB6682AE8FC5000F0B3C3 /* GameSettingsManager.swift */,
 			);
@@ -303,6 +308,23 @@
 			children = (
 				2A9CB6062AD827B900F0B3C3 /* RacePresentor.swift */,
 				2A9CB6082AD828BF00F0B3C3 /* RaceOutputDelegate.swift */,
+			);
+			path = Race;
+			sourceTree = "<group>";
+		};
+		2A9CB67E2AE9647C00F0B3C3 /* Records */ = {
+			isa = PBXGroup;
+			children = (
+				2A9CB67A2AE95F7500F0B3C3 /* RecordModel.swift */,
+				2A9CB67F2AE964A000F0B3C3 /* RecordsManager.swift */,
+			);
+			path = Records;
+			sourceTree = "<group>";
+		};
+		2A9CB6812AE96A6D00F0B3C3 /* Race */ = {
+			isa = PBXGroup;
+			children = (
+				2AC387752AD6F9A5005082DA /* RaceViewController.swift */,
 			);
 			path = Race;
 			sourceTree = "<group>";
@@ -370,8 +392,11 @@
 		2AC3875D2AD6BF8A005082DA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2A9CB67E2AE9647C00F0B3C3 /* Records */,
 				2A9CB64F2AE3D0ED00F0B3C3 /* Settings */,
+				2A9CB6502AE3D0FB00F0B3C3 /* UserModel.swift */,
 				2A9CB61A2AD997B200F0B3C3 /* CounterModel.swift */,
+				2A9CB67C2AE9637400F0B3C3 /* DateManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -391,6 +416,7 @@
 		2AC3875F2AD6BFB2005082DA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2A9CB6812AE96A6D00F0B3C3 /* Race */,
 				2A9CB6542AE6576000F0B3C3 /* Buttons */,
 				2A9CB64A2AE3AD1300F0B3C3 /* Settings */,
 				2A9CB5F72AD7C3D600F0B3C3 /* Control */,
@@ -399,7 +425,6 @@
 				2AC387602AD6BFBD005082DA /* Storyboards */,
 				2AC387302AD6BE5C005082DA /* ViewController.swift */,
 				2AC3876E2AD6D486005082DA /* ViewControllerDelegate.swift */,
-				2AC387752AD6F9A5005082DA /* RaceViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -630,11 +655,13 @@
 				2AC3877A2AD6FE1B005082DA /* GlobalConstants.swift in Sources */,
 				2A9CB65F2AE6652700F0B3C3 /* LevelsSliderSettingsView.swift in Sources */,
 				2AC387742AD6DC1C005082DA /* WhiteDottedLinesView.swift in Sources */,
+				2A9CB67B2AE95F7500F0B3C3 /* RecordModel.swift in Sources */,
 				2A9CB6292ADA94CE00F0B3C3 /* SpringTreeHindranceView.swift in Sources */,
 				2AC3876D2AD6D2E9005082DA /* StartMenuRouter.swift in Sources */,
 				2AC387762AD6F9A5005082DA /* RaceViewController.swift in Sources */,
 				2A9CB66E2AE92E8900F0B3C3 /* SettingsOutputDelegate.swift in Sources */,
 				2A9CB6672AE8FB4E00F0B3C3 /* UserDefaults+extensions.swift in Sources */,
+				2A9CB6802AE964A000F0B3C3 /* RecordsManager.swift in Sources */,
 				2A9CB6752AE93FF100F0B3C3 /* StartPresentor.swift in Sources */,
 				2AC387682AD6CBCB005082DA /* UIButtons+extensions.swift in Sources */,
 				2AC387802AD7BED3005082DA /* PlayerCarView.swift in Sources */,
@@ -642,6 +669,7 @@
 				2AC3876B2AD6D1FA005082DA /* Router.swift in Sources */,
 				2A9CB6652AE8F9CA00F0B3C3 /* GameSettingsModel.swift in Sources */,
 				2AC387722AD6D93D005082DA /* RoadView.swift in Sources */,
+				2A9CB67D2AE9637400F0B3C3 /* DateManager.swift in Sources */,
 				2A9CB5F92AD7C41800F0B3C3 /* ButtonsControlView.swift in Sources */,
 				2A9CB6512AE3D0FB00F0B3C3 /* UserModel.swift in Sources */,
 				2AC3872F2AD6BE5C005082DA /* SceneDelegate.swift in Sources */,

@@ -26,7 +26,11 @@ extension RacePresentor: RaceOutputDelegate {
     }
     
     func saveRecord() {
-        
+        let record = RecordModel(
+            user: GameSettingsManager.shared.getGameSettingsModel().user,
+            points: getScore()
+        )
+        RecordsManager.shared.addRecord(with: record)
     }
     
 }
