@@ -98,4 +98,14 @@ final class RoadView: UIView {
         hindrances.elements
     }
     
+    func setHindrances(index: Int) {
+        hindrances.removeFromSuperview()
+        hindrances = HindrancesView(
+            frame: frame,
+            type: HindranceFactory.getElementByIndex(with: index),
+            size: 5
+        )
+        addSubview(hindrances)
+    }
+    
 }

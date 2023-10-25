@@ -42,6 +42,9 @@
 		2A9CB66B2AE9110800F0B3C3 /* SettingsPresentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB66A2AE9110800F0B3C3 /* SettingsPresentor.swift */; };
 		2A9CB66E2AE92E8900F0B3C3 /* SettingsOutputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB66D2AE92E8900F0B3C3 /* SettingsOutputDelegate.swift */; };
 		2A9CB6702AE92EB300F0B3C3 /* SettingsInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB66F2AE92EB300F0B3C3 /* SettingsInputDelegate.swift */; };
+		2A9CB6752AE93FF100F0B3C3 /* StartPresentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6742AE93FF100F0B3C3 /* StartPresentor.swift */; };
+		2A9CB6772AE945DB00F0B3C3 /* StartOutputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6762AE945DB00F0B3C3 /* StartOutputDelegate.swift */; };
+		2A9CB6792AE945EF00F0B3C3 /* StartInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6782AE945EF00F0B3C3 /* StartInputDelegate.swift */; };
 		2AC3872D2AD6BE5C005082DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3872C2AD6BE5C005082DA /* AppDelegate.swift */; };
 		2AC3872F2AD6BE5C005082DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3872E2AD6BE5C005082DA /* SceneDelegate.swift */; };
 		2AC387312AD6BE5C005082DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC387302AD6BE5C005082DA /* ViewController.swift */; };
@@ -118,6 +121,9 @@
 		2A9CB66A2AE9110800F0B3C3 /* SettingsPresentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresentor.swift; sourceTree = "<group>"; };
 		2A9CB66D2AE92E8900F0B3C3 /* SettingsOutputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsOutputDelegate.swift; sourceTree = "<group>"; };
 		2A9CB66F2AE92EB300F0B3C3 /* SettingsInputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInputDelegate.swift; sourceTree = "<group>"; };
+		2A9CB6742AE93FF100F0B3C3 /* StartPresentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPresentor.swift; sourceTree = "<group>"; };
+		2A9CB6762AE945DB00F0B3C3 /* StartOutputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartOutputDelegate.swift; sourceTree = "<group>"; };
+		2A9CB6782AE945EF00F0B3C3 /* StartInputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartInputDelegate.swift; sourceTree = "<group>"; };
 		2AC387292AD6BE5C005082DA /* mobile-racing-game-velocity-rush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mobile-racing-game-velocity-rush.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AC3872C2AD6BE5C005082DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AC3872E2AD6BE5C005082DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -292,6 +298,15 @@
 			path = Back;
 			sourceTree = "<group>";
 		};
+		2A9CB6732AE93E5700F0B3C3 /* Race */ = {
+			isa = PBXGroup;
+			children = (
+				2A9CB6062AD827B900F0B3C3 /* RacePresentor.swift */,
+				2A9CB6082AD828BF00F0B3C3 /* RaceOutputDelegate.swift */,
+			);
+			path = Race;
+			sourceTree = "<group>";
+		};
 		2AC387202AD6BE5C005082DA = {
 			isa = PBXGroup;
 			children = (
@@ -364,9 +379,11 @@
 		2AC3875E2AD6BF93005082DA /* Presentors */ = {
 			isa = PBXGroup;
 			children = (
+				2A9CB6732AE93E5700F0B3C3 /* Race */,
 				2A9CB66C2AE92E6600F0B3C3 /* Settings */,
-				2A9CB6062AD827B900F0B3C3 /* RacePresentor.swift */,
-				2A9CB6082AD828BF00F0B3C3 /* RaceOutputDelegate.swift */,
+				2A9CB6742AE93FF100F0B3C3 /* StartPresentor.swift */,
+				2A9CB6762AE945DB00F0B3C3 /* StartOutputDelegate.swift */,
+				2A9CB6782AE945EF00F0B3C3 /* StartInputDelegate.swift */,
 			);
 			path = Presentors;
 			sourceTree = "<group>";
@@ -597,11 +614,13 @@
 				2A9CB6092AD828BF00F0B3C3 /* RaceOutputDelegate.swift in Sources */,
 				2AC387312AD6BE5C005082DA /* ViewController.swift in Sources */,
 				2A9CB65D2AE664A600F0B3C3 /* ControlsSliderSettingsView.swift in Sources */,
+				2A9CB6772AE945DB00F0B3C3 /* StartOutputDelegate.swift in Sources */,
 				2A9CB6132AD96BFC00F0B3C3 /* BaseControlView.swift in Sources */,
 				2A9CB5FD2AD7C70D00F0B3C3 /* SwipesControlView.swift in Sources */,
 				2A9CB6612AE666E900F0B3C3 /* HindrancesSliderSettingsView.swift in Sources */,
 				2A9CB6272ADA940E00F0B3C3 /* AutumnTreeHindranceView.swift in Sources */,
 				2AC3876F2AD6D486005082DA /* ViewControllerDelegate.swift in Sources */,
+				2A9CB6792AE945EF00F0B3C3 /* StartInputDelegate.swift in Sources */,
 				2AC3872D2AD6BE5C005082DA /* AppDelegate.swift in Sources */,
 				2A9CB6632AE6671C00F0B3C3 /* CarColorsSliderSettingsView.swift in Sources */,
 				2A9CB6252AD9BA4000F0B3C3 /* HindrancesView.swift in Sources */,
@@ -616,6 +635,7 @@
 				2AC387762AD6F9A5005082DA /* RaceViewController.swift in Sources */,
 				2A9CB66E2AE92E8900F0B3C3 /* SettingsOutputDelegate.swift in Sources */,
 				2A9CB6672AE8FB4E00F0B3C3 /* UserDefaults+extensions.swift in Sources */,
+				2A9CB6752AE93FF100F0B3C3 /* StartPresentor.swift in Sources */,
 				2AC387682AD6CBCB005082DA /* UIButtons+extensions.swift in Sources */,
 				2AC387802AD7BED3005082DA /* PlayerCarView.swift in Sources */,
 				2A9CB6072AD827B900F0B3C3 /* RacePresentor.swift in Sources */,
