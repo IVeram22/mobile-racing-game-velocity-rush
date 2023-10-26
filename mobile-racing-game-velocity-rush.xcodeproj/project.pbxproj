@@ -48,6 +48,8 @@
 		2A9CB67B2AE95F7500F0B3C3 /* RecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB67A2AE95F7500F0B3C3 /* RecordModel.swift */; };
 		2A9CB67D2AE9637400F0B3C3 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB67C2AE9637400F0B3C3 /* DateManager.swift */; };
 		2A9CB6802AE964A000F0B3C3 /* RecordsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB67F2AE964A000F0B3C3 /* RecordsManager.swift */; };
+		2A9CB6832AE9876600F0B3C3 /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6822AE9876600F0B3C3 /* RecordsViewController.swift */; };
+		2A9CB6852AE9890E00F0B3C3 /* RecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6842AE9890E00F0B3C3 /* RecordTableViewCell.swift */; };
 		2AC3872D2AD6BE5C005082DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3872C2AD6BE5C005082DA /* AppDelegate.swift */; };
 		2AC3872F2AD6BE5C005082DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3872E2AD6BE5C005082DA /* SceneDelegate.swift */; };
 		2AC387312AD6BE5C005082DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC387302AD6BE5C005082DA /* ViewController.swift */; };
@@ -130,6 +132,8 @@
 		2A9CB67A2AE95F7500F0B3C3 /* RecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordModel.swift; sourceTree = "<group>"; };
 		2A9CB67C2AE9637400F0B3C3 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		2A9CB67F2AE964A000F0B3C3 /* RecordsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsManager.swift; sourceTree = "<group>"; };
+		2A9CB6822AE9876600F0B3C3 /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
+		2A9CB6842AE9890E00F0B3C3 /* RecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
 		2AC387292AD6BE5C005082DA /* mobile-racing-game-velocity-rush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mobile-racing-game-velocity-rush.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AC3872C2AD6BE5C005082DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AC3872E2AD6BE5C005082DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -425,6 +429,8 @@
 				2AC387602AD6BFBD005082DA /* Storyboards */,
 				2AC387302AD6BE5C005082DA /* ViewController.swift */,
 				2AC3876E2AD6D486005082DA /* ViewControllerDelegate.swift */,
+				2A9CB6822AE9876600F0B3C3 /* RecordsViewController.swift */,
+				2A9CB6842AE9890E00F0B3C3 /* RecordTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -619,6 +625,7 @@
 			files = (
 				2A9CB6562AE6578200F0B3C3 /* BackButton.swift in Sources */,
 				2A9CB5FF2AD7C83B00F0B3C3 /* AccelerometerControlView.swift in Sources */,
+				2A9CB6832AE9876600F0B3C3 /* RecordsViewController.swift in Sources */,
 				2A9CB6232AD9B1B400F0B3C3 /* SummerTreeHindranceView.swift in Sources */,
 				2A9CB6492AE3AB8500F0B3C3 /* SettingsViewController.swift in Sources */,
 				2A9CB6532AE405FE00F0B3C3 /* SliderSettingsView.swift in Sources */,
@@ -662,6 +669,7 @@
 				2A9CB66E2AE92E8900F0B3C3 /* SettingsOutputDelegate.swift in Sources */,
 				2A9CB6672AE8FB4E00F0B3C3 /* UserDefaults+extensions.swift in Sources */,
 				2A9CB6802AE964A000F0B3C3 /* RecordsManager.swift in Sources */,
+				2A9CB6852AE9890E00F0B3C3 /* RecordTableViewCell.swift in Sources */,
 				2A9CB6752AE93FF100F0B3C3 /* StartPresentor.swift in Sources */,
 				2AC387682AD6CBCB005082DA /* UIButtons+extensions.swift in Sources */,
 				2AC387802AD7BED3005082DA /* PlayerCarView.swift in Sources */,

@@ -132,6 +132,8 @@ class RaceViewController: UIViewController {
     
     private func openAlert() {
         guard let raceOutputDelegate = raceOutputDelegate else { return }
+        raceOutputDelegate.saveRecord()
+        
         let alert = UIAlertController(
             title: "Game Over",
             message: "You have scored \(raceOutputDelegate.getScore()) points!",
@@ -155,7 +157,6 @@ class RaceViewController: UIViewController {
     
     private func gameOver() {
         stopEverything()
-        raceOutputDelegate?.saveRecord()
         openAlert()
     }
 
