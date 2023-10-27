@@ -93,7 +93,7 @@ class RaceViewController: UIViewController {
     }
     
     private func addControl() {
-        control = ButtonsControlView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
+        control = AccelerometerControlView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
         control.delegate = self
         view.addSubview(control)
     }
@@ -132,6 +132,8 @@ class RaceViewController: UIViewController {
     
     private func openAlert() {
         guard let raceOutputDelegate = raceOutputDelegate else { return }
+        raceOutputDelegate.saveRecord()
+        
         let alert = UIAlertController(
             title: "Game Over",
             message: "You have scored \(raceOutputDelegate.getScore()) points!",
@@ -139,13 +141,11 @@ class RaceViewController: UIViewController {
         )
         
         let restartAction = UIAlertAction(title: "Restart", style: .default) { [self] _ in
-            raceOutputDelegate.saveRecord()
             router.restartGame(from: self)
         }
         alert.addAction(restartAction)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { [self] _ in
-            raceOutputDelegate.saveRecord()
             router.comeBack(from: self)
         }
         alert.addAction(cancelAction)
@@ -155,7 +155,6 @@ class RaceViewController: UIViewController {
     
     private func gameOver() {
         stopEverything()
-        raceOutputDelegate?.saveRecord()
         openAlert()
     }
 

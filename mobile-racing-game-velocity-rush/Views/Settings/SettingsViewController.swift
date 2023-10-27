@@ -56,6 +56,11 @@ class SettingsViewController: UIViewController {
         presenter.setSettingsInputDelegate(delegate: self)
         settingsOutputDelegate = presenter
         settingsOutputDelegate?.getData()
+        
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(comeBack))
+        swipeRight.direction = .right
+        view.addGestureRecognizer(swipeRight)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -252,7 +257,7 @@ extension SettingsViewController: UITextFieldDelegate {
 }
 
 extension SettingsViewController: BackButtonDelegate {
-    func comeBack() {
+    @objc func comeBack() {
         router.comeBack(from: self)
     }
     

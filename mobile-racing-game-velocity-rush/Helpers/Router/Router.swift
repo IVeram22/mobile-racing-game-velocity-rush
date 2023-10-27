@@ -28,7 +28,7 @@ extension Router: StartMenuRouter {
     }
     
     func seeRecords(from viewController: UIViewController) {
-        print(#function)
+        open(from: viewController, to: RecordsViewController())
     }
     
 }
