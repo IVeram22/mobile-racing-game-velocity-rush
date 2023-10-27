@@ -13,7 +13,7 @@ class RecordsViewController: UIViewController {
         super.viewDidLoad()
         addRoad()
         
-        tableView = UITableView(frame: CGRect(x: 0, y: 0, width: 291, height: view.frame.height))
+        tableView = UITableView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.delegate = self
         tableView.dataSource = self
@@ -25,10 +25,13 @@ class RecordsViewController: UIViewController {
         NSLayoutConstraint.activate([
             tableView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
-            tableView.widthAnchor.constraint(equalToConstant: 291),
+            tableView.widthAnchor.constraint(equalToConstant: view.frame.width),
             tableView.heightAnchor.constraint(equalToConstant: view.frame.height),
         ])
         
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(comeBack))
+        swipeRight.direction = .right
+        view.addGestureRecognizer(swipeRight)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,6 +42,7 @@ class RecordsViewController: UIViewController {
     // MARK: - Private
     private var road: RoadView!
     private var tableView: UITableView!
+    private let router: BackRouter = Router.shared
     
     private var gameSettings: GameSettingsModel = GameSettingsManager.shared.getGameSettingsModel()
     private var records: [RecordModel] = RecordsManager.shared.getAllRecords()
@@ -57,9 +61,9 @@ class RecordsViewController: UIViewController {
 
 // MARK: - Extensions
 extension RecordsViewController: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
     
 }
 
@@ -67,7 +71,7 @@ extension RecordsViewController: UITableViewDelegate {
 extension RecordsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = RecordTableViewCell(style: .default, reuseIdentifier: "")
-        cell.setRecord(with: records[IndexPath.Index()])
+        cell.setRecord(with: records[indexPath.item])
         cell.backgroundColor = .clear
         return cell
     }
@@ -82,7 +86,12 @@ extension RecordsViewController: UITableViewDataSource {
     
 }
 
-
+extension RecordsViewController: BackButtonDelegate {
+    @objc func comeBack() {
+        router.comeBack(from: self)
+    }
+    
+}
 
 
 

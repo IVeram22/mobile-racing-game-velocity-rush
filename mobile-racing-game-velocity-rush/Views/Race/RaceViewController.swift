@@ -93,7 +93,7 @@ class RaceViewController: UIViewController {
     }
     
     private func addControl() {
-        control = ButtonsControlView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
+        control = AccelerometerControlView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
         control.delegate = self
         view.addSubview(control)
     }
@@ -141,13 +141,11 @@ class RaceViewController: UIViewController {
         )
         
         let restartAction = UIAlertAction(title: "Restart", style: .default) { [self] _ in
-            raceOutputDelegate.saveRecord()
             router.restartGame(from: self)
         }
         alert.addAction(restartAction)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { [self] _ in
-            raceOutputDelegate.saveRecord()
             router.comeBack(from: self)
         }
         alert.addAction(cancelAction)

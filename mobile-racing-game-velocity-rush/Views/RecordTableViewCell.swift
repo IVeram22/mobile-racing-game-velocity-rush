@@ -8,11 +8,6 @@
 import UIKit
 
 class RecordTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         contentView.backgroundColor = UIColor.clear
@@ -48,15 +43,16 @@ class RecordTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .right
         label.font = UIFont.systemFont(ofSize: 37)
-        label.textColor = .systemGray5
+        label.textColor = .systemPink
         return label
     }()
     
     private let dateLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .center
-        label.textColor = .systemGray3
+        label.textAlignment = .left
+        label.textColor = .gray
+        label.font = UIFont.systemFont(ofSize: 21)
         return label
     }()
     
@@ -74,7 +70,7 @@ class RecordTableViewCell: UITableViewCell {
             
             nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 25),
             nameLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 105),
-            nameLabel.widthAnchor.constraint(equalToConstant: 100),
+            nameLabel.widthAnchor.constraint(equalToConstant: 157),
             nameLabel.heightAnchor.constraint(equalToConstant: 35),
             
             pointsLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 25),

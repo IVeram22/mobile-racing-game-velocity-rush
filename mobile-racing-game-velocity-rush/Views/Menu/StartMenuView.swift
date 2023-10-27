@@ -29,7 +29,7 @@ private enum Constants {
 final class StartMenuView: UIView {
     private let startGameButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Start game", for: .normal)
+        button.setTitle("Start game".localized, for: .normal)
         button.backgroundColor = Constants.StartButton.backgroundColor
         button.setupDefault()
         return button
@@ -37,7 +37,7 @@ final class StartMenuView: UIView {
     
     private let settingsButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Settings", for: .normal)
+        button.setTitle("Settings".localized, for: .normal)
         button.backgroundColor = Constants.SettingsButton.backgroundColor
         button.setupDefault()
         button.setTitleColor(Constants.SettingsButton.titleColor, for: .normal)
@@ -46,7 +46,7 @@ final class StartMenuView: UIView {
     
     private let recordsButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Records", for: .normal)
+        button.setTitle("Records".localized, for: .normal)
         button.backgroundColor = Constants.RecordsButton.backgroundColor
         button.setupDefault()
         return button

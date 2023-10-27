@@ -29,11 +29,21 @@ final class RecordsManager {
     private func save(with record: RecordModel) {
         var records = read()
         records.append(record)
-        UserDefaults.standard.set(encodable: records, forKey: Constants.forKey)
+        let encoder = JSONEncoder()
+        if let encodedData = try? encoder.encode(records) {
+            UserDefaults.standard.set(encodedData, forKey: Constants.forKey)
+        }
+        
     }
     
     private func read() -> [RecordModel] {
-        UserDefaults.standard.object([RecordModel].self, forKey: Constants.forKey) ?? []
+        if let savedData = UserDefaults.standard.data(forKey: Constants.forKey) {
+            let decoder = JSONDecoder()
+            if let loadedRecordModels = try? decoder.decode([RecordModel].self, from: savedData) {
+                return loadedRecordModels
+            }
+        }
+        return []
     }
     
 }
