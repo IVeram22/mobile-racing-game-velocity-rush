@@ -8,7 +8,6 @@
 import UIKit
 
 class SwipesControlView: BaseControlView {
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         let swipeLeftGesture = UISwipeGestureRecognizer(target: self, action: #selector(turnLeft))
@@ -18,7 +17,6 @@ class SwipesControlView: BaseControlView {
         let swipeRightGesture = UISwipeGestureRecognizer(target: self, action: #selector(turnRight))
         swipeRightGesture.direction = .right
         addGestureRecognizer(swipeRightGesture)
-        
     }
     
     required init?(coder: NSCoder) {

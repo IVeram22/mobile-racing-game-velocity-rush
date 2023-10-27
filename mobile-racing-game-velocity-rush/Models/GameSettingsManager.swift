@@ -9,6 +9,8 @@ import Foundation
 
 private enum Constants {
     static let forKey: String = "GameSettingsModelKey"
+    static let defaultName: String = "Unknown"
+    
 }
 
 // MARK: Singleton - GameSettingsManager class is designed to work with game settings
@@ -20,7 +22,7 @@ final class GameSettingsManager {
     // MARK: - Public
     func getGameSettingsModel() -> GameSettingsModel {
         read() ?? GameSettingsModel(
-            user: UserModel(name: "userOne", foto: nil),
+            user: UserModel(name: Constants.defaultName, foto: nil),
             carColorIndex: 0,
             hindranceIndex: 0,
             levelIndex: 0,

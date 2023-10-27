@@ -9,7 +9,7 @@ import UIKit
 
 private enum Constants {
     static let interval: TimeInterval = 1.0
-    static let shift: Double = 0.1
+    static let shift: Double = 0.5
 }
 
 final class CounterModel {

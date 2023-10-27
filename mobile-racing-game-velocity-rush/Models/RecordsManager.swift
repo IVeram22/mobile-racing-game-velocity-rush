@@ -9,6 +9,7 @@ import Foundation
 
 private enum Constants {
     static let forKey: String = "RecordModelKey"
+    
 }
 
 final class RecordsManager {
@@ -33,7 +34,6 @@ final class RecordsManager {
         if let encodedData = try? encoder.encode(records) {
             UserDefaults.standard.set(encodedData, forKey: Constants.forKey)
         }
-        
     }
     
     private func read() -> [RecordModel] {

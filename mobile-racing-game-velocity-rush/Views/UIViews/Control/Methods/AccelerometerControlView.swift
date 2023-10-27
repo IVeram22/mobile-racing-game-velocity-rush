@@ -18,22 +18,21 @@ final class AccelerometerControlView: BaseControlView {
         manager.startAccelerometerUpdates()
         guard manager.isAccelerometerAvailable else { return }
         
-        Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { [weak self] _ in
-            if let data = self?.manager.accelerometerData {
-                
-                let shift = data.acceleration.x
-                print(shift)
-                
-                if shift > 0.1 {
-                    self?.turnRight()
-                }
-                
-                if shift < -0.1 {
-                    self?.turnLeft()
-                }
-            }
-        }
-        
+//        Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { [weak self] _ in
+//            if let data = self?.manager.accelerometerData {
+//                
+//                let shift = data.acceleration.x
+//                print(shift)
+//                
+//                if shift > 0.1 {
+//                    self?.turnRight()
+//                }
+//                
+//                if shift < -0.1 {
+//                    self?.turnLeft()
+//                }
+//            }
+//        }
     }
     
     required init?(coder: NSCoder) {
