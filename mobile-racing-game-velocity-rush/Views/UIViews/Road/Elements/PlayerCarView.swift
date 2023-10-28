@@ -8,7 +8,9 @@
 import UIKit
 
 private enum Constants {
-    static let shift: CGFloat = 50
+    static let mainShift: CGFloat = 50
+    static let sideShift: CGFloat = 20
+    static let margin: CGFloat = 10
     static let duration: TimeInterval = 0.3
 }
 
@@ -25,17 +27,38 @@ final class PlayerCarView: UIView {
     }
     
     func moveToLeft() {
-        moveToX(with: -Constants.shift)
+        let newX: CGFloat
+        
+        if Constants.margin + Constants.mainShift < frame.origin.x {
+            newX = frame.origin.x - Constants.mainShift
+        } else if Constants.margin + Constants.sideShift / 2 < frame.origin.x {
+            newX = frame.origin.x - Constants.sideShift
+        } else {
+            return
+        }
+        
+        moveToX(with: newX - frame.origin.x)
     }
     
     func moveToRight() {
-        moveToX(with: Constants.shift)
+        let screenWidth = UIScreen.main.bounds.width
+        let newX: CGFloat
+        
+        if frame.origin.x + frame.width + Constants.mainShift < screenWidth - Constants.margin {
+            newX = frame.origin.x + Constants.mainShift
+        } else if frame.origin.x + frame.width + Constants.sideShift < screenWidth {
+            newX = frame.origin.x + Constants.sideShift
+        } else {
+            return
+        }
+        
+        moveToX(with: newX - frame.origin.x)
     }
     
     private func moveToX(with x: CGFloat) {
         UIView.animate(withDuration: Constants.duration) { [self] in
             frame.origin.x += x
-        } 
+        }
     }
     
 }
