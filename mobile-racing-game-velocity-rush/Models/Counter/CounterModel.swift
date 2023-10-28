@@ -9,11 +9,11 @@ import UIKit
 
 private enum Constants {
     static let interval: TimeInterval = 1.0
-    static let shift: Double = 0.5
+    static let shift: Int = 10
 }
 
 final class CounterModel {
-    private var counter: Double = 0.0
+    private var counter: Int = 0
     private var timer: Timer?
     
     init() { }
@@ -29,7 +29,7 @@ final class CounterModel {
         timer = nil
     }
     
-    func getScore() -> Double {
+    func getScore() -> Int {
         counter
     }
     

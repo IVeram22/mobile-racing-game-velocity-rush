@@ -62,6 +62,8 @@ final class HindrancesView: UIView {
     
     private func addElements() {
         var isLeft: Bool = true
+        guard size != 0 else { return }
+        
         for _ in 1...size {
             
             let x = isLeft ? Constants.Left.x : frame.width + Constants.Right.x

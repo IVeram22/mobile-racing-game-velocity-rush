@@ -38,6 +38,7 @@ class RaceViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         road.setHindrances(index: config.hindranceIndex)
+        road.setLevel(with: config.levelIndex)
         road.runLinesAnimation()
         Timer.scheduledTimer(withTimeInterval: Constants.pauseIntervalBeforeGame, repeats: false) { [self] _ in
             road.runCarsAnimation()
@@ -151,7 +152,7 @@ class RaceViewController: UIViewController {
     }
     
     private func openAlert() {
-        recordsOutputDelegate?.addNewRecord(with: RecordModel(user: config.user, points: getScore()))
+        recordsOutputDelegate?.addNewRecord(with: RecordModel(user: config.user, points: getScore(), color: config.levelIndex))
         
         let alert = UIAlertController(
             title: "Game Over",

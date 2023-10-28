@@ -20,6 +20,7 @@ class RecordTableViewCell: UITableViewCell {
         nameLabel.text = record.user.name
         pointsLabel.text = "\(record.points) pt"
         dateLabel.text = record.date
+        pointsLabel.textColor = GlobalConstants.Levels.colors[record.color]
     }
     
     // MARK: - Private
@@ -75,7 +76,7 @@ class RecordTableViewCell: UITableViewCell {
             
             pointsLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 25),
             pointsLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -5),
-            pointsLabel.widthAnchor.constraint(equalToConstant: 100),
+            pointsLabel.leftAnchor.constraint(equalTo: nameLabel.rightAnchor),
             pointsLabel.heightAnchor.constraint(equalToConstant: 35),
             
             dateLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 75),
