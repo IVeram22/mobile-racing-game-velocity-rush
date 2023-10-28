@@ -43,10 +43,11 @@ class SettingsViewController: UIViewController {
         addControlView()
         addBackButton()
         addSwipeRightToGoBack()
+        gameSettingsOutputDelegate?.getConfig()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        gameSettingsOutputDelegate?.getConfig()
+        
         road.runAllAnimation()
     }
     
@@ -225,12 +226,18 @@ class SettingsViewController: UIViewController {
 
 // MARK: - Extensions
 extension SettingsViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let editedImage = info[.editedImage] as? UIImage {
+            userSettingsView.setFoto(editedImage)
+        } else if let originalImage = info[.originalImage] as? UIImage {
+            userSettingsView.setFoto(originalImage)
+        }
         
-        // MARK: No image found
-        guard let image = info[.editedImage] as? UIImage else { return }
-        userSettingsView.setFoto(image)
+        picker.dismiss(animated: true, completion: nil)
     }
     
 }
