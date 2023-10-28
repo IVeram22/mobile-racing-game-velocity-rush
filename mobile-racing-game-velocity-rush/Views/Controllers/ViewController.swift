@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        gameSettingsOutputDelegate?.getData()
+        gameSettingsOutputDelegate?.getConfig()
         road.runAllAnimation()
     }
     
@@ -94,7 +94,7 @@ extension ViewController: GameSettingsInputDelegate {
         displayData()
     }
     
-    func setupData(with gameSettings: GameSettingsModel) {
+    func setupConfig(with gameSettings: GameSettingsModel) {
         config = gameSettings
     }
     

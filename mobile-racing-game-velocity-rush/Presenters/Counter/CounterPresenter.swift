@@ -11,13 +11,6 @@ final class CounterPresenter {
     private var counter = CounterModel()
 }
 
-// MARK: - Get
-protocol CounterOutputDelegate: AnyObject {
-    func getScore() -> String
-    func start()
-    func stop()
-}
-
 // MARK: - Extensions
 extension CounterPresenter: CounterOutputDelegate {
     func getScore() -> String {

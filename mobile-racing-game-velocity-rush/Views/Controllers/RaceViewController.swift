@@ -72,7 +72,7 @@ class RaceViewController: UIViewController {
         gameSettingsOutputDelegate = gameSettingsPresenter
         recordsOutputDelegate = recordsPresenter
         counterOutputDelegate = counterPresenter
-        gameSettingsOutputDelegate?.getData()
+        gameSettingsOutputDelegate?.getConfig()
     }
     
     private func addRoad() {
@@ -151,7 +151,7 @@ class RaceViewController: UIViewController {
     }
     
     private func openAlert() {
-        recordsOutputDelegate?.setData(with: RecordModel(user: config.user, points: getScore()))
+        recordsOutputDelegate?.addNewRecord(with: RecordModel(user: config.user, points: getScore()))
         
         let alert = UIAlertController(
             title: "Game Over",
@@ -200,7 +200,7 @@ extension RaceViewController: GameSettingsInputDelegate {
         displayData()
     }
     
-    func setupData(with gameSettings: GameSettingsModel) {
+    func setupConfig(with gameSettings: GameSettingsModel) {
         config = gameSettings
     }
     

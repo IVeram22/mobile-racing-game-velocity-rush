@@ -30,8 +30,8 @@ class RecordsViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        gameSettingsOutputDelegate?.getData()
-        recordsOutputDelegate?.getData()
+        gameSettingsOutputDelegate?.getConfig()
+        recordsOutputDelegate?.getRecords()
         road.runAllAnimation()
     }
     
@@ -152,7 +152,7 @@ extension RecordsViewController: GameSettingsInputDelegate {
         displayData()
     }
     
-    func setupData(with gameSettings: GameSettingsModel) {
+    func setupConfig(with gameSettings: GameSettingsModel) {
         config = gameSettings
     }
     

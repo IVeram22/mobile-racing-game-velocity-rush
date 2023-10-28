@@ -14,33 +14,20 @@ final class RecordsPresenter {
         recordsInputDelegate = delegate
     }
     
-    private func loadRecordsData() {
+    private func loadRecords() {
         recordsInputDelegate?.setupData(with: RecordsManager.shared.getAllRecords())
         recordsInputDelegate?.setupInitialStateForRecords()
     }
     
 }
 
-// MARK: - Set
-protocol RecordsInputDelegate: AnyObject {
-    func setupInitialStateForRecords()
-    func setupData(with records: [RecordModel])
-    func displayRecords()
-}
-
-// MARK: - Get
-protocol RecordsOutputDelegate: AnyObject {
-    func getData()
-    func setData(with record: RecordModel)
-}
-
 // MARK: - Extensions
 extension RecordsPresenter: RecordsOutputDelegate {
-    func getData() {
-        loadRecordsData()
+    func getRecords() {
+        loadRecords()
     }
     
-    func setData(with record: RecordModel) {
+    func addNewRecord(with record: RecordModel) {
         RecordsManager.shared.addRecord(with: record)
     }
     

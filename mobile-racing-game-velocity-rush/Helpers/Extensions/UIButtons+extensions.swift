@@ -11,6 +11,7 @@ private enum Constants {
     enum Menu {
         static let cornerRadius: CGFloat = 10
     }
+    
 }
 
 extension UIButton {
@@ -19,4 +20,5 @@ extension UIButton {
         setTitleColor(.white, for: .normal)
         layer.cornerRadius = Constants.Menu.cornerRadius
     }
+    
 }

@@ -14,33 +14,20 @@ final class GameSettingsPresenter {
         gameSettingsInputDelegate = delegate
     }
     
-    private func loadGameSettingsData() {
-        gameSettingsInputDelegate?.setupData(with: GameSettingsManager.shared.getGameSettingsModel())
+    private func loadGameSettings() {
+        gameSettingsInputDelegate?.setupConfig(with: GameSettingsManager.shared.getGameSettingsModel())
         gameSettingsInputDelegate?.setupInitialState()
     }
     
 }
 
-// MARK: - Set
-protocol GameSettingsInputDelegate: AnyObject {
-    func setupInitialState()
-    func setupData(with gameSettings: GameSettingsModel)
-    func displayData()
-}
-
-// MARK: - Get
-protocol GameSettingsOutputDelegate: AnyObject {
-    func getData()
-    func setData(with gameSettings: GameSettingsModel)
-}
-
 // MARK: - Extensions
 extension GameSettingsPresenter: GameSettingsOutputDelegate {
-    func getData() {
-        loadGameSettingsData()
+    func getConfig() {
+        loadGameSettings()
     }
     
-    func setData(with gameSettings: GameSettingsModel) {
+    func setConfig(with gameSettings: GameSettingsModel) {
         GameSettingsManager.shared.setGameSettingsModel(with: gameSettings)
     }
     

@@ -46,7 +46,7 @@ class SettingsViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        gameSettingsOutputDelegate?.getData()
+        gameSettingsOutputDelegate?.getConfig()
         road.runAllAnimation()
     }
     
@@ -218,7 +218,7 @@ class SettingsViewController: UIViewController {
         config.hindranceIndex = hindranceView.getCurrentIndex()
         config.levelIndex = levelView.getCurrentIndex()
         config.controlIndex = controlView.getCurrentIndex()
-        gameSettingsOutputDelegate?.setData(with: config)
+        gameSettingsOutputDelegate?.setConfig(with: config)
     }
     
 }
@@ -285,7 +285,7 @@ extension SettingsViewController: GameSettingsInputDelegate {
         displayData()
     }
     
-    func setupData(with gameSettings: GameSettingsModel) {
+    func setupConfig(with gameSettings: GameSettingsModel) {
         config = gameSettings
     }
     

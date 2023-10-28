@@ -11,6 +11,11 @@
 		2A0366022AEC168B007915AC /* RecordsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0366012AEC168B007915AC /* RecordsPresenter.swift */; };
 		2A0366042AEC1FD2007915AC /* CounterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0366032AEC1FD2007915AC /* CounterPresenter.swift */; };
 		2A0366062AEC260A007915AC /* ControlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0366052AEC260A007915AC /* ControlFactory.swift */; };
+		2A03660B2AECDD70007915AC /* CounterOutputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A03660A2AECDD70007915AC /* CounterOutputDelegate.swift */; };
+		2A03660D2AECDD9D007915AC /* RecordsOutputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A03660C2AECDD9D007915AC /* RecordsOutputDelegate.swift */; };
+		2A03660F2AECDDB2007915AC /* RecordsInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A03660E2AECDDB2007915AC /* RecordsInputDelegate.swift */; };
+		2A0366112AECDDE3007915AC /* GameSettingsOutputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0366102AECDDE3007915AC /* GameSettingsOutputDelegate.swift */; };
+		2A0366132AECDDFD007915AC /* GameSettingsInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0366122AECDDFD007915AC /* GameSettingsInputDelegate.swift */; };
 		2A9CB5F92AD7C41800F0B3C3 /* ButtonsControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB5F82AD7C41800F0B3C3 /* ButtonsControlView.swift */; };
 		2A9CB5FB2AD7C53300F0B3C3 /* PlayerControlDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB5FA2AD7C53300F0B3C3 /* PlayerControlDelegate.swift */; };
 		2A9CB5FD2AD7C70D00F0B3C3 /* SwipesControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB5FC2AD7C70D00F0B3C3 /* SwipesControlView.swift */; };
@@ -93,6 +98,11 @@
 		2A0366012AEC168B007915AC /* RecordsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsPresenter.swift; sourceTree = "<group>"; };
 		2A0366032AEC1FD2007915AC /* CounterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterPresenter.swift; sourceTree = "<group>"; };
 		2A0366052AEC260A007915AC /* ControlFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlFactory.swift; sourceTree = "<group>"; };
+		2A03660A2AECDD70007915AC /* CounterOutputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterOutputDelegate.swift; sourceTree = "<group>"; };
+		2A03660C2AECDD9D007915AC /* RecordsOutputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsOutputDelegate.swift; sourceTree = "<group>"; };
+		2A03660E2AECDDB2007915AC /* RecordsInputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsInputDelegate.swift; sourceTree = "<group>"; };
+		2A0366102AECDDE3007915AC /* GameSettingsOutputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettingsOutputDelegate.swift; sourceTree = "<group>"; };
+		2A0366122AECDDFD007915AC /* GameSettingsInputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettingsInputDelegate.swift; sourceTree = "<group>"; };
 		2A9CB5F82AD7C41800F0B3C3 /* ButtonsControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsControlView.swift; sourceTree = "<group>"; };
 		2A9CB5FA2AD7C53300F0B3C3 /* PlayerControlDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerControlDelegate.swift; sourceTree = "<group>"; };
 		2A9CB5FC2AD7C70D00F0B3C3 /* SwipesControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipesControlView.swift; sourceTree = "<group>"; };
@@ -239,6 +249,35 @@
 			isa = PBXGroup;
 			children = (
 				2A9CB61A2AD997B200F0B3C3 /* CounterModel.swift */,
+			);
+			path = Counter;
+			sourceTree = "<group>";
+		};
+		2A0366072AECDD1E007915AC /* GameSettings */ = {
+			isa = PBXGroup;
+			children = (
+				2A0365FF2AEC01B2007915AC /* GameSettingsPresenter.swift */,
+				2A0366102AECDDE3007915AC /* GameSettingsOutputDelegate.swift */,
+				2A0366122AECDDFD007915AC /* GameSettingsInputDelegate.swift */,
+			);
+			path = GameSettings;
+			sourceTree = "<group>";
+		};
+		2A0366082AECDD2A007915AC /* Records */ = {
+			isa = PBXGroup;
+			children = (
+				2A0366012AEC168B007915AC /* RecordsPresenter.swift */,
+				2A03660C2AECDD9D007915AC /* RecordsOutputDelegate.swift */,
+				2A03660E2AECDDB2007915AC /* RecordsInputDelegate.swift */,
+			);
+			path = Records;
+			sourceTree = "<group>";
+		};
+		2A0366092AECDD36007915AC /* Counter */ = {
+			isa = PBXGroup;
+			children = (
+				2A0366032AEC1FD2007915AC /* CounterPresenter.swift */,
+				2A03660A2AECDD70007915AC /* CounterOutputDelegate.swift */,
 			);
 			path = Counter;
 			sourceTree = "<group>";
@@ -430,9 +469,9 @@
 		2AC3875E2AD6BF93005082DA /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				2A0365FF2AEC01B2007915AC /* GameSettingsPresenter.swift */,
-				2A0366012AEC168B007915AC /* RecordsPresenter.swift */,
-				2A0366032AEC1FD2007915AC /* CounterPresenter.swift */,
+				2A0366092AECDD36007915AC /* Counter */,
+				2A0366082AECDD2A007915AC /* Records */,
+				2A0366072AECDD1E007915AC /* GameSettings */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -642,6 +681,7 @@
 				2A9CB5FF2AD7C83B00F0B3C3 /* AccelerometerControlView.swift in Sources */,
 				2A9CB6832AE9876600F0B3C3 /* RecordsViewController.swift in Sources */,
 				2A9CB6232AD9B1B400F0B3C3 /* SummerTreeHindranceView.swift in Sources */,
+				2A03660D2AECDD9D007915AC /* RecordsOutputDelegate.swift in Sources */,
 				2A9CB6492AE3AB8500F0B3C3 /* SettingsViewController.swift in Sources */,
 				2A9CB6532AE405FE00F0B3C3 /* SliderSettingsView.swift in Sources */,
 				2A9CB6582AE65A8800F0B3C3 /* BackRouter.swift in Sources */,
@@ -656,6 +696,7 @@
 				2A9CB62B2ADA957600F0B3C3 /* WinterTreeHindranceView.swift in Sources */,
 				2AC3877C2AD703C9005082DA /* UIView+extensions.swift in Sources */,
 				2A9CB65A2AE663CC00F0B3C3 /* BackButtonDelegate.swift in Sources */,
+				2A03660B2AECDD70007915AC /* CounterOutputDelegate.swift in Sources */,
 				2A9CB6D22AEAC69500F0B3C3 /* String+extensions.swift in Sources */,
 				2A9CB6692AE8FC5000F0B3C3 /* GameSettingsManager.swift in Sources */,
 				2AC387312AD6BE5C005082DA /* ViewController.swift in Sources */,
@@ -664,6 +705,7 @@
 				2A9CB5FD2AD7C70D00F0B3C3 /* SwipesControlView.swift in Sources */,
 				2A9CB6612AE666E900F0B3C3 /* HindrancesSliderSettingsView.swift in Sources */,
 				2A9CB6272ADA940E00F0B3C3 /* AutumnTreeHindranceView.swift in Sources */,
+				2A03660F2AECDDB2007915AC /* RecordsInputDelegate.swift in Sources */,
 				2AC3876F2AD6D486005082DA /* ViewControllerDelegate.swift in Sources */,
 				2AC3872D2AD6BE5C005082DA /* AppDelegate.swift in Sources */,
 				2A9CB6632AE6671C00F0B3C3 /* CarColorsSliderSettingsView.swift in Sources */,
@@ -687,7 +729,9 @@
 				2AC387802AD7BED3005082DA /* PlayerCarView.swift in Sources */,
 				2AC3876B2AD6D1FA005082DA /* Router.swift in Sources */,
 				2A9CB6652AE8F9CA00F0B3C3 /* GameSettingsModel.swift in Sources */,
+				2A0366132AECDDFD007915AC /* GameSettingsInputDelegate.swift in Sources */,
 				2AC387722AD6D93D005082DA /* RoadView.swift in Sources */,
+				2A0366112AECDDE3007915AC /* GameSettingsOutputDelegate.swift in Sources */,
 				2A9CB67D2AE9637400F0B3C3 /* DateManager.swift in Sources */,
 				2A0366062AEC260A007915AC /* ControlFactory.swift in Sources */,
 				2A9CB5F92AD7C41800F0B3C3 /* ButtonsControlView.swift in Sources */,
