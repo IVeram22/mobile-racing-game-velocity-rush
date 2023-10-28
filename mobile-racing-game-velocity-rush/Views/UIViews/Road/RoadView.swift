@@ -35,6 +35,7 @@ final class RoadView: UIView {
     private var lines: WhiteDottedLinesView!
     private var cars: EnemyCarsView!
     private var hindrances: HindrancesView!
+    private var hindranceType: HindranceType!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -99,11 +100,22 @@ final class RoadView: UIView {
     }
     
     func setHindrances(index: Int) {
+        hindranceType = HindranceFactory.getElementByIndex(with: index)
+        addHindrances(size: 5)
+    }
+    
+    func setLevel(with index: Int) {
+        let level = LevelFactory.createLevel(index: index)
+        addHindrances(size: level.getNumberOfHindrances())
+        cars.setNewNumberOfCars(size: level.getNumberOfCars())
+    }
+    
+    private func addHindrances(size: Int) {
         hindrances.removeFromSuperview()
         hindrances = HindrancesView(
             frame: frame,
-            type: HindranceFactory.getElementByIndex(with: index),
-            size: 5
+            type: hindranceType,
+            size: size
         )
         addSubview(hindrances)
     }

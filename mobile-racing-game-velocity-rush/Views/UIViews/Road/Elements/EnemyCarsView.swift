@@ -46,6 +46,12 @@ final class EnemyCarsView: UIView {
         }
     }
     
+    func setNewNumberOfCars(size: Int) {
+        self.size = size
+        elements = []
+        addCars()
+    }
+    
     private func addCars() {
         for _ in 1...size {
             let car = createCar()
