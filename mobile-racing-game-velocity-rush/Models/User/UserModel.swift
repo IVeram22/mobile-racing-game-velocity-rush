@@ -7,6 +7,11 @@
 
 import UIKit
 
+private enum Constants {
+    static let defaultFoto: String = "Racer"
+    
+}
+
 final class UserModel: Codable {
     var name: String
     var foto: UIImage?
@@ -16,7 +21,7 @@ final class UserModel: Codable {
         if let foto {
             self.foto = foto
         } else {
-            self.foto = UIImage(named: "Racer")
+            self.foto = UIImage(named: Constants.defaultFoto)
         }
     }
     

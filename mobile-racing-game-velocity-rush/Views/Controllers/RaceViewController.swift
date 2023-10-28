@@ -29,20 +29,20 @@ class RaceViewController: UIViewController {
     // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupPresenters()
         addRoad()
         addCounter()
         addPlayer()
         addControl()
-        raceOutputDelegate = presenter
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        road.setHindrances(index: gameSettings.hindranceIndex)
+        road.setHindrances(index: config.hindranceIndex)
         road.runLinesAnimation()
         Timer.scheduledTimer(withTimeInterval: Constants.pauseIntervalBeforeGame, repeats: false) { [self] _ in
             road.runCarsAnimation()
             road.runHindrancesAnimation()
-            raceOutputDelegate?.startCounter()
+            counterOutputDelegate?.start()
         }
         roadTimer = Timer.scheduledTimer(withTimeInterval: Constants.checkCollisionInterval, repeats: true) { [self] _ in
             checkCollision()
@@ -56,14 +56,32 @@ class RaceViewController: UIViewController {
     private var control: BaseControlView!
     private var counter: UILabel!
     private var roadTimer: Timer!
+    // Navigation
     private let router: GameOverRouter = Router.shared
+    // Presenter
+    private var config: GameSettingsModel!
+    private let gameSettingsPresenter = GameSettingsPresenter()
+    weak private var gameSettingsOutputDelegate: GameSettingsOutputDelegate?
+    private let recordsPresenter = RecordsPresenter()
+    weak private var recordsOutputDelegate: RecordsOutputDelegate?
+    private let counterPresenter = CounterPresenter()
+    weak private var counterOutputDelegate: CounterOutputDelegate?
     
-    private var gameSettings: GameSettingsModel = GameSettingsManager.shared.getGameSettingsModel()
-    private let presenter = RacePresentor()
-    weak private var raceOutputDelegate: RaceOutputDelegate?
+    private func setupPresenters() {
+        gameSettingsPresenter.setGameSettingsInputDelegate(with: self)
+        gameSettingsOutputDelegate = gameSettingsPresenter
+        recordsOutputDelegate = recordsPresenter
+        counterOutputDelegate = counterPresenter
+        gameSettingsOutputDelegate?.getConfig()
+    }
     
     private func addRoad() {
-        road = RoadView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
+        road = RoadView(frame: CGRect(
+            x: 0,
+            y: 0,
+            width: view.frame.width,
+            height: view.frame.height
+        ))
         view.addSubview(road)
     }
     
@@ -79,7 +97,6 @@ class RaceViewController: UIViewController {
             counter.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.Counter.topAnchor),
             counter.heightAnchor.constraint(equalToConstant: Constants.Counter.heightAnchor),
         ])
-        
     }
     
     private func addPlayer() {
@@ -88,12 +105,17 @@ class RaceViewController: UIViewController {
             y: view.frame.height / Constants.PlayerCar.y - GlobalConstants.Cars.height / Constants.PlayerCar.half,
             width: GlobalConstants.Cars.width,
             height: GlobalConstants.Cars.height
-        ), with: gameSettings.carColorIndex)
+        ), with: config.carColorIndex)
         view.addSubview(player)
     }
     
     private func addControl() {
-        control = AccelerometerControlView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
+        control = ControlFactory.createControl(index: config.controlIndex, frame: CGRect(
+            x: 0,
+            y: 0,
+            width: view.frame.width,
+            height: view.frame.height
+        ))
         control.delegate = self
         view.addSubview(control)
     }
@@ -117,26 +139,23 @@ class RaceViewController: UIViewController {
     }
     
     private func updateCounter() {
-        if let raceOutputDelegate {
-            counter.text = "\(raceOutputDelegate.getScore()) points"
-        }
+        counter.text = "\(getScore()) points"
     }
     
     private func stopEverything() {
         roadTimer?.invalidate()
         roadTimer = nil
-        raceOutputDelegate?.stopCounter()
+        counterOutputDelegate?.stop()
         road.stopAllAnimation()
         view.addBlackBackground()
     }
     
     private func openAlert() {
-        guard let raceOutputDelegate = raceOutputDelegate else { return }
-        raceOutputDelegate.saveRecord()
+        recordsOutputDelegate?.addNewRecord(with: RecordModel(user: config.user, points: getScore()))
         
         let alert = UIAlertController(
             title: "Game Over",
-            message: "You have scored \(raceOutputDelegate.getScore()) points!",
+            message: "You have scored \(getScore()) points!",
             preferredStyle: .alert
         )
         
@@ -151,6 +170,10 @@ class RaceViewController: UIViewController {
         alert.addAction(cancelAction)
         
         present(alert, animated: true, completion: nil)
+    }
+    
+    private func getScore() -> String {
+        counterOutputDelegate?.getScore() ?? "nil"
     }
     
     private func gameOver() {
@@ -168,6 +191,21 @@ extension RaceViewController: ControlRacerDelegate {
     
     func turnRight() {
         player.moveToRight()
+    }
+    
+}
+
+extension RaceViewController: GameSettingsInputDelegate {
+    func setupInitialState() {
+        displayData()
+    }
+    
+    func setupConfig(with gameSettings: GameSettingsModel) {
+        config = gameSettings
+    }
+    
+    func displayData() {
+        
     }
     
 }

@@ -9,7 +9,6 @@ import UIKit
 
 class BaseControlView: UIView {
     var delegate: ControlRacerDelegate?
-    
 }
 
 extension BaseControlView: PlayerControl {

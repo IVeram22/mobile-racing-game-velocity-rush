@@ -38,7 +38,6 @@ final class ButtonsControlView: BaseControlView {
         
         leftButton.addTarget(self, action: #selector(turnLeft), for: .touchUpInside)
         rightButton.addTarget(self, action: #selector(turnRight), for: .touchUpInside)
-        
     }
     
     required init?(coder: NSCoder) {
