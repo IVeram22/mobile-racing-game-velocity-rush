@@ -21,3 +21,22 @@ final class RecordModel: Codable {
     }
     
 }
+
+// MARK: - Extensions
+extension [RecordModel] {
+    mutating func sortedByPoints() {
+        self.sort { currentRecord, nextRecord in
+            if let currentPoint = Int(currentRecord.points),
+               let nextPoint = Int(nextRecord.points) {
+                return currentPoint > nextPoint
+            }
+            return false
+        }
+    }
+    
+    mutating func sortedByLevel() {
+        self.sort { currentRecord, nextRecord in
+            currentRecord.color > nextRecord.color
+        }
+    }
+}

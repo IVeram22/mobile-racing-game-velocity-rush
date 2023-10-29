@@ -29,21 +29,16 @@ final class RecordsManager {
     // MARK: - Private
     private func save(with record: RecordModel) {
         var records = read()
+        
         records.append(record)
-        let encoder = JSONEncoder()
-        if let encodedData = try? encoder.encode(records) {
-            UserDefaults.standard.set(encodedData, forKey: Constants.forKey)
-        }
+        records.sortedByPoints()
+        records.sortedByLevel()
+        
+        UserDefaults.standard.setArray(encodableArray: records, forKey: Constants.forKey)
     }
     
     private func read() -> [RecordModel] {
-        if let savedData = UserDefaults.standard.data(forKey: Constants.forKey) {
-            let decoder = JSONDecoder()
-            if let loadedRecordModels = try? decoder.decode([RecordModel].self, from: savedData) {
-                return loadedRecordModels
-            }
-        }
-        return []
+        UserDefaults.standard.array([RecordModel].self, forKey: Constants.forKey)
     }
     
 }
