@@ -27,6 +27,9 @@ class RecordsViewController: UIViewController {
         addTable()
         addBackButton()
         addSwipeRightToGoBack()
+        
+//        let tap = UITapGestureRecognizer(target: self, action: #selector(deleteRecord))
+//        view.addGestureRecognizer(tap)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -145,6 +148,7 @@ extension RecordsViewController: UITableViewDataSource {
         let cell = RecordTableViewCell(style: .default, reuseIdentifier: "record\(indexPath.item)")
         cell.setRecord(with: records[indexPath.item])
         cell.backgroundColor = .clear
+        cell.setRecordsViewControllerDelegate(with: self)
         return cell
     }
     
@@ -191,6 +195,13 @@ extension RecordsViewController: RecordsInputDelegate {
     
     func displayRecords() {
         
+    }
+    
+}
+
+extension RecordsViewController: RecordsViewControllerDelegate {
+    @objc func deleteRecord() {
+        print("delete")
     }
     
 }
