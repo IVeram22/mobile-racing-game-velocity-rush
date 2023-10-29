@@ -32,6 +32,7 @@ class RecordsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         gameSettingsOutputDelegate?.getConfig()
         recordsOutputDelegate?.getRecords()
+        displayMessageAboutEmptyRecords()
         road.runAllAnimation()
     }
     
@@ -111,6 +112,23 @@ class RecordsViewController: UIViewController {
         swipeRight.direction = .right
         view.addGestureRecognizer(swipeRight)
     }
+    
+    private func displayMessageAboutEmptyRecords() {
+        guard let records, records.isEmpty else { return }
+        let label = UILabel(frame: .zero)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 47)
+        label.text = "No records"
+        view.addSubview(label)
+        NSLayoutConstraint.activate([
+            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            label.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            label.widthAnchor.constraint(equalToConstant: view.frame.width),
+            label.heightAnchor.constraint(equalToConstant: view.frame.width),
+        ])
+    }
+
 }
 
 // MARK: - Extensions
