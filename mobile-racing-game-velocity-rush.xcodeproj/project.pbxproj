@@ -80,6 +80,16 @@
 		2AC6E1992AED075D009866C4 /* HardLevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6E1982AED075D009866C4 /* HardLevelModel.swift */; };
 		2AC6E19B2AED077B009866C4 /* LevelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6E19A2AED077B009866C4 /* LevelFactory.swift */; };
 		2AC6E19E2AEEB200009866C4 /* RecordsViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6E19D2AEEB200009866C4 /* RecordsViewControllerDelegate.swift */; };
+		2AC6E1A12AF00A12009866C4 /* StartScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AC6E1A02AF00A12009866C4 /* StartScreen.png */; };
+		2AC6E1A32AF00A35009866C4 /* SettingsScreen1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AC6E1A22AF00A35009866C4 /* SettingsScreen1.png */; };
+		2AC6E1A52AF00A53009866C4 /* SettingsScreen2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AC6E1A42AF00A53009866C4 /* SettingsScreen2.png */; };
+		2AC6E1A72AF00A74009866C4 /* RecordsScreen(No records).png in Resources */ = {isa = PBXBuildFile; fileRef = 2AC6E1A62AF00A74009866C4 /* RecordsScreen(No records).png */; };
+		2AC6E1A92AF00AE0009866C4 /* SettingsScreen(Select Photo).png in Resources */ = {isa = PBXBuildFile; fileRef = 2AC6E1A82AF00AE0009866C4 /* SettingsScreen(Select Photo).png */; };
+		2AC6E1AB2AF00B3B009866C4 /* RaceScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AC6E1AA2AF00B3B009866C4 /* RaceScreen.png */; };
+		2AC6E1AD2AF00B68009866C4 /* RaceScreen(Game Over).png in Resources */ = {isa = PBXBuildFile; fileRef = 2AC6E1AC2AF00B68009866C4 /* RaceScreen(Game Over).png */; };
+		2AC6E1AF2AF00D36009866C4 /* RecordsScreen(Data).png in Resources */ = {isa = PBXBuildFile; fileRef = 2AC6E1AE2AF00D36009866C4 /* RecordsScreen(Data).png */; };
+		2AC6E1B12AF00D5D009866C4 /* RecordsScreen(Delete Cell1).png in Resources */ = {isa = PBXBuildFile; fileRef = 2AC6E1B02AF00D5D009866C4 /* RecordsScreen(Delete Cell1).png */; };
+		2AC6E1B32AF00D86009866C4 /* RecordsScreen(Delete Cell2).png in Resources */ = {isa = PBXBuildFile; fileRef = 2AC6E1B22AF00D86009866C4 /* RecordsScreen(Delete Cell2).png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -180,6 +190,16 @@
 		2AC6E1982AED075D009866C4 /* HardLevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardLevelModel.swift; sourceTree = "<group>"; };
 		2AC6E19A2AED077B009866C4 /* LevelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelFactory.swift; sourceTree = "<group>"; };
 		2AC6E19D2AEEB200009866C4 /* RecordsViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewControllerDelegate.swift; sourceTree = "<group>"; };
+		2AC6E1A02AF00A12009866C4 /* StartScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StartScreen.png; sourceTree = "<group>"; };
+		2AC6E1A22AF00A35009866C4 /* SettingsScreen1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SettingsScreen1.png; sourceTree = "<group>"; };
+		2AC6E1A42AF00A53009866C4 /* SettingsScreen2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SettingsScreen2.png; sourceTree = "<group>"; };
+		2AC6E1A62AF00A74009866C4 /* RecordsScreen(No records).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecordsScreen(No records).png"; sourceTree = "<group>"; };
+		2AC6E1A82AF00AE0009866C4 /* SettingsScreen(Select Photo).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SettingsScreen(Select Photo).png"; sourceTree = "<group>"; };
+		2AC6E1AA2AF00B3B009866C4 /* RaceScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RaceScreen.png; sourceTree = "<group>"; };
+		2AC6E1AC2AF00B68009866C4 /* RaceScreen(Game Over).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RaceScreen(Game Over).png"; sourceTree = "<group>"; };
+		2AC6E1AE2AF00D36009866C4 /* RecordsScreen(Data).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecordsScreen(Data).png"; sourceTree = "<group>"; };
+		2AC6E1B02AF00D5D009866C4 /* RecordsScreen(Delete Cell1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecordsScreen(Delete Cell1).png"; sourceTree = "<group>"; };
+		2AC6E1B22AF00D86009866C4 /* RecordsScreen(Delete Cell2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecordsScreen(Delete Cell2).png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -410,6 +430,7 @@
 				2AC3872B2AD6BE5C005082DA /* mobile-racing-game-velocity-rush */,
 				2AC387422AD6BE5E005082DA /* mobile-racing-game-velocity-rushTests */,
 				2AC3874C2AD6BE5E005082DA /* mobile-racing-game-velocity-rushUITests */,
+				2AC6E19F2AF0085F009866C4 /* screenshots */,
 				2AC3872A2AD6BE5C005082DA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -586,6 +607,23 @@
 			path = Records;
 			sourceTree = "<group>";
 		};
+		2AC6E19F2AF0085F009866C4 /* screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				2AC6E1A02AF00A12009866C4 /* StartScreen.png */,
+				2AC6E1AA2AF00B3B009866C4 /* RaceScreen.png */,
+				2AC6E1AC2AF00B68009866C4 /* RaceScreen(Game Over).png */,
+				2AC6E1A22AF00A35009866C4 /* SettingsScreen1.png */,
+				2AC6E1A42AF00A53009866C4 /* SettingsScreen2.png */,
+				2AC6E1A82AF00AE0009866C4 /* SettingsScreen(Select Photo).png */,
+				2AC6E1A62AF00A74009866C4 /* RecordsScreen(No records).png */,
+				2AC6E1AE2AF00D36009866C4 /* RecordsScreen(Data).png */,
+				2AC6E1B02AF00D5D009866C4 /* RecordsScreen(Delete Cell1).png */,
+				2AC6E1B22AF00D86009866C4 /* RecordsScreen(Delete Cell2).png */,
+			);
+			path = screenshots;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -691,8 +729,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AC6E1B12AF00D5D009866C4 /* RecordsScreen(Delete Cell1).png in Resources */,
+				2AC6E1A72AF00A74009866C4 /* RecordsScreen(No records).png in Resources */,
+				2AC6E1B32AF00D86009866C4 /* RecordsScreen(Delete Cell2).png in Resources */,
+				2AC6E1A12AF00A12009866C4 /* StartScreen.png in Resources */,
+				2AC6E1A92AF00AE0009866C4 /* SettingsScreen(Select Photo).png in Resources */,
+				2AC6E1AB2AF00B3B009866C4 /* RaceScreen.png in Resources */,
+				2AC6E1A52AF00A53009866C4 /* SettingsScreen2.png in Resources */,
 				2AC387392AD6BE5D005082DA /* LaunchScreen.storyboard in Resources */,
+				2AC6E1A32AF00A35009866C4 /* SettingsScreen1.png in Resources */,
 				2A9CB6CB2AEAC55600F0B3C3 /* Localizable.strings in Resources */,
+				2AC6E1AD2AF00B68009866C4 /* RaceScreen(Game Over).png in Resources */,
+				2AC6E1AF2AF00D36009866C4 /* RecordsScreen(Data).png in Resources */,
 				2AC387362AD6BE5D005082DA /* Assets.xcassets in Resources */,
 				2AC387342AD6BE5C005082DA /* Main.storyboard in Resources */,
 			);
