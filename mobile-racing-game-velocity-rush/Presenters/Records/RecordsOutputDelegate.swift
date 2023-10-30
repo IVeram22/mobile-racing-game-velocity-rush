@@ -10,4 +10,5 @@ import Foundation
 protocol RecordsOutputDelegate: AnyObject {
     func getRecords()
     func addNewRecord(with record: RecordModel)
+    func deleteRecord(with index: Int)
 }

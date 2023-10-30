@@ -79,6 +79,7 @@
 		2AC6E1972AED0745009866C4 /* NormalLevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6E1962AED0745009866C4 /* NormalLevelModel.swift */; };
 		2AC6E1992AED075D009866C4 /* HardLevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6E1982AED075D009866C4 /* HardLevelModel.swift */; };
 		2AC6E19B2AED077B009866C4 /* LevelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6E19A2AED077B009866C4 /* LevelFactory.swift */; };
+		2AC6E19E2AEEB200009866C4 /* RecordsViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6E19D2AEEB200009866C4 /* RecordsViewControllerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,6 +179,7 @@
 		2AC6E1962AED0745009866C4 /* NormalLevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalLevelModel.swift; sourceTree = "<group>"; };
 		2AC6E1982AED075D009866C4 /* HardLevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardLevelModel.swift; sourceTree = "<group>"; };
 		2AC6E19A2AED077B009866C4 /* LevelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelFactory.swift; sourceTree = "<group>"; };
+		2AC6E19D2AEEB200009866C4 /* RecordsViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewControllerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 		2A0365FA2AEBFD1D007915AC /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
+				2AC6E19C2AEEB1E0009866C4 /* Records */,
 				2A0365FB2AEBFD4E007915AC /* Settings */,
 				2AC3876E2AD6D486005082DA /* ViewControllerDelegate.swift */,
 			);
@@ -575,6 +578,14 @@
 			path = Levels;
 			sourceTree = "<group>";
 		};
+		2AC6E19C2AEEB1E0009866C4 /* Records */ = {
+			isa = PBXGroup;
+			children = (
+				2AC6E19D2AEEB200009866C4 /* RecordsViewControllerDelegate.swift */,
+			);
+			path = Records;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -714,6 +725,7 @@
 				2A9CB6232AD9B1B400F0B3C3 /* SummerTreeHindranceView.swift in Sources */,
 				2A03660D2AECDD9D007915AC /* RecordsOutputDelegate.swift in Sources */,
 				2A9CB6492AE3AB8500F0B3C3 /* SettingsViewController.swift in Sources */,
+				2AC6E19E2AEEB200009866C4 /* RecordsViewControllerDelegate.swift in Sources */,
 				2A9CB6532AE405FE00F0B3C3 /* SliderSettingsView.swift in Sources */,
 				2A9CB6582AE65A8800F0B3C3 /* BackRouter.swift in Sources */,
 				2A9CB61D2AD99C5C00F0B3C3 /* HindranceFactory.swift in Sources */,

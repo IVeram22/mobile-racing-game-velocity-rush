@@ -31,4 +31,8 @@ extension RecordsPresenter: RecordsOutputDelegate {
         RecordsManager.shared.addRecord(with: record)
     }
     
+    func deleteRecord(with index: Int) {
+        RecordsManager.shared.removeRecord(with: index)
+    }
+    
 }

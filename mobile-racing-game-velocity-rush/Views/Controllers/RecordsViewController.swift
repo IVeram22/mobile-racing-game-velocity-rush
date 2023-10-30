@@ -10,6 +10,7 @@ import UIKit
 private enum Constants {
     enum Cell {
         static let heightForRowAt: CGFloat = 101
+        static let widthForRowAt: CGFloat = 501
     }
     
     enum BackButton {
@@ -128,7 +129,28 @@ class RecordsViewController: UIViewController {
             label.heightAnchor.constraint(equalToConstant: view.frame.width),
         ])
     }
+    
+    private func displayDeleteAlert(with index: Int) {
+        let alert = UIAlertController(
+            title: "Delete the Record",
+            message: "Are you sure you want to delete the record? This action cannot be undone.",
+            preferredStyle: .alert
+        )
+        
+        let deleteAction = UIAlertAction(title: "Delete", style: .default) { [self] _ in
+            recordsOutputDelegate?.deleteRecord(with: index)
+            recordsOutputDelegate?.getRecords()
+            tableView.deleteRows(at: [IndexPath(row: index, section: 0)], with: .fade)
 
+        }
+        alert.addAction(deleteAction)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
 }
 
 // MARK: - Extensions
@@ -142,9 +164,10 @@ extension RecordsViewController: UITableViewDelegate {
 
 extension RecordsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = RecordTableViewCell(style: .default, reuseIdentifier: "record\(indexPath.item)")
+        let cell = RecordTableViewCell(style: .default, reuseIdentifier: "\(indexPath.item)")
         cell.setRecord(with: records[indexPath.item])
         cell.backgroundColor = .clear
+        cell.setRecordsViewControllerDelegate(with: self)
         return cell
     }
     
@@ -155,7 +178,6 @@ extension RecordsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         Constants.Cell.heightForRowAt
     }
-    
 }
 
 extension RecordsViewController: BackButtonDelegate {
@@ -191,6 +213,13 @@ extension RecordsViewController: RecordsInputDelegate {
     
     func displayRecords() {
         
+    }
+    
+}
+
+extension RecordsViewController: RecordsViewControllerDelegate {
+    func deleteRecord(index: Int) {
+        displayDeleteAlert(with: index)
     }
     
 }

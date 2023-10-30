@@ -26,6 +26,12 @@ final class RecordsManager {
         save(with: record)
     }
     
+    func removeRecord(with index: Int) {
+        var records = read()
+        records.remove(at: index)
+        saveAll(with: records)
+    }
+    
     // MARK: - Private
     private func save(with record: RecordModel) {
         var records = read()
@@ -34,11 +40,15 @@ final class RecordsManager {
         records.sortedByPoints()
         records.sortedByLevel()
         
-        UserDefaults.standard.setArray(encodableArray: records, forKey: Constants.forKey)
+        saveAll(with: records)
     }
     
     private func read() -> [RecordModel] {
         UserDefaults.standard.array([RecordModel].self, forKey: Constants.forKey)
+    }
+    
+    private func saveAll(with records: [RecordModel]) {
+        UserDefaults.standard.setArray(encodableArray: records, forKey: Constants.forKey)
     }
     
 }
