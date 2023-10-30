@@ -146,7 +146,7 @@ class RaceViewController: UIViewController {
     }
     
     private func updateCounter() {
-        counter.text = "\(getScore()) points"
+        counter.text = "\(getScore()) \("points".localized)"
     }
     
     private func stopEverything() {
@@ -164,17 +164,17 @@ class RaceViewController: UIViewController {
         recordsOutputDelegate?.addNewRecord(with: RecordModel(user: config.user, points: getScore(), color: config.levelIndex))
         
         let alert = UIAlertController(
-            title: "Game Over",
-            message: "You have scored \(getScore()) points!",
+            title: "Game Over".localized,
+            message: "\("You have scored".localized) \(getScore()) \("points".localized)!",
             preferredStyle: .alert
         )
         
-        let restartAction = UIAlertAction(title: "Restart", style: .default) { [self] _ in
+        let restartAction = UIAlertAction(title: "Restart".localized, style: .default) { [self] _ in
             router.restartGame(from: self)
         }
         alert.addAction(restartAction)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { [self] _ in
+        let cancelAction = UIAlertAction(title: "Cancel".localized, style: .cancel) { [self] _ in
             router.comeBack(from: self)
         }
         alert.addAction(cancelAction)

@@ -9,7 +9,7 @@ import UIKit
 
 private enum Constants {
     enum Player {
-        static let text: String = "Player"
+        static let text: String = "Player".localized
         static let backgroundColor: UIColor = .black
         static let textColor: UIColor = .white
         static let heightAnchor: CGFloat = 35

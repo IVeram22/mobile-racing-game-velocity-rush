@@ -54,7 +54,7 @@ final class ControlsSliderSettingsView: SliderSettingsView {
         ))
         label.translatesAutoresizingMaskIntoConstraints = false
         
-        label.text = GlobalConstants.Controls.names[index]
+        label.text = GlobalConstants.Controls.names[index].localized
         label.textColor = GlobalConstants.Controls.colors[index]
         label.textAlignment = .center
         

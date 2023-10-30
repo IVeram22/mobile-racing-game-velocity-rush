@@ -9,3 +9,35 @@
 "Start game" = "Start game";
 "Settings" = "Settings";
 "Records" = "Records";
+
+"points" = "points";
+"Game Over" = "Game Over";
+"You have scored" = "You have scored";
+"Restart" = "Restart";
+"Cancel" = "Cancel";
+
+"Player Car Colors" = "Player Car Color";
+"Hindrances" = "Hindrances";
+"Levels" = "Levels";
+"Player Controls" = "Player Controls";
+
+"Choose Image Source" = "Choose Image Source";
+"Camera" = "Camera";
+"Photo Library" = "Photo Library";
+
+"Delete" = "Delete";
+"Delete the Record" = "Delete the Record";
+"Are you sure you want to delete the record? This action cannot be undone." = "Are you sure you want to delete the record? This action cannot be undone.";
+"No records" = "No records";
+
+"Player" = "Player";
+
+"Easy" = "Easy";
+"Normal" = "Normal";
+"Hard" = "Hard";
+
+"Tap" = "Tap";
+"Swipe" = "Swipe";
+"Accelerometer" = "Accelerometer";
+
+"Back" = "Back";
