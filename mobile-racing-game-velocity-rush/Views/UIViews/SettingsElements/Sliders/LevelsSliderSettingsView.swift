@@ -54,7 +54,7 @@ final class LevelsSliderSettingsView: SliderSettingsView {
         ))
         label.translatesAutoresizingMaskIntoConstraints = false
         
-        label.text = GlobalConstants.Levels.names[index]
+        label.text = GlobalConstants.Levels.names[index].localized
         label.textColor = GlobalConstants.Levels.colors[index]
         label.textAlignment = .center
         

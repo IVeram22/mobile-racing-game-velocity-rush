@@ -9,3 +9,35 @@
 "Start game" = "Начать игру";
 "Settings" = "Настройки";
 "Records" = "Рекорды";
+
+"points" = "очков";
+"Game Over" = "Конец игры";
+"You have scored" = "Вы набрали";
+"Restart" = "Перезапустить";
+"Cancel" = "Отмена";
+
+"Player Car Colors" = "Цвет автомобиля игрока";
+"Hindrances" = "Препятствия";
+"Levels" = "Уровни";
+"Player Controls" = "Управление игрока";
+
+"Choose Image Source" = "Выберите источник изображения";
+"Camera" = "Камера";
+"Photo Library" = "Фотоальбом";
+
+"Delete" = "Удалить";
+"Delete the Record" = "Удалить запись";
+"Are you sure you want to delete the record? This action cannot be undone." = "Вы уверены, что хотите удалить запись? Это действие нельзя отменить.";
+"No records" = "Нет записей";
+
+"Player" = "Игрок";
+
+"Easy" = "Легко";
+"Normal" = "Нормально";
+"Hard" = "Сложно";
+
+"Tap" = "Нажатие";
+"Swipe" = "Свайп";
+"Accelerometer" = "Акселерометр";
+
+"Back" = "Назад";

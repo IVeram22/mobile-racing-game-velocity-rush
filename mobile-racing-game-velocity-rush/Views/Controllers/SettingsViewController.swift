@@ -124,7 +124,7 @@ class SettingsViewController: UIViewController {
             width: Constants.Cell.width,
             height: Constants.Cell.height
         ))
-        carColorView.setTitle("Player Car Colors")
+        carColorView.setTitle("Player Car Colors".localized)
         scrollView.addSubview(carColorView)
         NSLayoutConstraint.activate([
             carColorView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
@@ -141,7 +141,7 @@ class SettingsViewController: UIViewController {
             width: Constants.Cell.width,
             height: Constants.Cell.height
         ))
-        hindranceView.setTitle("Hindrances")
+        hindranceView.setTitle("Hindrances".localized)
         scrollView.addSubview(hindranceView)
         NSLayoutConstraint.activate([
             hindranceView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
@@ -158,7 +158,7 @@ class SettingsViewController: UIViewController {
             width: Constants.Cell.width,
             height: Constants.Cell.height
         ))
-        levelView.setTitle("Levels")
+        levelView.setTitle("Levels".localized)
         scrollView.addSubview(levelView)
         NSLayoutConstraint.activate([
             levelView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
@@ -175,7 +175,7 @@ class SettingsViewController: UIViewController {
             width: Constants.Cell.width,
             height: Constants.Cell.height
         ))
-        controlView.setTitle("Player Controls")
+        controlView.setTitle("Player Controls".localized)
         scrollView.addSubview(controlView)
         NSLayoutConstraint.activate([
             controlView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
@@ -244,9 +244,9 @@ extension SettingsViewController: UINavigationControllerDelegate, UIImagePickerC
 
 extension SettingsViewController: SettingsViewControllerDelegate {
     func imageViewTapped() {
-        let actionSheet = UIAlertController(title: "Choose Image Source", message: nil, preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(title: "Choose Image Source".localized, message: nil, preferredStyle: .actionSheet)
         
-        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action:UIAlertAction) in
+        actionSheet.addAction(UIAlertAction(title: "Camera".localized, style: .default, handler: { (action:UIAlertAction) in
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
                 let vc = UIImagePickerController()
                 vc.sourceType = .camera
@@ -258,7 +258,7 @@ extension SettingsViewController: SettingsViewControllerDelegate {
             }
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action:UIAlertAction) in
+        actionSheet.addAction(UIAlertAction(title: "Photo Library".localized, style: .default, handler: { (action:UIAlertAction) in
             let vc = UIImagePickerController()
             vc.sourceType = .photoLibrary
             vc.allowsEditing = true
@@ -266,7 +266,7 @@ extension SettingsViewController: SettingsViewControllerDelegate {
             self.present(vc, animated: true)
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil))
         present(actionSheet, animated: true, completion: nil)
     }
     

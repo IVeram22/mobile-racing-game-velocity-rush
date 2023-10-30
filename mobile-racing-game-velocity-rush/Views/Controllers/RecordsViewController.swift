@@ -8,6 +8,8 @@
 import UIKit
 
 private enum Constants {
+    static let font: CGFloat = 47
+    
     enum Cell {
         static let heightForRowAt: CGFloat = 101
         static let widthForRowAt: CGFloat = 501
@@ -119,8 +121,8 @@ class RecordsViewController: UIViewController {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 47)
-        label.text = "No records"
+        label.font = UIFont.systemFont(ofSize: Constants.font)
+        label.text = "No records".localized
         view.addSubview(label)
         NSLayoutConstraint.activate([
             label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -132,12 +134,12 @@ class RecordsViewController: UIViewController {
     
     private func displayDeleteAlert(with index: Int) {
         let alert = UIAlertController(
-            title: "Delete the Record",
-            message: "Are you sure you want to delete the record? This action cannot be undone.",
+            title: "Delete the Record".localized,
+            message: "Are you sure you want to delete the record? This action cannot be undone.".localized,
             preferredStyle: .alert
         )
         
-        let deleteAction = UIAlertAction(title: "Delete", style: .default) { [self] _ in
+        let deleteAction = UIAlertAction(title: "Delete".localized, style: .default) { [self] _ in
             recordsOutputDelegate?.deleteRecord(with: index)
             recordsOutputDelegate?.getRecords()
             tableView.deleteRows(at: [IndexPath(row: index, section: 0)], with: .fade)
@@ -145,7 +147,7 @@ class RecordsViewController: UIViewController {
         }
         alert.addAction(deleteAction)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        let cancelAction = UIAlertAction(title: "Cancel".localized, style: .cancel)
         alert.addAction(cancelAction)
         
         present(alert, animated: true, completion: nil)

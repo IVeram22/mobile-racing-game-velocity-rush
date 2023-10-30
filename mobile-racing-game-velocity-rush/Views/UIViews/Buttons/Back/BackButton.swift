@@ -13,7 +13,7 @@ final class BackButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
-        setTitle("Back", for: .normal)
+        setTitle("Back".localized, for: .normal)
         setTitleColor(.white, for: .normal)
         cornerRadius()
         addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
