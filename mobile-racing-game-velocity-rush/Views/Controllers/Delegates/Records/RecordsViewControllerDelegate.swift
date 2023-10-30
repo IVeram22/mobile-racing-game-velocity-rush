@@ -8,5 +8,5 @@
 import UIKit
 
 protocol RecordsViewControllerDelegate: AnyObject {
-    func deleteRecord()
+    func deleteRecord(index: Int)
 }

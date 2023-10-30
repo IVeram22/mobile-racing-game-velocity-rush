@@ -52,6 +52,7 @@ class RecordTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         contentView.backgroundColor = UIColor.clear
         addDeleteView()
+        addrecordView()
         addPhotoView()
         addNameLabel()
         addPointsLabel()
@@ -74,6 +75,13 @@ class RecordTableViewCell: UITableViewCell {
     }
     
     // MARK: - Private
+    private let recordView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor.clear
+        return view
+    }()
+    
     private let fotoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -129,8 +137,8 @@ class RecordTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             deleteView.topAnchor.constraint(equalTo: contentView.topAnchor),
             deleteView.rightAnchor.constraint(
-                equalTo: contentView.rightAnchor,
-                constant: Constants.DeleteView.widthAnchor),
+                equalTo: contentView.rightAnchor
+                ),
             deleteView.widthAnchor.constraint(equalToConstant: Constants.DeleteView.widthAnchor),
             deleteView.heightAnchor.constraint(equalToConstant: Constants.heightAnchor),
             
@@ -139,18 +147,29 @@ class RecordTableViewCell: UITableViewCell {
                 constant: Constants.heightAnchor / 2 - Constants.DeleteView.TrashIcon.size / 2),
             deleteImageView.rightAnchor.constraint(
                 equalTo: contentView.rightAnchor,
-                constant: Constants.DeleteView.widthAnchor / 2 + Constants.DeleteView.TrashIcon.size / 2),
+                constant: -Constants.DeleteView.widthAnchor / 2 + Constants.DeleteView.TrashIcon.size / 2),
             deleteImageView.widthAnchor.constraint(equalToConstant: Constants.DeleteView.TrashIcon.size),
             deleteImageView.heightAnchor.constraint(equalToConstant: Constants.DeleteView.TrashIcon.size),
         ])
         deleteImageView.image = UIImage(named: "Trash")
         let tap = UITapGestureRecognizer(target: self, action: #selector(deleteButtonTapped))
-//        deleteView.addGestureRecognizer(tap)
-        contentView.addGestureRecognizer(tap)
+        deleteView.addGestureRecognizer(tap)
+        deleteView.isHidden = true
+        deleteImageView.isHidden = true
+    }
+    
+    private func addrecordView() {
+        contentView.addSubview(recordView)
+        NSLayoutConstraint.activate([
+            recordView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            recordView.leftAnchor.constraint(equalTo: contentView.leftAnchor),
+            recordView.rightAnchor.constraint(equalTo: contentView.rightAnchor),
+            recordView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
     }
     
     private func addPhotoView() {
-        contentView.addSubview(fotoImageView)
+        recordView.addSubview(fotoImageView)
         NSLayoutConstraint.activate([
             fotoImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.PhotoView.constant),
             fotoImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: Constants.PhotoView.constant),
@@ -160,7 +179,7 @@ class RecordTableViewCell: UITableViewCell {
     }
     
     private func addNameLabel() {
-        contentView.addSubview(nameLabel)
+        recordView.addSubview(nameLabel)
         NSLayoutConstraint.activate([
             nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
             nameLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: Constants.NameLabel.leftAnchor),
@@ -170,7 +189,7 @@ class RecordTableViewCell: UITableViewCell {
     }
     
     private func addPointsLabel() {
-        contentView.addSubview(pointsLabel)
+        recordView.addSubview(pointsLabel)
         NSLayoutConstraint.activate([
             pointsLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
             pointsLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: Constants.PointsLabel.rightAnchor),
@@ -180,7 +199,7 @@ class RecordTableViewCell: UITableViewCell {
     }
     
     private func addDateLabel() {
-        contentView.addSubview(dateLabel)
+        recordView.addSubview(dateLabel)
         NSLayoutConstraint.activate([
             dateLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.DateLabel.topAnchor),
             dateLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: Constants.DateLabel.leftAnchor),
@@ -203,23 +222,38 @@ class RecordTableViewCell: UITableViewCell {
     
     @objc private func didSwipeLeft() {
         guard !isLeftSwipeDid else { return }
+        deleteView.frame.origin.x += Constants.DeleteView.widthAnchor
+        
         UIView.animate(withDuration: Constants.duration) { [self] in
-            frame.origin.x -= Constants.DeleteView.widthAnchor
+            deleteView.isHidden = false
+            recordView.frame.origin.x -= Constants.DeleteView.widthAnchor
+            deleteView.frame.origin.x -= Constants.DeleteView.widthAnchor
+        } completion: { [self] _ in
+            deleteImageView.isHidden = false
         }
+        
         isLeftSwipeDid.toggle()
     }
     
     @objc private func didSwipeRight() {
         guard isLeftSwipeDid else { return }
+        
         UIView.animate(withDuration: Constants.duration) { [self] in
-            frame.origin.x += Constants.DeleteView.widthAnchor
+            recordView.frame.origin.x += Constants.DeleteView.widthAnchor
+            deleteView.frame.origin.x += Constants.DeleteView.widthAnchor
+            deleteImageView.isHidden = true
+        } completion: { [self] _ in
+            deleteView.frame.origin.x -= Constants.DeleteView.widthAnchor
+            deleteView.isHidden = true
         }
+        
         isLeftSwipeDid.toggle()
     }
     
     @objc private func deleteButtonTapped() {
-        print("deleteButtonTapped")
-        recordsViewControllerDelegate?.deleteRecord()
+        guard let reuseIdentifier else { return }
+        guard let number = Int(reuseIdentifier) else { return }
+        recordsViewControllerDelegate?.deleteRecord(index: number)
     }
     
 }
