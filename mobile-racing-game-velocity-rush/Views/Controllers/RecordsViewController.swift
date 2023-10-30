@@ -219,8 +219,6 @@ extension RecordsViewController: RecordsInputDelegate {
 
 extension RecordsViewController: RecordsViewControllerDelegate {
     func deleteRecord(index: Int) {
-        print("delete")
-        print(index)
         displayDeleteAlert(with: index)
     }
     
