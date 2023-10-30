@@ -31,28 +31,28 @@ The records screen displays the list of saved records. It provides the following
 
 ## Screenshots
 
-<img src="screenshots/StartScreen.png" alt="StartScreen" width="585" height="1266">
-<img src="screenshots/RaceScreen.png" alt="RaceScreen" width="585" height="1266">
-<img src="screenshots/RaceScreen(Game Over).png" alt="RaceScreen(Game Over)" width="585" height="1266">
-<img src="screenshots/SettingsScreen1.png" alt="SettingsScreen1" width="585" height="1266">
-<img src="screenshots/SettingsScreen2.png" alt="SettingsScreen2" width="585" height="1266">
-<img src="screenshots/SettingsScreen(Select Photo).png" alt="SettingsScreen(Select Photo)" width="585" height="1266">
-<img src="screenshots/RecordsScreen(No records).png" alt="RecordsScreen(No records)" width="585" height="1266">
-<img src="screenshots/RecordsScreen(Data).png" alt="RecordsScreen(Data)" width="585" height="1266">
-<img src="screenshots/RecordsScreen(Delete Cell1).png" alt="RecordsScreen(Delete Cell1)" width="585" height="1266">
-<img src="screenshots/RecordsScreen(Delete Cell2).png" alt="RecordsScreen(Delete Cell2)" width="585" height="1266">
+<img src="screenshots/StartScreen.png" alt="StartScreen" width="393" height="852">
+<img src="screenshots/RaceScreen.png" alt="RaceScreen" width="393" height="852">
+<img src="screenshots/RaceScreen(Game Over).png" alt="RaceScreen(Game Over)" width="393" height="852">
+<img src="screenshots/SettingsScreen1.png" alt="SettingsScreen1" width="393" height="852">
+<img src="screenshots/SettingsScreen2.png" alt="SettingsScreen2" width="393" height="852">
+<img src="screenshots/SettingsScreen(Select Photo).png" alt="SettingsScreen(Select Photo)" width="393" height="852">
+<img src="screenshots/RecordsScreen(No records).png" alt="RecordsScreen(No records)" width="393" height="852">
+<img src="screenshots/RecordsScreen(Data).png" alt="RecordsScreen(Data)" width="393" height="852">
+<img src="screenshots/RecordsScreen(Delete Cell1).png" alt="RecordsScreen(Delete Cell1)" width="393" height="852">
+<img src="screenshots/RecordsScreen(Delete Cell2).png" alt="RecordsScreen(Delete Cell2)" width="393" height="852">
 
 ## Requirements
 
-- iOS 14.0+
-- Xcode 12.0+
+- iOS 15.0+
+- Xcode 14.0+
 - Swift 5.0+
 
 ## Installation
 
 1. Clone the repository:
 
-git clone git@github.com:your-username/FactorialCalculator.git
+git clone git@github.com:your-username/mobile-racing-game-velocity-rush.git
 
 3. Open the project in Xcode.
 
