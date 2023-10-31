@@ -25,6 +25,7 @@ final class ControlsSliderSettingsView: SliderSettingsView {
         createControl()
     }
     
+    // MARK: - Private
     private func createControl() {
         mainElement = UIView(frame: CGRect(
             x: 0,
@@ -32,14 +33,16 @@ final class ControlsSliderSettingsView: SliderSettingsView {
             width: GlobalConstants.Controls.width,
             height: GlobalConstants.Controls.height
         ))
+        
         mainElement.translatesAutoresizingMaskIntoConstraints = false
+        
         addSubview(mainElement)
+        
         NSLayoutConstraint.activate([
             mainElement.centerXAnchor.constraint(equalTo: centerXAnchor),
             mainElement.centerYAnchor.constraint(equalTo: centerYAnchor),
             mainElement.widthAnchor.constraint(equalToConstant: GlobalConstants.Controls.width),
             mainElement.heightAnchor.constraint(equalToConstant: GlobalConstants.Controls.height),
-
         ])
         
         addLabel()
@@ -52,8 +55,8 @@ final class ControlsSliderSettingsView: SliderSettingsView {
             width: GlobalConstants.Controls.width,
             height: GlobalConstants.Controls.height
         ))
-        label.translatesAutoresizingMaskIntoConstraints = false
         
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.text = GlobalConstants.Controls.names[index].localized
         label.textColor = GlobalConstants.Controls.colors[index]
         label.textAlignment = .center
@@ -65,7 +68,6 @@ final class ControlsSliderSettingsView: SliderSettingsView {
             label.centerYAnchor.constraint(equalTo: mainElement.centerYAnchor),
             label.widthAnchor.constraint(equalToConstant: GlobalConstants.Levels.width),
             label.heightAnchor.constraint(equalToConstant: GlobalConstants.Levels.height),
-
         ])
     }
     

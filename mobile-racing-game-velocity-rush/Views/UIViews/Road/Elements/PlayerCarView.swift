@@ -12,6 +12,7 @@ private enum Constants {
     static let sideShift: CGFloat = 20
     static let margin: CGFloat = 10
     static let duration: TimeInterval = 0.3
+    
 }
 
 final class PlayerCarView: UIView {
@@ -26,6 +27,7 @@ final class PlayerCarView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Public
     func moveToLeft() {
         let newX: CGFloat
         
@@ -55,6 +57,7 @@ final class PlayerCarView: UIView {
         moveToX(with: newX - frame.origin.x)
     }
     
+    // MARK: - Private
     private func moveToX(with x: CGFloat) {
         UIView.animate(withDuration: Constants.duration) { [self] in
             frame.origin.x += x

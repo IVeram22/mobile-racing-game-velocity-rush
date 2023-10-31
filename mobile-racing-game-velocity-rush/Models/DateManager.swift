@@ -10,7 +10,7 @@ import Foundation
 final class DateManager {
     static let shared = DateManager()
     
-    init() {}
+    private init() {}
     
     func getCurrentDate() -> String {
         let date = Date()

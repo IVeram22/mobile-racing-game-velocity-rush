@@ -10,16 +10,20 @@ import CoreMotion
 
 private enum Constants {
     static let duration: TimeInterval = 0.3
+    static let margin: CGFloat = 0.1
+    
 }
 
 final class AccelerometerControlView: BaseControlView {
-    private let manager = CMMotionManager()
-    private var timer: Timer!
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
+    // MARK: - Public
     func startTimer() {
         guard manager.isAccelerometerAvailable else { return }
         manager.startAccelerometerUpdates()
@@ -27,11 +31,11 @@ final class AccelerometerControlView: BaseControlView {
             if let data = self?.manager.accelerometerData {
                 let shift = data.acceleration.x
                 
-                if shift > 0.1 {
+                if shift > Constants.margin {
                     self?.turnRight()
                 }
                 
-                if shift < -0.1 {
+                if shift < -Constants.margin {
                     self?.turnLeft()
                 }
             }
@@ -44,8 +48,8 @@ final class AccelerometerControlView: BaseControlView {
         manager.stopAccelerometerUpdates()
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    // MARK: - Private
+    private let manager = CMMotionManager()
+    private var timer: Timer!
     
 }

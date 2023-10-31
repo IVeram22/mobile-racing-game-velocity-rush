@@ -18,25 +18,6 @@ private enum Constants {
 }
 
 final class RoadView: UIView {
-    private let leftRoadside: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = Constants.Roadside.backgroundColor
-        return view
-    }()
-    
-    private let rightRoadside: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = Constants.Roadside.backgroundColor
-        return view
-    }()
-    
-    private var lines: WhiteDottedLinesView!
-    private var cars: EnemyCarsView!
-    private var hindrances: HindrancesView!
-    private var hindranceType: HindranceType!
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = Constants.backgroundColor
@@ -60,13 +41,13 @@ final class RoadView: UIView {
             rightRoadside.heightAnchor.constraint(equalTo: heightAnchor),
             rightRoadside.widthAnchor.constraint(equalToConstant: Constants.Roadside.width)
         ])
-        
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Public
     func runAllAnimation() {
         lines.runAnimation()
         cars.runAnimation()
@@ -109,6 +90,26 @@ final class RoadView: UIView {
         addHindrances(size: level.getNumberOfHindrances())
         cars.setNewNumberOfCars(size: level.getNumberOfCars())
     }
+    
+    // MARK: - Private
+    private let leftRoadside: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = Constants.Roadside.backgroundColor
+        return view
+    }()
+    
+    private let rightRoadside: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = Constants.Roadside.backgroundColor
+        return view
+    }()
+    
+    private var lines: WhiteDottedLinesView!
+    private var cars: EnemyCarsView!
+    private var hindrances: HindrancesView!
+    private var hindranceType: HindranceType!
     
     private func addHindrances(size: Int) {
         hindrances.removeFromSuperview()

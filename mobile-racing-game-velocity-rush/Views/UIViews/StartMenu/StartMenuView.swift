@@ -27,33 +27,6 @@ private enum Constants {
 }
 
 final class StartMenuView: UIView {
-    private let startGameButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Start game".localized, for: .normal)
-        button.backgroundColor = Constants.StartButton.backgroundColor
-        button.setupDefault()
-        return button
-    }()
-    
-    private let settingsButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Settings".localized, for: .normal)
-        button.backgroundColor = Constants.SettingsButton.backgroundColor
-        button.setupDefault()
-        button.setTitleColor(Constants.SettingsButton.titleColor, for: .normal)
-        return button
-    }()
-    
-    private let recordsButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Records".localized, for: .normal)
-        button.backgroundColor = Constants.RecordsButton.backgroundColor
-        button.setupDefault()
-        return button
-    }()
-    
-    weak var delegate: ViewControllerDelegate?
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
@@ -79,9 +52,7 @@ final class StartMenuView: UIView {
             recordsButton.heightAnchor.constraint(equalToConstant: Constants.heightAnchor),
         ])
         
-        startGameButton.addTarget(self, action: #selector(startGameButtonTapped), for: .touchUpInside)
-        settingsButton.addTarget(self, action: #selector(settingsButtonTapped), for: .touchUpInside)
-        recordsButton.addTarget(self, action: #selector(recordsButtonTapped), for: .touchUpInside)
+        addButtonsTargets()
     }
     
     required init?(coder: NSCoder) {
@@ -89,15 +60,54 @@ final class StartMenuView: UIView {
     }
     
     @objc private func startGameButtonTapped(_ sender: UIButton) {
-        delegate?.startPlaying()
+        viewControllerDelegate?.startPlaying()
     }
     
     @objc private func settingsButtonTapped(_ sender: UIButton) {
-        delegate?.openSettings()
+        viewControllerDelegate?.openSettings()
     }
     
     @objc private func recordsButtonTapped(_ sender: UIButton) {
-        delegate?.seeRecords()
+        viewControllerDelegate?.seeRecords()
+    }
+    
+    // MARK: - Public
+    func setViewControllerDelegate(with delegate: ViewControllerDelegate) {
+        viewControllerDelegate = delegate
+    }
+    
+    // MARK: - Private
+    private let startGameButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Start game".localized, for: .normal)
+        button.backgroundColor = Constants.StartButton.backgroundColor
+        button.setupDefault()
+        return button
+    }()
+    
+    private let settingsButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Settings".localized, for: .normal)
+        button.backgroundColor = Constants.SettingsButton.backgroundColor
+        button.setupDefault()
+        button.setTitleColor(Constants.SettingsButton.titleColor, for: .normal)
+        return button
+    }()
+    
+    private let recordsButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Records".localized, for: .normal)
+        button.backgroundColor = Constants.RecordsButton.backgroundColor
+        button.setupDefault()
+        return button
+    }()
+    
+    private weak var viewControllerDelegate: ViewControllerDelegate?
+    
+    private func addButtonsTargets() {
+        startGameButton.addTarget(self, action: #selector(startGameButtonTapped), for: .touchUpInside)
+        settingsButton.addTarget(self, action: #selector(settingsButtonTapped), for: .touchUpInside)
+        recordsButton.addTarget(self, action: #selector(recordsButtonTapped), for: .touchUpInside)
     }
     
 }

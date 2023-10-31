@@ -25,6 +25,7 @@ final class LevelsSliderSettingsView: SliderSettingsView {
         createLevel()
     }
     
+    // MARK: - Private
     private func createLevel() {
         mainElement = UIView(frame: CGRect(
             x: 0,
@@ -32,8 +33,11 @@ final class LevelsSliderSettingsView: SliderSettingsView {
             width: GlobalConstants.Levels.width,
             height: GlobalConstants.Levels.height
         ))
+        
         mainElement.translatesAutoresizingMaskIntoConstraints = false
+        
         addSubview(mainElement)
+        
         NSLayoutConstraint.activate([
             mainElement.centerXAnchor.constraint(equalTo: centerXAnchor),
             mainElement.centerYAnchor.constraint(equalTo: centerYAnchor),
@@ -52,8 +56,8 @@ final class LevelsSliderSettingsView: SliderSettingsView {
             width: GlobalConstants.Levels.width,
             height: GlobalConstants.Levels.height
         ))
-        label.translatesAutoresizingMaskIntoConstraints = false
         
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.text = GlobalConstants.Levels.names[index].localized
         label.textColor = GlobalConstants.Levels.colors[index]
         label.textAlignment = .center
@@ -65,9 +69,7 @@ final class LevelsSliderSettingsView: SliderSettingsView {
             label.centerYAnchor.constraint(equalTo: mainElement.centerYAnchor),
             label.widthAnchor.constraint(equalToConstant: GlobalConstants.Levels.width),
             label.heightAnchor.constraint(equalToConstant: GlobalConstants.Levels.height),
-
         ])
-        
     }
     
 }

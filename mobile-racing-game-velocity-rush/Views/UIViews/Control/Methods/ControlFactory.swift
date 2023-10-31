@@ -11,6 +11,7 @@ enum ControlType {
     case Tap
     case Swipe
     case Accelerometer
+
 }
 
 final class ControlFactory {

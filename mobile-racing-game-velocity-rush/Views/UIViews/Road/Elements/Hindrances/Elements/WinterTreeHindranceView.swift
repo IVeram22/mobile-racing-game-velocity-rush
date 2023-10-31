@@ -19,7 +19,6 @@ private enum Constants {
 }
 
 class WinterTreeHindranceView: BaseHindranceView {
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         trunk.backgroundColor = Constants.Trunk.backgroundColor

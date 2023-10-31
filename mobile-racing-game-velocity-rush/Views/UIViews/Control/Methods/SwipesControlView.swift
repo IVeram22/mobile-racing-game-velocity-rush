@@ -10,6 +10,15 @@ import UIKit
 class SwipesControlView: BaseControlView {
     override init(frame: CGRect) {
         super.init(frame: frame)
+        addGestures()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Private
+    private func addGestures() {
         let swipeLeftGesture = UISwipeGestureRecognizer(target: self, action: #selector(turnLeft))
         swipeLeftGesture.direction = .left
         addGestureRecognizer(swipeLeftGesture)
@@ -18,9 +27,5 @@ class SwipesControlView: BaseControlView {
         swipeRightGesture.direction = .right
         addGestureRecognizer(swipeRightGesture)
     }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-        
+
 }

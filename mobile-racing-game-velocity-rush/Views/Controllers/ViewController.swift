@@ -33,9 +33,9 @@ class ViewController: UIViewController {
     // MARK: - Private
     private var menu: StartMenuView!
     private var road: RoadView!
-    // Navigation
+    // MARK: Navigation
     private let router: StartMenuRouter = Router.shared
-    // Presenter
+    // MARK: Presenter
     private var config: GameSettingsModel!
     private let presenter = GameSettingsPresenter()
     weak private var gameSettingsOutputDelegate: GameSettingsOutputDelegate?
@@ -62,7 +62,7 @@ class ViewController: UIViewController {
             width: Constants.Menu.width,
             height: Constants.Menu.height
         ))
-        menu.delegate = self
+        menu.setViewControllerDelegate(with: self)
         view.addSubview(menu)
         NSLayoutConstraint.activate([
             menu.centerXAnchor.constraint(equalTo: view.centerXAnchor),

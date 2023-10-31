@@ -8,22 +8,12 @@
 import UIKit
 
 final class ButtonsControlView: BaseControlView {
-    private let leftButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
-    private let rightButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         addSubview(leftButton)
         addSubview(rightButton)
+        
         NSLayoutConstraint.activate([
             leftButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 0),
             leftButton.topAnchor.constraint(equalTo: topAnchor, constant: 0),
@@ -36,12 +26,29 @@ final class ButtonsControlView: BaseControlView {
             rightButton.heightAnchor.constraint(equalToConstant: frame.height)
         ])
         
-        leftButton.addTarget(self, action: #selector(turnLeft), for: .touchUpInside)
-        rightButton.addTarget(self, action: #selector(turnRight), for: .touchUpInside)
+        addButtonsTargets()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Private
+    private let leftButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private let rightButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private func addButtonsTargets() {
+        leftButton.addTarget(self, action: #selector(turnLeft), for: .touchUpInside)
+        rightButton.addTarget(self, action: #selector(turnRight), for: .touchUpInside)
     }
     
 }

@@ -16,7 +16,9 @@ final class CarColorsSliderSettingsView: SliderSettingsView {
             width: GlobalConstants.Cars.width,
             height: GlobalConstants.Cars.height
         ), with: index)
+        
         mainElement.translatesAutoresizingMaskIntoConstraints = false
+        
         addSubview(mainElement)
         
         NSLayoutConstraint.activate([

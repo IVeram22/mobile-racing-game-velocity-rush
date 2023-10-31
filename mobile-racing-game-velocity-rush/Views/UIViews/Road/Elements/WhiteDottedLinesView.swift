@@ -18,11 +18,10 @@ private enum Constants {
     static let alpha: CGFloat = 0.7
     static let frameStartTime: Double = 0.2
     static let frameDuration: Double = 0.5
+
 }
 
 final class WhiteDottedLinesView: UIView {
-    private var lines: [UIView] = []
-    
     override init(frame: CGRect) {
         super.init(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
         addLines()
@@ -32,6 +31,7 @@ final class WhiteDottedLinesView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Public
     func runAnimation() {
         var delay: TimeInterval = 0.0
         for line in lines {
@@ -47,6 +47,9 @@ final class WhiteDottedLinesView: UIView {
             whiteDottedLine.layer.timeOffset = pausedTime
         }
     }
+    
+    // MARK: - Private
+    private var lines: [UIView] = []
     
     private func addLines() {
         for _ in 0...Constants.numberOfLines {

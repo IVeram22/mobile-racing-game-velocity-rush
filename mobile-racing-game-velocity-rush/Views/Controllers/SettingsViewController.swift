@@ -64,9 +64,9 @@ class SettingsViewController: UIViewController {
     private var levelView: LevelsSliderSettingsView!
     private var controlView: ControlsSliderSettingsView!
     private var backButton: BackButton!
-    // Navigation
+    // MARK: Navigation
     private let router: BackRouter = Router.shared
-    // Presenter
+    // MARK: Presenter
     private var config: GameSettingsModel!
     private let presenter = GameSettingsPresenter()
     weak private var gameSettingsOutputDelegate: GameSettingsOutputDelegate?

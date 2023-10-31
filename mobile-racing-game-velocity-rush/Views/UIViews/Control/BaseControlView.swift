@@ -11,6 +11,7 @@ class BaseControlView: UIView {
     var delegate: ControlRacerDelegate?
 }
 
+// MARK: - Extensions
 extension BaseControlView: PlayerControl {
     @objc func turnRight() {
         delegate?.turnRight()
