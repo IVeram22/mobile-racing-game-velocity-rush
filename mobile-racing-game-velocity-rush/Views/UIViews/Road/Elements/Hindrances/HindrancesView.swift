@@ -26,13 +26,10 @@ private enum Constants {
         static let frameStartTime: Double = 0.2
         static let frameDuration: Double = 0.5
     }
+    
 }
 
 final class HindrancesView: UIView {
-    var elements: [UIView] = []
-    private var type: HindranceType!
-    private var size: Int!
-    
     init(frame: CGRect, type: HindranceType, size: Int = 5) {
         super.init(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
         self.type = type
@@ -43,6 +40,10 @@ final class HindrancesView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
+    // MARK: - Public
+    var elements: [UIView] = []
     
     func runAnimation() {
         var delay: TimeInterval = 0.0
@@ -59,6 +60,10 @@ final class HindrancesView: UIView {
             element.layer.timeOffset = pausedTime
         }
     }
+    
+    // MARK: - Private
+    private var type: HindranceType!
+    private var size: Int!
     
     private func addElements() {
         var isLeft: Bool = true

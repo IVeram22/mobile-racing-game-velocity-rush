@@ -7,9 +7,20 @@
 
 import Foundation
 
+private enum Constants {
+    static let name: String = "Easy"
+    static let numberOfCars: Int = 2
+    static let numberOfHindrances: Int = 0
+    
+}
+
 final class EasyLevelModel: BaseLevelModel {
     init() {
-        super.init(name: "Easy", numberOfCars: 2, numberOfHindrances: 0)
+        super.init(
+            name: Constants.name,
+            numberOfCars: Constants.numberOfCars,
+            numberOfHindrances: Constants.numberOfHindrances
+        )
     }
     
 }

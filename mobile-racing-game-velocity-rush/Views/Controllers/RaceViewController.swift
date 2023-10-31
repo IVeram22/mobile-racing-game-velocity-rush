@@ -63,9 +63,9 @@ class RaceViewController: UIViewController {
     private var control: BaseControlView!
     private var counter: UILabel!
     private var roadTimer: Timer!
-    // Navigation
+    // MARK: Navigation
     private let router: GameOverRouter = Router.shared
-    // Presenter
+    // MARK: Presenter
     private var config: GameSettingsModel!
     private let gameSettingsPresenter = GameSettingsPresenter()
     weak private var gameSettingsOutputDelegate: GameSettingsOutputDelegate?

@@ -18,6 +18,7 @@ private enum Constants {
     enum BackButton {
         static let shift: CGFloat = -55
     }
+    
 }
 
 class RecordsViewController: UIViewController {
@@ -43,9 +44,9 @@ class RecordsViewController: UIViewController {
     private var road: RoadView!
     private var tableView: UITableView!
     private var backButton: BackButton!
-    // Navigation
+    // MARK: Navigation
     private let router: BackRouter = Router.shared
-    // Presenter
+    // MARK: Presenter
     private var config: GameSettingsModel!
     private let gameSettingsPresenter = GameSettingsPresenter()
     weak private var gameSettingsOutputDelegate: GameSettingsOutputDelegate?

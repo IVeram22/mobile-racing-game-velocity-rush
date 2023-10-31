@@ -13,19 +13,76 @@ private enum Constants {
         static let backgroundColor: UIColor = .black
         static let textColor: UIColor = .white
         static let heightAnchor: CGFloat = 35
-        
     }
     
     enum TextField {
         static let backgroundColor: UIColor = .black
         static let textColor: UIColor = .white
         static let heightAnchor: CGFloat = 35
-        
     }
     
 }
 
 final class UserSettingsView: UIView {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        addSubview(fotoImageView)
+        addSubview(titleLabel)
+        addSubview(nameTextField)
+        
+        NSLayoutConstraint.activate([
+            fotoImageView.topAnchor.constraint(equalTo: topAnchor),
+            fotoImageView.leftAnchor.constraint(equalTo: leftAnchor),
+            fotoImageView.widthAnchor.constraint(equalToConstant: frame.width),
+            fotoImageView.heightAnchor.constraint(equalToConstant: frame.height),
+            
+            titleLabel.topAnchor.constraint(equalTo: topAnchor),
+            titleLabel.leftAnchor.constraint(equalTo: leftAnchor),
+            titleLabel.widthAnchor.constraint(equalToConstant: frame.width),
+            titleLabel.heightAnchor.constraint(equalToConstant: Constants.Player.heightAnchor),
+            
+            nameTextField.bottomAnchor.constraint(equalTo: bottomAnchor),
+            nameTextField.leftAnchor.constraint(equalTo: leftAnchor),
+            nameTextField.widthAnchor.constraint(equalToConstant: frame.width),
+            nameTextField.heightAnchor.constraint(equalToConstant: Constants.TextField.heightAnchor),
+        ])
+        
+        addTapGestureRecognizer()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func imageViewTapped() {
+        settingsViewControllerDelegate?.imageViewTapped()
+    }
+    
+    // MARK: - Public
+    func addDelegate(with delegate: SettingsViewController) {
+        settingsViewControllerDelegate = delegate
+        nameTextField.delegate = delegate
+    }
+  
+    func setName(_ name: String) {
+        nameTextField.text = name
+    }
+    
+    func getName() -> String? {
+        nameTextField.text
+    }
+
+    func setFoto(_ image: UIImage) {
+        fotoImageView.image = image
+    }
+
+    func getFoto() -> UIImage? {
+        fotoImageView.image
+    }
+    
+    // MARK: - Private
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -55,66 +112,8 @@ final class UserSettingsView: UIView {
     
     private weak var settingsViewControllerDelegate: SettingsViewControllerDelegate?
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        translatesAutoresizingMaskIntoConstraints = false
-        
-        addSubview(fotoImageView)
-        addSubview(titleLabel)
-        addSubview(nameTextField)
-        
-        
-        NSLayoutConstraint.activate([
-            fotoImageView.topAnchor.constraint(equalTo: topAnchor),
-            fotoImageView.leftAnchor.constraint(equalTo: leftAnchor),
-            fotoImageView.widthAnchor.constraint(equalToConstant: frame.width),
-            fotoImageView.heightAnchor.constraint(equalToConstant: frame.height),
-            
-            titleLabel.topAnchor.constraint(equalTo: topAnchor),
-            titleLabel.leftAnchor.constraint(equalTo: leftAnchor),
-            titleLabel.widthAnchor.constraint(equalToConstant: frame.width),
-            titleLabel.heightAnchor.constraint(equalToConstant: Constants.Player.heightAnchor),
-            
-            nameTextField.bottomAnchor.constraint(equalTo: bottomAnchor),
-            nameTextField.leftAnchor.constraint(equalTo: leftAnchor),
-            nameTextField.widthAnchor.constraint(equalToConstant: frame.width),
-            nameTextField.heightAnchor.constraint(equalToConstant: Constants.TextField.heightAnchor),
-            
-        ])
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped))
-        fotoImageView.addGestureRecognizer(tap)
+    private func addTapGestureRecognizer() {
+        fotoImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageViewTapped)))
         fotoImageView.isUserInteractionEnabled = true
-
     }
-    
-    @objc func imageViewTapped() {
-        settingsViewControllerDelegate?.imageViewTapped()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func addDelegate(with delegate: SettingsViewController) {
-        settingsViewControllerDelegate = delegate
-        nameTextField.delegate = delegate
-    }
-  
-    func setName(_ name: String) {
-        nameTextField.text = name
-    }
-    
-    func getName() -> String? {
-        nameTextField.text
-    }
-
-    func setFoto(_ image: UIImage) {
-        fotoImageView.image = image
-    }
-
-    func getFoto() -> UIImage? {
-        fotoImageView.image
-    }
-    
 }

@@ -16,13 +16,13 @@ private enum Constants {
 }
 
 class BaseHindranceView: UIView {
-    let trunk: UIView = {
+    internal let trunk: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let leaves: UIView = {
+    internal let leaves: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -60,4 +60,5 @@ class BaseHindranceView: UIView {
     internal func getHeight() -> CGFloat {
         Constants.height
     }
+    
 }

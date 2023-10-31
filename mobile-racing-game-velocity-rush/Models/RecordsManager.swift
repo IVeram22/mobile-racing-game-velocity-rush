@@ -15,8 +15,6 @@ private enum Constants {
 final class RecordsManager {
     static let shared = RecordsManager()
     
-    private init() {}
-    
     // MARK: - Public
     func getAllRecords() -> [RecordModel] {
         read()
@@ -33,6 +31,8 @@ final class RecordsManager {
     }
     
     // MARK: - Private
+    private init() {}
+    
     private func save(with record: RecordModel) {
         var records = read()
         

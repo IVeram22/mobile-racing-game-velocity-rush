@@ -8,8 +8,6 @@
 import UIKit
 
 final class HindrancesSliderSettingsView: SliderSettingsView {
-    private var hindranceType: HindranceType = .AutumnTree
-    
     func addHindrance(with index: Int = 0) {
         self.index = index
         createHindrance()
@@ -27,6 +25,9 @@ final class HindrancesSliderSettingsView: SliderSettingsView {
         createHindrance()
     }
     
+    // MARK: - Private
+    private var hindranceType: HindranceType = .AutumnTree
+    
     private func createHindrance() {
         hindranceType = HindranceFactory.getElementByIndex(with: index)
         mainElement = HindranceFactory.createHindrance(type: hindranceType, frame: CGRect(
@@ -35,7 +36,9 @@ final class HindrancesSliderSettingsView: SliderSettingsView {
             width: GlobalConstants.Hindrances.width,
             height: GlobalConstants.Hindrances.height
         ))
+        
         mainElement.translatesAutoresizingMaskIntoConstraints = false
+        
         addSubview(mainElement)
         
         NSLayoutConstraint.activate([
@@ -44,7 +47,6 @@ final class HindrancesSliderSettingsView: SliderSettingsView {
             mainElement.widthAnchor.constraint(equalToConstant: GlobalConstants.Hindrances.width),
             mainElement.heightAnchor.constraint(equalToConstant: GlobalConstants.Hindrances.height),
         ])
-        
     }
 
 }

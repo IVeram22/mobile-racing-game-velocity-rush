@@ -9,11 +9,13 @@ import UIKit
 
 private enum Constants {
     static let duration: CFTimeInterval = 0.3
+    
 }
 
 final class Router {
     static let shared = Router()
     
+    // MARK: - Private
     private init() {}
     
     private func open(from viewController: UIViewController, to nextViewController: UIViewController, type: CATransitionType, subtype: CATransitionSubtype) {

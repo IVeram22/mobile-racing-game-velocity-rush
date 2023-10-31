@@ -39,4 +39,5 @@ extension [RecordModel] {
             currentRecord.color > nextRecord.color
         }
     }
+
 }
