@@ -9,7 +9,7 @@ import UIKit
 
 private enum Constants {
     static let radius: CGFloat = 10
-
+    
     enum Shadow {
         static let shadowColor: CGColor = UIColor.black.cgColor
         static let shadowOpacity: Float = 0.5
@@ -19,6 +19,11 @@ private enum Constants {
     enum Background {
         static let color: UIColor = .black
         static let alpha: CGFloat = 0.5
+    }
+    
+    enum Shake {
+        static let duration: CFTimeInterval = 0.05
+        static let shakeAnimation: String = "ShakeCarAnimationKey"
     }
     
 }
@@ -42,6 +47,24 @@ extension UIView {
         background.backgroundColor = Constants.Background.color
         background.alpha = Constants.Background.alpha
         addSubview(background)
+    }
+    
+    func shakeAnimation(repeatCount: Float) {
+        let shakeAnimation = CABasicAnimation(keyPath: "position")
+        shakeAnimation.duration = Constants.Shake.duration
+        shakeAnimation.repeatCount = repeatCount
+        shakeAnimation.autoreverses = true
+        
+        let fromPoint = CGPoint(x: self.center.x - 0.8, y: self.center.y)
+        let toPoint = CGPoint(x: self.center.x + 0.8, y: self.center.y)
+        shakeAnimation.fromValue = NSValue(cgPoint: fromPoint)
+        shakeAnimation.toValue = NSValue(cgPoint: toPoint)
+        
+        self.layer.add(shakeAnimation, forKey: "shake")
+    }
+    
+    func stopShakeAnimation() {
+        self.layer.removeAnimation(forKey: "shake")
     }
     
 }

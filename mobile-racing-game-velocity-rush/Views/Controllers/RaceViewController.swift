@@ -75,6 +75,7 @@ class RaceViewController: UIViewController {
         road.setHindrances(index: config.hindranceIndex)
         road.setLevel(with: config.levelIndex)
         road.runLinesAnimation()
+        player.shakeAnimation(repeatCount: .infinity)
         
         if let accelerometerControl = control as? AccelerometerControlView {
             accelerometerControl.startTimer()
@@ -164,6 +165,7 @@ class RaceViewController: UIViewController {
         if let accelerometerControl = control as? AccelerometerControlView {
             accelerometerControl.stopTimer()
         }
+        player.stopShakeAnimation()
         roadTimer?.invalidate()
         roadTimer = nil
         counterOutputDelegate?.stop()
