@@ -128,7 +128,7 @@ final class RecordTableViewCell: UITableViewCell {
     private func setupInterface() {
         contentView.backgroundColor = UIColor.clear
         addDeleteView()
-        addrecordView()
+        addRecordView()
         addPhotoView()
         addNameLabel()
         addPointsLabel()
@@ -164,7 +164,7 @@ final class RecordTableViewCell: UITableViewCell {
         deleteImageView.isHidden = true
     }
     
-    private func addrecordView() {
+    private func addRecordView() {
         contentView.addSubview(recordView)
         NSLayoutConstraint.activate([
             recordView.topAnchor.constraint(equalTo: contentView.topAnchor),
