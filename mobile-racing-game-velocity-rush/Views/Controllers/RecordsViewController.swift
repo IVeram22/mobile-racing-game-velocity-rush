@@ -22,25 +22,7 @@ private enum Constants {
 }
 
 class RecordsViewController: UIViewController {
-    // MARK: - View lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupPresenter()
-        addRoad()
-        view.addBlackBackground()
-        addTable()
-        addBackButton()
-        addSwipeRightToGoBack()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        gameSettingsOutputDelegate?.getConfig()
-        recordsOutputDelegate?.getRecords()
-        displayMessageAboutEmptyRecords()
-        road.runAllAnimation()
-    }
-    
-    // MARK: - Private
+    // MARK: Interface
     private var road: RoadView!
     private var tableView: UITableView!
     private var backButton: BackButton!
@@ -54,11 +36,39 @@ class RecordsViewController: UIViewController {
     private let recordsPresenter = RecordsPresenter()
     weak private var recordsOutputDelegate: RecordsOutputDelegate?
     
+    // MARK: - View lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupPresenter()
+        setupInterface()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupBeforeAppearance()
+    }
+    
+    // MARK: - Private
     private func setupPresenter() {
-        gameSettingsPresenter.setGameSettingsInputDelegate(with: self)
+        recordsPresenter.setRecordsInputDataDelegate(with: self)
+//        gameSettingsPresenter.setGameSettingsInputDelegate(with: self)
         gameSettingsOutputDelegate = gameSettingsPresenter
-        recordsPresenter.setRecordsInputDelegate(with: self)
         recordsOutputDelegate = recordsPresenter
+    }
+    
+    private func setupInterface() {
+        addRoad()
+        view.addBlackBackground()
+        addTable()
+        addBackButton()
+        addSwipeRightToGoBack()
+    }
+    
+    private func setupBeforeAppearance() {
+        gameSettingsOutputDelegate?.getConfig()
+        recordsOutputDelegate?.getRecords()
+        displayMessageAboutEmptyRecords()
+        road.runAllAnimation()
     }
     
     private func addRoad() {
@@ -190,32 +200,27 @@ extension RecordsViewController: BackButtonDelegate {
     
 }
 
-extension RecordsViewController: GameSettingsInputDelegate {
-    func setupInitialState() {
-        displayData()
-    }
-    
+extension RecordsViewController: GameSettingsInputDataDelegate {
     func setupConfig(with gameSettings: GameSettingsModel) {
         config = gameSettings
     }
     
-    func displayData() {
-        road.setHindrances(index: config.hindranceIndex)
-    }
-    
 }
 
-extension RecordsViewController: RecordsInputDelegate {
-    func setupInitialStateForRecords() {
-        displayRecords()
-    }
-    
+//extension RecordsViewController: GameSettingsInputDelegate {
+//    func setupInitialState() {
+//        displayData()
+//    }
+//
+//    func displayData() {
+//        road.setHindrances(index: config.hindranceIndex)
+//    }
+//
+//}
+
+extension RecordsViewController: RecordsInputDataDelegate {
     func setupData(with records: [RecordModel]) {
         self.records = records
-    }
-    
-    func displayRecords() {
-        
     }
     
 }

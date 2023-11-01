@@ -26,38 +26,7 @@ private enum Constants {
 }
 
 class RaceViewController: UIViewController {
-    // MARK: - View lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupPresenters()
-        addRoad()
-        addCounter()
-        addPlayer()
-        addControl()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        road.setHindrances(index: config.hindranceIndex)
-        road.setLevel(with: config.levelIndex)
-        road.runLinesAnimation()
-        
-        if let accelerometerControl = control as? AccelerometerControlView {
-            accelerometerControl.startTimer()
-        }
-        
-        
-        Timer.scheduledTimer(withTimeInterval: Constants.pauseIntervalBeforeGame, repeats: false) { [self] _ in
-            road.runCarsAnimation()
-            road.runHindrancesAnimation()
-            counterOutputDelegate?.start()
-        }
-        roadTimer = Timer.scheduledTimer(withTimeInterval: Constants.checkCollisionInterval, repeats: true) { [self] _ in
-            checkCollision()
-            updateCounter()
-        }
-    }
-    
-    // MARK: - Private
+    // MARK: Interface
     private var road: RoadView!
     private var player: PlayerCarView!
     private var control: BaseControlView!
@@ -74,12 +43,54 @@ class RaceViewController: UIViewController {
     private let counterPresenter = CounterPresenter()
     weak private var counterOutputDelegate: CounterOutputDelegate?
     
+    // MARK: - View lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupPresenters()
+        setupInterface()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupBeforeAppearance()
+    }
+    
+    // MARK: - Private
     private func setupPresenters() {
-        gameSettingsPresenter.setGameSettingsInputDelegate(with: self)
+        gameSettingsPresenter.setGameSettingsInputDataDelegate(with: self)
         gameSettingsOutputDelegate = gameSettingsPresenter
         recordsOutputDelegate = recordsPresenter
         counterOutputDelegate = counterPresenter
         gameSettingsOutputDelegate?.getConfig()
+    }
+    
+    private func setupInterface() {
+        addRoad()
+        addCounter()
+        addPlayer()
+        addControl()
+    }
+    
+    private func setupBeforeAppearance() {
+        road.setHindrances(index: config.hindranceIndex)
+        road.setLevel(with: config.levelIndex)
+        road.runLinesAnimation()
+        
+        if let accelerometerControl = control as? AccelerometerControlView {
+            accelerometerControl.startTimer()
+        }
+        
+        
+        Timer.scheduledTimer(withTimeInterval: Constants.pauseIntervalBeforeGame, repeats: false) { [self] _ in
+            road.runCarsAnimation()
+            road.runHindrancesAnimation()
+            counterOutputDelegate?.start()
+        }
+        
+        roadTimer = Timer.scheduledTimer(withTimeInterval: Constants.checkCollisionInterval, repeats: true) { [self] _ in
+            checkCollision()
+            updateCounter()
+        }
     }
     
     private func addRoad() {
@@ -205,17 +216,9 @@ extension RaceViewController: ControlRacerDelegate {
     
 }
 
-extension RaceViewController: GameSettingsInputDelegate {
-    func setupInitialState() {
-        displayData()
-    }
-    
+extension RaceViewController: GameSettingsInputDataDelegate {
     func setupConfig(with gameSettings: GameSettingsModel) {
         config = gameSettings
-    }
-    
-    func displayData() {
-        
     }
     
 }

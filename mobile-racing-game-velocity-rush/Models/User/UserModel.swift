@@ -13,6 +13,9 @@ private enum Constants {
 }
 
 final class UserModel: Codable {
+    var name: String
+    var foto: UIImage?
+    
     init(name: String, foto: UIImage?) {
         self.name = name
         self.foto = foto ?? UIImage(named: Constants.defaultFoto)
@@ -27,9 +30,6 @@ final class UserModel: Codable {
     }
     
     // MARK: - Public
-    var name: String
-    var foto: UIImage?
-    
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(name, forKey: .name)

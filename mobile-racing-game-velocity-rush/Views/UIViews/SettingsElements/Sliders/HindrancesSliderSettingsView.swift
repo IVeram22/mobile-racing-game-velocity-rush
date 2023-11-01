@@ -8,10 +8,7 @@
 import UIKit
 
 final class HindrancesSliderSettingsView: SliderSettingsView {
-    func addHindrance(with index: Int = 0) {
-        self.index = index
-        createHindrance()
-    }
+    private var hindranceType: HindranceType = .AutumnTree
     
     override func previousButtonTapped(_ sender: UIButton) {
         index = index - 1 < 0 ? HindranceFactory.getSize() - 1 : index - 1
@@ -25,9 +22,13 @@ final class HindrancesSliderSettingsView: SliderSettingsView {
         createHindrance()
     }
     
-    // MARK: - Private
-    private var hindranceType: HindranceType = .AutumnTree
+    // MARK: - Public
+    func addHindrance(with index: Int = 0) {
+        self.index = index
+        createHindrance()
+    }
     
+    // MARK: - Private
     private func createHindrance() {
         hindranceType = HindranceFactory.getElementByIndex(with: index)
         mainElement = HindranceFactory.createHindrance(type: hindranceType, frame: CGRect(

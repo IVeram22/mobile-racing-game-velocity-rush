@@ -47,34 +47,8 @@ private enum Constants {
     
 }
 
-class RecordTableViewCell: UITableViewCell {
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        contentView.backgroundColor = UIColor.clear
-        addDeleteView()
-        addrecordView()
-        addPhotoView()
-        addNameLabel()
-        addPointsLabel()
-        addDateLabel()
-        addLeftSwipe()
-        addRightSwipe()
-    }
-    
-    // MARK: - Public
-    func setRecord(with record: RecordModel) {
-        fotoImageView.image = record.user.foto
-        nameLabel.text = record.user.name
-        pointsLabel.text = "\(record.points) pt"
-        dateLabel.text = record.date
-        pointsLabel.textColor = GlobalConstants.Levels.colors[record.color]
-    }
-    
-    func setRecordsViewControllerDelegate(with delegate: RecordsViewControllerDelegate) {
-        recordsViewControllerDelegate = delegate
-    }
-    
-    // MARK: - Private
+final class RecordTableViewCell: UITableViewCell {
+    // MARK: Interface
     private let recordView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -131,6 +105,38 @@ class RecordTableViewCell: UITableViewCell {
     private var isLeftSwipeDid: Bool = false
     private var recordsViewControllerDelegate: RecordsViewControllerDelegate?
     
+    // MARK: - Table View Cell lifecycle
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        setupInterface()
+    }
+    
+    // MARK: - Public
+    func setRecord(with record: RecordModel) {
+        fotoImageView.image = record.user.foto
+        nameLabel.text = record.user.name
+        pointsLabel.text = "\(record.points) pt"
+        dateLabel.text = record.date
+        pointsLabel.textColor = GlobalConstants.Levels.colors[record.color]
+    }
+    
+    func setRecordsViewControllerDelegate(with delegate: RecordsViewControllerDelegate) {
+        recordsViewControllerDelegate = delegate
+    }
+    
+    // MARK: - Private
+    private func setupInterface() {
+        contentView.backgroundColor = UIColor.clear
+        addDeleteView()
+        addRecordView()
+        addPhotoView()
+        addNameLabel()
+        addPointsLabel()
+        addDateLabel()
+        addLeftSwipe()
+        addRightSwipe()
+    }
+    
     private func addDeleteView() {
         contentView.addSubview(deleteView)
         contentView.addSubview(deleteImageView)
@@ -158,7 +164,7 @@ class RecordTableViewCell: UITableViewCell {
         deleteImageView.isHidden = true
     }
     
-    private func addrecordView() {
+    private func addRecordView() {
         contentView.addSubview(recordView)
         NSLayoutConstraint.activate([
             recordView.topAnchor.constraint(equalTo: contentView.topAnchor),
@@ -251,8 +257,7 @@ class RecordTableViewCell: UITableViewCell {
     }
     
     @objc private func deleteButtonTapped() {
-        guard let reuseIdentifier else { return }
-        guard let number = Int(reuseIdentifier) else { return }
+        guard let reuseIdentifier, let number = Int(reuseIdentifier) else { return }
         recordsViewControllerDelegate?.deleteRecord(index: number)
     }
     

@@ -9,6 +9,5 @@ import Foundation
 
 protocol RecordsInputDelegate: AnyObject {
     func setupInitialStateForRecords()
-    func setupData(with records: [RecordModel])
     func displayRecords()
 }

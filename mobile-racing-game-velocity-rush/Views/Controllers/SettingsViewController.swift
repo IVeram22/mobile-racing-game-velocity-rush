@@ -29,33 +29,7 @@ private enum Constants {
 }
 
 class SettingsViewController: UIViewController {
-    // MARK: - View lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupPresenter()
-        addRoad()
-        view.addBlackBackground()
-        addScrollView()
-        addUserSettingsView()
-        addCarColorView()
-        addHindranceView()
-        addLevelView()
-        addControlView()
-        addBackButton()
-        addSwipeRightToGoBack()
-        gameSettingsOutputDelegate?.getConfig()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-        road.runAllAnimation()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        saveData()
-    }
-    
-    // MARK: - Private
+    // MARK: Interface
     private var road: RoadView!
     private var scrollView = UIScrollView()
     private var userSettingsView: UserSettingsView!
@@ -71,9 +45,46 @@ class SettingsViewController: UIViewController {
     private let presenter = GameSettingsPresenter()
     weak private var gameSettingsOutputDelegate: GameSettingsOutputDelegate?
     
+    // MARK: - View lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupPresenter()
+        setupInterface()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupBeforeAppearance()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        saveData()
+    }
+    
+    // MARK: - Private
     private func setupPresenter() {
         presenter.setGameSettingsInputDelegate(with: self)
+        presenter.setGameSettingsInputDataDelegate(with: self)
         gameSettingsOutputDelegate = presenter
+    }
+    
+    private func setupInterface() {
+        addRoad()
+        view.addBlackBackground()
+        addScrollView()
+        addUserSettingsView()
+        addCarColorView()
+        addHindranceView()
+        addLevelView()
+        addControlView()
+        addBackButton()
+        addSwipeRightToGoBack()
+        gameSettingsOutputDelegate?.getConfig()
+    }
+    
+    private func setupBeforeAppearance() {
+        road.runAllAnimation()
     }
     
     private func addRoad() {
@@ -208,7 +219,7 @@ class SettingsViewController: UIViewController {
         view.addGestureRecognizer(swipeRight)
     }
     
-    private func saveData() {
+    private func updateConfig() {
         if let name = userSettingsView.getName() {
             config.user.name = name
         }
@@ -219,6 +230,10 @@ class SettingsViewController: UIViewController {
         config.hindranceIndex = hindranceView.getCurrentIndex()
         config.levelIndex = levelView.getCurrentIndex()
         config.controlIndex = controlView.getCurrentIndex()
+    }
+    
+    private func saveData() {
+        updateConfig()
         gameSettingsOutputDelegate?.setConfig(with: config)
     }
     
@@ -292,10 +307,6 @@ extension SettingsViewController: GameSettingsInputDelegate {
         displayData()
     }
     
-    func setupConfig(with gameSettings: GameSettingsModel) {
-        config = gameSettings
-    }
-    
     func displayData() {
         userSettingsView.setName(config.user.name)
         userSettingsView.setFoto(config.user.foto!)
@@ -303,7 +314,14 @@ extension SettingsViewController: GameSettingsInputDelegate {
         hindranceView.addHindrance(with: config.hindranceIndex)
         levelView.addLevel(with: config.levelIndex)
         controlView.addControl(with: config.controlIndex)
+        road.setHindrances(index: config.hindranceIndex)
     }
     
 }
 
+extension SettingsViewController: GameSettingsInputDataDelegate {
+    func setupConfig(with gameSettings: GameSettingsModel) {
+        config = gameSettings
+    }
+    
+}

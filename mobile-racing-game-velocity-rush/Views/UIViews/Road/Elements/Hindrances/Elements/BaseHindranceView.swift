@@ -16,6 +16,7 @@ private enum Constants {
 }
 
 class BaseHindranceView: UIView {
+    // MARK: Interface
     internal let trunk: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -30,7 +31,23 @@ class BaseHindranceView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        setupInterface()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    internal func getWidth() -> CGFloat {
+        Constants.width
+    }
+    
+    internal func getHeight() -> CGFloat {
+        Constants.height
+    }
+    
+    // MARK: - Private
+    private func setupInterface() {
         addSubview(trunk)
         addSubview(leaves)
         
@@ -47,18 +64,6 @@ class BaseHindranceView: UIView {
         ])
         
         leaves.cornerRadius(with: Constants.trunkCornerRadius)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    internal func getWidth() -> CGFloat {
-        Constants.width
-    }
-    
-    internal func getHeight() -> CGFloat {
-        Constants.height
     }
     
 }

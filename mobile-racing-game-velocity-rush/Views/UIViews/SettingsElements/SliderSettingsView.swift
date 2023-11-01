@@ -22,59 +22,9 @@ private enum Constants {
 }
 
 class SliderSettingsView: UIView {
+    // MARK: Interface
     internal var mainElement = UIView()
-    internal var index: Int = 0
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        translatesAutoresizingMaskIntoConstraints = false
-        
-        addSubview(previousButton)
-        addSubview(nextButton)
-        addSubview(titleLabel)
-        
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: topAnchor),
-            titleLabel.leftAnchor.constraint(equalTo: leftAnchor),
-            titleLabel.widthAnchor.constraint(equalToConstant: frame.width),
-            titleLabel.heightAnchor.constraint(equalToConstant: Constants.Title.heightAnchor),
-            
-            previousButton.topAnchor.constraint(equalTo: topAnchor),
-            previousButton.leftAnchor.constraint(equalTo: leftAnchor),
-            previousButton.widthAnchor.constraint(equalToConstant: Constants.Buttons.widthAnchor),
-            previousButton.heightAnchor.constraint(equalToConstant: frame.height),
-            
-            nextButton.topAnchor.constraint(equalTo: topAnchor),
-            nextButton.leftAnchor.constraint(equalTo: rightAnchor, constant: -Constants.Buttons.widthAnchor),
-            nextButton.widthAnchor.constraint(equalToConstant: Constants.Buttons.widthAnchor),
-            nextButton.heightAnchor.constraint(equalToConstant: frame.height),
-        ])
-        
-        addButtonsTargets()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    @objc func previousButtonTapped(_ sender: UIButton) { }
-    
-    @objc func nextButtonTapped(_ sender: UIButton) { }
-    
-    internal func removeMainElement() {
-        mainElement.removeFromSuperview()
-    }
-    
-    // MARK: - Public
-    func setTitle(_ title: String) {
-        titleLabel.text = title
-    }
-    
-    func getCurrentIndex() -> Int {
-        index
-    }
-    
-    // MARK: - Private
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -103,6 +53,62 @@ class SliderSettingsView: UIView {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 65)
         return button
     }()
+    
+    internal var index: Int = 0
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupInterface()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func previousButtonTapped(_ sender: UIButton) { }
+    
+    @objc func nextButtonTapped(_ sender: UIButton) { }
+    
+    internal func removeMainElement() {
+        mainElement.removeFromSuperview()
+    }
+    
+    // MARK: - Public
+    func setTitle(_ title: String) {
+        titleLabel.text = title
+    }
+    
+    func getCurrentIndex() -> Int {
+        index
+    }
+    
+    // MARK: - Private
+    private func setupInterface() {
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        addSubview(previousButton)
+        addSubview(nextButton)
+        addSubview(titleLabel)
+        
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: topAnchor),
+            titleLabel.leftAnchor.constraint(equalTo: leftAnchor),
+            titleLabel.widthAnchor.constraint(equalToConstant: frame.width),
+            titleLabel.heightAnchor.constraint(equalToConstant: Constants.Title.heightAnchor),
+            
+            previousButton.topAnchor.constraint(equalTo: topAnchor),
+            previousButton.leftAnchor.constraint(equalTo: leftAnchor),
+            previousButton.widthAnchor.constraint(equalToConstant: Constants.Buttons.widthAnchor),
+            previousButton.heightAnchor.constraint(equalToConstant: frame.height),
+            
+            nextButton.topAnchor.constraint(equalTo: topAnchor),
+            nextButton.leftAnchor.constraint(equalTo: rightAnchor, constant: -Constants.Buttons.widthAnchor),
+            nextButton.widthAnchor.constraint(equalToConstant: Constants.Buttons.widthAnchor),
+            nextButton.heightAnchor.constraint(equalToConstant: frame.height),
+        ])
+        
+        addButtonsTargets()
+    }
     
     private func addButtonsTargets() {
         previousButton.addTarget(self, action: #selector(previousButtonTapped), for: .touchUpInside)

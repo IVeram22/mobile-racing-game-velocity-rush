@@ -18,29 +18,29 @@ private enum Constants {
 }
 
 final class RoadView: UIView {
+    // MARK: Interface
+    private let leftRoadside: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = Constants.Roadside.backgroundColor
+        return view
+    }()
+    
+    private let rightRoadside: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = Constants.Roadside.backgroundColor
+        return view
+    }()
+    
+    private var lines: WhiteDottedLinesView!
+    private var cars: EnemyCarsView!
+    private var hindrances: HindrancesView!
+    private var hindranceType: HindranceType!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = Constants.backgroundColor
-        
-        lines = WhiteDottedLinesView(frame: frame)
-        cars = EnemyCarsView(frame: frame, size: 2)
-        hindrances = HindrancesView(frame: frame, type: .SummerTree, size: 5)
-        
-        addSubview(leftRoadside)
-        addSubview(rightRoadside)
-        addSubview(lines)
-        addSubview(cars)
-        addSubview(hindrances)
-        
-        NSLayoutConstraint.activate([
-            leftRoadside.leftAnchor.constraint(equalTo: leftAnchor, constant: 0),
-            leftRoadside.heightAnchor.constraint(equalTo: heightAnchor),
-            leftRoadside.widthAnchor.constraint(equalToConstant: Constants.Roadside.width),
-            
-            rightRoadside.rightAnchor.constraint(equalTo: rightAnchor, constant: 0),
-            rightRoadside.heightAnchor.constraint(equalTo: heightAnchor),
-            rightRoadside.widthAnchor.constraint(equalToConstant: Constants.Roadside.width)
-        ])
+        setupInterface()
     }
     
     required init?(coder: NSCoder) {
@@ -92,24 +92,29 @@ final class RoadView: UIView {
     }
     
     // MARK: - Private
-    private let leftRoadside: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = Constants.Roadside.backgroundColor
-        return view
-    }()
-    
-    private let rightRoadside: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = Constants.Roadside.backgroundColor
-        return view
-    }()
-    
-    private var lines: WhiteDottedLinesView!
-    private var cars: EnemyCarsView!
-    private var hindrances: HindrancesView!
-    private var hindranceType: HindranceType!
+    private func setupInterface() {
+        backgroundColor = Constants.backgroundColor
+        
+        lines = WhiteDottedLinesView(frame: frame)
+        cars = EnemyCarsView(frame: frame, size: 2)
+        hindrances = HindrancesView(frame: frame, type: .SummerTree, size: 5)
+        
+        addSubview(leftRoadside)
+        addSubview(rightRoadside)
+        addSubview(lines)
+        addSubview(cars)
+        addSubview(hindrances)
+        
+        NSLayoutConstraint.activate([
+            leftRoadside.leftAnchor.constraint(equalTo: leftAnchor, constant: 0),
+            leftRoadside.heightAnchor.constraint(equalTo: heightAnchor),
+            leftRoadside.widthAnchor.constraint(equalToConstant: Constants.Roadside.width),
+            
+            rightRoadside.rightAnchor.constraint(equalTo: rightAnchor, constant: 0),
+            rightRoadside.heightAnchor.constraint(equalTo: heightAnchor),
+            rightRoadside.widthAnchor.constraint(equalToConstant: Constants.Roadside.width)
+        ])
+    }
     
     private func addHindrances(size: Int) {
         hindrances.removeFromSuperview()

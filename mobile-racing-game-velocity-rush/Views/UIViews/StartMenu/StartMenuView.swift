@@ -24,59 +24,11 @@ private enum Constants {
     enum RecordsButton {
         static let backgroundColor: UIColor = .systemRed
     }
+
 }
 
 final class StartMenuView: UIView {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        translatesAutoresizingMaskIntoConstraints = false
-        
-        addSubview(startGameButton)
-        addSubview(settingsButton)
-        addSubview(recordsButton)
-        
-        NSLayoutConstraint.activate([
-            startGameButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            startGameButton.topAnchor.constraint(equalTo: topAnchor, constant: Constants.topPadding),
-            startGameButton.widthAnchor.constraint(equalToConstant: Constants.widthAnchor),
-            startGameButton.heightAnchor.constraint(equalToConstant: Constants.heightAnchor),
-            
-            settingsButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            settingsButton.topAnchor.constraint(equalTo: startGameButton.bottomAnchor, constant: Constants.topPadding),
-            settingsButton.widthAnchor.constraint(equalToConstant: Constants.widthAnchor),
-            settingsButton.heightAnchor.constraint(equalToConstant: Constants.heightAnchor),
-            
-            recordsButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            recordsButton.topAnchor.constraint(equalTo: settingsButton.bottomAnchor, constant: Constants.topPadding),
-            recordsButton.widthAnchor.constraint(equalToConstant: Constants.widthAnchor),
-            recordsButton.heightAnchor.constraint(equalToConstant: Constants.heightAnchor),
-        ])
-        
-        addButtonsTargets()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    @objc private func startGameButtonTapped(_ sender: UIButton) {
-        viewControllerDelegate?.startPlaying()
-    }
-    
-    @objc private func settingsButtonTapped(_ sender: UIButton) {
-        viewControllerDelegate?.openSettings()
-    }
-    
-    @objc private func recordsButtonTapped(_ sender: UIButton) {
-        viewControllerDelegate?.seeRecords()
-    }
-    
-    // MARK: - Public
-    func setViewControllerDelegate(with delegate: ViewControllerDelegate) {
-        viewControllerDelegate = delegate
-    }
-    
-    // MARK: - Private
+    // MARK: Interface
     private let startGameButton: UIButton = {
         let button = UIButton()
         button.setTitle("Start game".localized, for: .normal)
@@ -102,7 +54,62 @@ final class StartMenuView: UIView {
         return button
     }()
     
+    // MARK: Delegate
     private weak var viewControllerDelegate: ViewControllerDelegate?
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupInterface()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc private func startGameButtonTapped(_ sender: UIButton) {
+        viewControllerDelegate?.startPlaying()
+    }
+    
+    @objc private func settingsButtonTapped(_ sender: UIButton) {
+        viewControllerDelegate?.openSettings()
+    }
+    
+    @objc private func recordsButtonTapped(_ sender: UIButton) {
+        viewControllerDelegate?.seeRecords()
+    }
+    
+    // MARK: - Public
+    func setViewControllerDelegate(with delegate: ViewControllerDelegate) {
+        viewControllerDelegate = delegate
+    }
+    
+    // MARK: - Private
+    private func setupInterface() {
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        addSubview(startGameButton)
+        addSubview(settingsButton)
+        addSubview(recordsButton)
+        
+        NSLayoutConstraint.activate([
+            startGameButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            startGameButton.topAnchor.constraint(equalTo: topAnchor, constant: Constants.topPadding),
+            startGameButton.widthAnchor.constraint(equalToConstant: Constants.widthAnchor),
+            startGameButton.heightAnchor.constraint(equalToConstant: Constants.heightAnchor),
+            
+            settingsButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            settingsButton.topAnchor.constraint(equalTo: startGameButton.bottomAnchor, constant: Constants.topPadding),
+            settingsButton.widthAnchor.constraint(equalToConstant: Constants.widthAnchor),
+            settingsButton.heightAnchor.constraint(equalToConstant: Constants.heightAnchor),
+            
+            recordsButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            recordsButton.topAnchor.constraint(equalTo: settingsButton.bottomAnchor, constant: Constants.topPadding),
+            recordsButton.widthAnchor.constraint(equalToConstant: Constants.widthAnchor),
+            recordsButton.heightAnchor.constraint(equalToConstant: Constants.heightAnchor),
+        ])
+        
+        addButtonsTargets()
+    }
     
     private func addButtonsTargets() {
         startGameButton.addTarget(self, action: #selector(startGameButtonTapped), for: .touchUpInside)

@@ -30,6 +30,10 @@ private enum Constants {
 }
 
 final class HindrancesView: UIView {
+    private var type: HindranceType!
+    private var size: Int!
+    var elements: [UIView] = []
+    
     init(frame: CGRect, type: HindranceType, size: Int = 5) {
         super.init(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
         self.type = type
@@ -43,8 +47,6 @@ final class HindrancesView: UIView {
     
     
     // MARK: - Public
-    var elements: [UIView] = []
-    
     func runAnimation() {
         var delay: TimeInterval = 0.0
         for element in elements {
@@ -62,9 +64,6 @@ final class HindrancesView: UIView {
     }
     
     // MARK: - Private
-    private var type: HindranceType!
-    private var size: Int!
-    
     private func addElements() {
         var isLeft: Bool = true
         guard size != 0 else { return }

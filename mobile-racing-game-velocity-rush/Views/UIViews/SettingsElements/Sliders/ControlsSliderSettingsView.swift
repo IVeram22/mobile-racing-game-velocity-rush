@@ -8,11 +8,6 @@
 import UIKit
 
 final class ControlsSliderSettingsView: SliderSettingsView {
-    func addControl(with index: Int = 0) {
-        self.index = index
-        createControl()
-    }
-    
     override func previousButtonTapped(_ sender: UIButton) {
         index = index - 1 < 0 ? GlobalConstants.Controls.names.count - 1 : index - 1
         removeMainElement()
@@ -22,6 +17,12 @@ final class ControlsSliderSettingsView: SliderSettingsView {
     override func nextButtonTapped(_ sender: UIButton) {
         index = index + 1 == GlobalConstants.Controls.names.count ? 0 : index + 1
         removeMainElement()
+        createControl()
+    }
+    
+    // MARK: Public
+    func addControl(with index: Int = 0) {
+        self.index = index
         createControl()
     }
     

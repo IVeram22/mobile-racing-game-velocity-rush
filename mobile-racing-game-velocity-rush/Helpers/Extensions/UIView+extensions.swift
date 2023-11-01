@@ -39,7 +39,6 @@ extension UIView {
     
     func addBlackBackground() {
         let background = UIView(frame: self.frame)
-        background.layer.cornerRadius = Constants.radius
         background.backgroundColor = Constants.Background.color
         background.alpha = Constants.Background.alpha
         addSubview(background)

@@ -16,21 +16,7 @@ private enum Constants {
 }
 
 class ViewController: UIViewController {
-    // MARK: - View lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupPresenter()
-        addRoad()
-        view.addBlackBackground()
-        addStartMenu()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        gameSettingsOutputDelegate?.getConfig()
-        road.runAllAnimation()
-    }
-    
-    // MARK: - Private
+    // MARK: Interface
     private var menu: StartMenuView!
     private var road: RoadView!
     // MARK: Navigation
@@ -40,9 +26,34 @@ class ViewController: UIViewController {
     private let presenter = GameSettingsPresenter()
     weak private var gameSettingsOutputDelegate: GameSettingsOutputDelegate?
     
+    // MARK: - View lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupPresenter()
+        setupInterface()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupBeforeAppearance()
+    }
+    
+    // MARK: - Private
     private func setupPresenter() {
         presenter.setGameSettingsInputDelegate(with: self)
+        presenter.setGameSettingsInputDataDelegate(with: self)
         gameSettingsOutputDelegate = presenter
+    }
+    
+    private func setupInterface() {
+        addRoad()
+        view.addBlackBackground()
+        addStartMenu()
+    }
+    
+    private func setupBeforeAppearance() {
+        gameSettingsOutputDelegate?.getConfig()
+        road.runAllAnimation()
     }
     
     private func addRoad() {
@@ -89,13 +100,16 @@ extension ViewController: ViewControllerDelegate {
     
 }
 
+extension ViewController: GameSettingsInputDataDelegate {
+    func setupConfig(with gameSettings: GameSettingsModel) {
+        config = gameSettings
+    }
+    
+}
+
 extension ViewController: GameSettingsInputDelegate {
     func setupInitialState() {
         displayData()
-    }
-    
-    func setupConfig(with gameSettings: GameSettingsModel) {
-        config = gameSettings
     }
     
     func displayData() {
