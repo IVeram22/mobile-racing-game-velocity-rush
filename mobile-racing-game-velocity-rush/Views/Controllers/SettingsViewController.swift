@@ -65,6 +65,7 @@ class SettingsViewController: UIViewController {
     // MARK: - Private
     private func setupPresenter() {
         presenter.setGameSettingsInputDelegate(with: self)
+        presenter.setGameSettingsInputDataDelegate(with: self)
         gameSettingsOutputDelegate = presenter
     }
     
@@ -218,7 +219,7 @@ class SettingsViewController: UIViewController {
         view.addGestureRecognizer(swipeRight)
     }
     
-    private func saveData() {
+    private func updateConfig() {
         if let name = userSettingsView.getName() {
             config.user.name = name
         }
@@ -229,6 +230,10 @@ class SettingsViewController: UIViewController {
         config.hindranceIndex = hindranceView.getCurrentIndex()
         config.levelIndex = levelView.getCurrentIndex()
         config.controlIndex = controlView.getCurrentIndex()
+    }
+    
+    private func saveData() {
+        updateConfig()
         gameSettingsOutputDelegate?.setConfig(with: config)
     }
     
@@ -302,10 +307,6 @@ extension SettingsViewController: GameSettingsInputDelegate {
         displayData()
     }
     
-    func setupConfig(with gameSettings: GameSettingsModel) {
-        config = gameSettings
-    }
-    
     func displayData() {
         userSettingsView.setName(config.user.name)
         userSettingsView.setFoto(config.user.foto!)
@@ -313,7 +314,14 @@ extension SettingsViewController: GameSettingsInputDelegate {
         hindranceView.addHindrance(with: config.hindranceIndex)
         levelView.addLevel(with: config.levelIndex)
         controlView.addControl(with: config.controlIndex)
+        road.setHindrances(index: config.hindranceIndex)
     }
     
 }
 
+extension SettingsViewController: GameSettingsInputDataDelegate {
+    func setupConfig(with gameSettings: GameSettingsModel) {
+        config = gameSettings
+    }
+    
+}

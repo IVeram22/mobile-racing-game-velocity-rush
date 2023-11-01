@@ -90,6 +90,8 @@
 		2AC6E1AF2AF00D36009866C4 /* RecordsScreen(Data).png in Resources */ = {isa = PBXBuildFile; fileRef = 2AC6E1AE2AF00D36009866C4 /* RecordsScreen(Data).png */; };
 		2AC6E1B12AF00D5D009866C4 /* RecordsScreen(Delete Cell1).png in Resources */ = {isa = PBXBuildFile; fileRef = 2AC6E1B02AF00D5D009866C4 /* RecordsScreen(Delete Cell1).png */; };
 		2AC6E1B32AF00D86009866C4 /* RecordsScreen(Delete Cell2).png in Resources */ = {isa = PBXBuildFile; fileRef = 2AC6E1B22AF00D86009866C4 /* RecordsScreen(Delete Cell2).png */; };
+		2AC6E1B52AF26C98009866C4 /* RecordsInputDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6E1B42AF26C98009866C4 /* RecordsInputDataDelegate.swift */; };
+		2AC6E1B72AF26EC4009866C4 /* GameSettingsInputDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6E1B62AF26EC4009866C4 /* GameSettingsInputDataDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,6 +202,8 @@
 		2AC6E1AE2AF00D36009866C4 /* RecordsScreen(Data).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecordsScreen(Data).png"; sourceTree = "<group>"; };
 		2AC6E1B02AF00D5D009866C4 /* RecordsScreen(Delete Cell1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecordsScreen(Delete Cell1).png"; sourceTree = "<group>"; };
 		2AC6E1B22AF00D86009866C4 /* RecordsScreen(Delete Cell2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecordsScreen(Delete Cell2).png"; sourceTree = "<group>"; };
+		2AC6E1B42AF26C98009866C4 /* RecordsInputDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsInputDataDelegate.swift; sourceTree = "<group>"; };
+		2AC6E1B62AF26EC4009866C4 /* GameSettingsInputDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettingsInputDataDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,6 +296,7 @@
 				2A0365FF2AEC01B2007915AC /* GameSettingsPresenter.swift */,
 				2A0366102AECDDE3007915AC /* GameSettingsOutputDelegate.swift */,
 				2A0366122AECDDFD007915AC /* GameSettingsInputDelegate.swift */,
+				2AC6E1B62AF26EC4009866C4 /* GameSettingsInputDataDelegate.swift */,
 			);
 			path = GameSettings;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 				2A0366012AEC168B007915AC /* RecordsPresenter.swift */,
 				2A03660C2AECDD9D007915AC /* RecordsOutputDelegate.swift */,
 				2A03660E2AECDDB2007915AC /* RecordsInputDelegate.swift */,
+				2AC6E1B42AF26C98009866C4 /* RecordsInputDataDelegate.swift */,
 			);
 			path = Records;
 			sourceTree = "<group>";
@@ -783,6 +789,7 @@
 				2A0366042AEC1FD2007915AC /* CounterPresenter.swift in Sources */,
 				2A9CB6112AD969E500F0B3C3 /* PlayerControl.swift in Sources */,
 				2AC6E1952AED0730009866C4 /* EasyLevelModel.swift in Sources */,
+				2AC6E1B52AF26C98009866C4 /* RecordsInputDataDelegate.swift in Sources */,
 				2A9CB61B2AD997B200F0B3C3 /* CounterModel.swift in Sources */,
 				2A9CB6202AD9B07700F0B3C3 /* BaseHindranceView.swift in Sources */,
 				2A9CB62B2ADA957600F0B3C3 /* WinterTreeHindranceView.swift in Sources */,
@@ -792,6 +799,7 @@
 				2A9CB6D22AEAC69500F0B3C3 /* String+extensions.swift in Sources */,
 				2A9CB6692AE8FC5000F0B3C3 /* GameSettingsManager.swift in Sources */,
 				2AC6E1992AED075D009866C4 /* HardLevelModel.swift in Sources */,
+				2AC6E1B72AF26EC4009866C4 /* GameSettingsInputDataDelegate.swift in Sources */,
 				2AC387312AD6BE5C005082DA /* ViewController.swift in Sources */,
 				2A9CB65D2AE664A600F0B3C3 /* ControlsSliderSettingsView.swift in Sources */,
 				2A9CB6132AD96BFC00F0B3C3 /* BaseControlView.swift in Sources */,

@@ -41,6 +41,7 @@ class ViewController: UIViewController {
     // MARK: - Private
     private func setupPresenter() {
         presenter.setGameSettingsInputDelegate(with: self)
+        presenter.setGameSettingsInputDataDelegate(with: self)
         gameSettingsOutputDelegate = presenter
     }
     
@@ -99,13 +100,16 @@ extension ViewController: ViewControllerDelegate {
     
 }
 
+extension ViewController: GameSettingsInputDataDelegate {
+    func setupConfig(with gameSettings: GameSettingsModel) {
+        config = gameSettings
+    }
+    
+}
+
 extension ViewController: GameSettingsInputDelegate {
     func setupInitialState() {
         displayData()
-    }
-    
-    func setupConfig(with gameSettings: GameSettingsModel) {
-        config = gameSettings
     }
     
     func displayData() {

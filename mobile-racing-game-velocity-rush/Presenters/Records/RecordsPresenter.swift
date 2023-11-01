@@ -9,15 +9,20 @@ import Foundation
 
 final class RecordsPresenter {
     weak private var recordsInputDelegate: RecordsInputDelegate?
+    weak private var recordsInputDataDelegate: RecordsInputDataDelegate?
     
     // MARK: - Public
     func setRecordsInputDelegate(with delegate: RecordsInputDelegate) {
         recordsInputDelegate = delegate
     }
     
+    func setRecordsInputDataDelegate(with delegate: RecordsInputDataDelegate) {
+        recordsInputDataDelegate = delegate
+    }
+    
     // MARK: - Private
     private func loadRecords() {
-        recordsInputDelegate?.setupData(with: RecordsManager.shared.getAllRecords())
+        recordsInputDataDelegate?.setupData(with: RecordsManager.shared.getAllRecords())
         recordsInputDelegate?.setupInitialStateForRecords()
     }
     

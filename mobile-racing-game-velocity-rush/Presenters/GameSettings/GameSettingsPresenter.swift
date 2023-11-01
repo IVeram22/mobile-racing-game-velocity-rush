@@ -9,15 +9,19 @@ import Foundation
 
 final class GameSettingsPresenter {
     weak private var gameSettingsInputDelegate: GameSettingsInputDelegate?
+    weak private var gameSettingsInputDataDelegate: GameSettingsInputDataDelegate?
     
     // MARK: - Public
     func setGameSettingsInputDelegate(with delegate: GameSettingsInputDelegate) {
         gameSettingsInputDelegate = delegate
     }
+    func setGameSettingsInputDataDelegate(with delegate: GameSettingsInputDataDelegate) {
+        gameSettingsInputDataDelegate = delegate
+    }
     
     // MARK: - Private
     private func loadGameSettings() {
-        gameSettingsInputDelegate?.setupConfig(with: GameSettingsManager.shared.getGameSettingsModel())
+        gameSettingsInputDataDelegate?.setupConfig(with: GameSettingsManager.shared.getGameSettingsModel())
         gameSettingsInputDelegate?.setupInitialState()
     }
     

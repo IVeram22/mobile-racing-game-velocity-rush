@@ -50,9 +50,9 @@ class RecordsViewController: UIViewController {
     
     // MARK: - Private
     private func setupPresenter() {
-        gameSettingsPresenter.setGameSettingsInputDelegate(with: self)
+        recordsPresenter.setRecordsInputDataDelegate(with: self)
+//        gameSettingsPresenter.setGameSettingsInputDelegate(with: self)
         gameSettingsOutputDelegate = gameSettingsPresenter
-        recordsPresenter.setRecordsInputDelegate(with: self)
         recordsOutputDelegate = recordsPresenter
     }
     
@@ -200,32 +200,27 @@ extension RecordsViewController: BackButtonDelegate {
     
 }
 
-extension RecordsViewController: GameSettingsInputDelegate {
-    func setupInitialState() {
-        displayData()
-    }
-    
+extension RecordsViewController: GameSettingsInputDataDelegate {
     func setupConfig(with gameSettings: GameSettingsModel) {
         config = gameSettings
     }
     
-    func displayData() {
-        road.setHindrances(index: config.hindranceIndex)
-    }
-    
 }
 
-extension RecordsViewController: RecordsInputDelegate {
-    func setupInitialStateForRecords() {
-        displayRecords()
-    }
-    
+//extension RecordsViewController: GameSettingsInputDelegate {
+//    func setupInitialState() {
+//        displayData()
+//    }
+//
+//    func displayData() {
+//        road.setHindrances(index: config.hindranceIndex)
+//    }
+//
+//}
+
+extension RecordsViewController: RecordsInputDataDelegate {
     func setupData(with records: [RecordModel]) {
         self.records = records
-    }
-    
-    func displayRecords() {
-        
     }
     
 }

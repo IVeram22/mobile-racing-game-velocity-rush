@@ -9,6 +9,5 @@ import Foundation
 
 protocol GameSettingsInputDelegate: AnyObject {
     func setupInitialState()
-    func setupConfig(with gameSettings: GameSettingsModel)
     func displayData()
 }

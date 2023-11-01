@@ -57,7 +57,7 @@ class RaceViewController: UIViewController {
     
     // MARK: - Private
     private func setupPresenters() {
-        gameSettingsPresenter.setGameSettingsInputDelegate(with: self)
+        gameSettingsPresenter.setGameSettingsInputDataDelegate(with: self)
         gameSettingsOutputDelegate = gameSettingsPresenter
         recordsOutputDelegate = recordsPresenter
         counterOutputDelegate = counterPresenter
@@ -216,17 +216,9 @@ extension RaceViewController: ControlRacerDelegate {
     
 }
 
-extension RaceViewController: GameSettingsInputDelegate {
-    func setupInitialState() {
-        displayData()
-    }
-    
+extension RaceViewController: GameSettingsInputDataDelegate {
     func setupConfig(with gameSettings: GameSettingsModel) {
         config = gameSettings
-    }
-    
-    func displayData() {
-        
     }
     
 }
