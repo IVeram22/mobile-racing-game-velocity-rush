@@ -15,6 +15,9 @@ private enum Constants {
 }
 
 final class AccelerometerControlView: BaseControlView {
+    private let manager = CMMotionManager()
+    private var timer: Timer!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -47,9 +50,5 @@ final class AccelerometerControlView: BaseControlView {
         timer = nil
         manager.stopAccelerometerUpdates()
     }
-    
-    // MARK: - Private
-    private let manager = CMMotionManager()
-    private var timer: Timer!
-    
+
 }

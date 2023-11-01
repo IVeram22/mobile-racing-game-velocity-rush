@@ -8,11 +8,6 @@
 import UIKit
 
 final class LevelsSliderSettingsView: SliderSettingsView {
-    func addLevel(with index: Int = 0) {
-        self.index = index
-        createLevel()
-    }
-    
     override func previousButtonTapped(_ sender: UIButton) {
         index = index - 1 < 0 ? GlobalConstants.Levels.names.count - 1 : index - 1
         removeMainElement()
@@ -22,6 +17,12 @@ final class LevelsSliderSettingsView: SliderSettingsView {
     override func nextButtonTapped(_ sender: UIButton) {
         index = index + 1 == GlobalConstants.Levels.names.count ? 0 : index + 1
         removeMainElement()
+        createLevel()
+    }
+    
+    // MARK: - Public
+    func addLevel(with index: Int = 0) {
+        self.index = index
         createLevel()
     }
     

@@ -7,6 +7,10 @@
 
 import Foundation
 
+private enum Constants {
+    static let dateFormat: String = "dd-MM-yyyy hh:mm a"
+}
+
 final class DateManager {
     static let shared = DateManager()
     
@@ -15,7 +19,7 @@ final class DateManager {
     func getCurrentDate() -> String {
         let date = Date()
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd-MM-yyyy hh:mm a"
+        formatter.dateFormat = Constants.dateFormat
         return formatter.string(from: date)
     }
     

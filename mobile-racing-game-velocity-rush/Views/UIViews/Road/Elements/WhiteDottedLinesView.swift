@@ -22,6 +22,8 @@ private enum Constants {
 }
 
 final class WhiteDottedLinesView: UIView {
+    private var lines: [UIView] = []
+    
     override init(frame: CGRect) {
         super.init(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
         addLines()
@@ -49,8 +51,6 @@ final class WhiteDottedLinesView: UIView {
     }
     
     // MARK: - Private
-    private var lines: [UIView] = []
-    
     private func addLines() {
         for _ in 0...Constants.numberOfLines {
             lines.append(createLine())

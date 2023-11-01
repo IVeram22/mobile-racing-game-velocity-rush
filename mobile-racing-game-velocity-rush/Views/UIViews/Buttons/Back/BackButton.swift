@@ -15,6 +15,8 @@ private enum Constants {
 }
 
 final class BackButton: UIButton {
+    private weak var settingsViewControllerBackDelegate: BackButtonDelegate?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -35,8 +37,6 @@ final class BackButton: UIButton {
     }
     
     // MARK: - Private
-    private weak var settingsViewControllerBackDelegate: BackButtonDelegate?
-    
     private func setup() {
         translatesAutoresizingMaskIntoConstraints = false
         setTitle(Constants.title, for: .normal)

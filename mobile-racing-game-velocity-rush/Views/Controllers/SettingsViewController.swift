@@ -29,33 +29,7 @@ private enum Constants {
 }
 
 class SettingsViewController: UIViewController {
-    // MARK: - View lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupPresenter()
-        addRoad()
-        view.addBlackBackground()
-        addScrollView()
-        addUserSettingsView()
-        addCarColorView()
-        addHindranceView()
-        addLevelView()
-        addControlView()
-        addBackButton()
-        addSwipeRightToGoBack()
-        gameSettingsOutputDelegate?.getConfig()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-        road.runAllAnimation()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        saveData()
-    }
-    
-    // MARK: - Private
+    // MARK: Interface
     private var road: RoadView!
     private var scrollView = UIScrollView()
     private var userSettingsView: UserSettingsView!
@@ -71,9 +45,45 @@ class SettingsViewController: UIViewController {
     private let presenter = GameSettingsPresenter()
     weak private var gameSettingsOutputDelegate: GameSettingsOutputDelegate?
     
+    // MARK: - View lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupPresenter()
+        setupInterface()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupBeforeAppearance()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        saveData()
+    }
+    
+    // MARK: - Private
     private func setupPresenter() {
         presenter.setGameSettingsInputDelegate(with: self)
         gameSettingsOutputDelegate = presenter
+    }
+    
+    private func setupInterface() {
+        addRoad()
+        view.addBlackBackground()
+        addScrollView()
+        addUserSettingsView()
+        addCarColorView()
+        addHindranceView()
+        addLevelView()
+        addControlView()
+        addBackButton()
+        addSwipeRightToGoBack()
+        gameSettingsOutputDelegate?.getConfig()
+    }
+    
+    private func setupBeforeAppearance() {
+        road.runAllAnimation()
     }
     
     private func addRoad() {

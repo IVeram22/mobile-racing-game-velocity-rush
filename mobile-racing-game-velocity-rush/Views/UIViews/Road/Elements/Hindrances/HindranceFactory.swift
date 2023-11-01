@@ -12,6 +12,7 @@ enum HindranceType {
     case SummerTree
     case AutumnTree
     case WinterTree
+
 }
 
 final class HindranceFactory {
@@ -44,6 +45,7 @@ final class HindranceFactory {
             return .WinterTree
         }
     }
+
 }
 
 

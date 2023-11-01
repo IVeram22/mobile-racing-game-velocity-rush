@@ -19,6 +19,9 @@ private enum Constants {
 }
 
 final class EnemyCarsView: UIView {
+    private var size: Int!
+    var elements: [UIView] = []
+    
     init(frame: CGRect, size: Int = 2) {
         super.init(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
         self.size = size
@@ -30,8 +33,6 @@ final class EnemyCarsView: UIView {
     }
     
     // MARK: - Public
-    var elements: [UIView] = []
-    
     func runAnimation() {
         for element in elements {
             animateCar(with: element)
@@ -53,8 +54,6 @@ final class EnemyCarsView: UIView {
     }
     
     // MARK: - Private
-    private var size: Int!
-    
     private func addCars() {
         for _ in 1...size {
             let car = createCar()
