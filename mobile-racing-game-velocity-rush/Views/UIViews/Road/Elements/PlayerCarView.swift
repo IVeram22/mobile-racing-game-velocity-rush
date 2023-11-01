@@ -59,8 +59,11 @@ final class PlayerCarView: UIView {
     
     // MARK: - Private
     private func moveToX(with x: CGFloat) {
+        stopShakeAnimation()
         UIView.animate(withDuration: Constants.duration) { [self] in
             frame.origin.x += x
+        } completion: { [self] _ in
+            shakeAnimation(repeatCount: .infinity)
         }
     }
     
