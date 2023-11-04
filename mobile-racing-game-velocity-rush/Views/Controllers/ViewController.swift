@@ -15,7 +15,7 @@ private enum Constants {
 
 }
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     // MARK: Interface
     private var menu: StartMenuView!
     private var road: RoadView!

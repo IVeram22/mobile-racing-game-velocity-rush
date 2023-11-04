@@ -28,7 +28,7 @@ private enum Constants {
     
 }
 
-class SettingsViewController: UIViewController {
+final class SettingsViewController: UIViewController {
     // MARK: Interface
     private var road: RoadView!
     private var scrollView = UIScrollView()

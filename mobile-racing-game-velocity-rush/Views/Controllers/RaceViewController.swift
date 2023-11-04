@@ -25,7 +25,7 @@ private enum Constants {
     
 }
 
-class RaceViewController: UIViewController {
+final class RaceViewController: UIViewController {
     // MARK: Interface
     private var road: RoadView!
     private var player: PlayerCarView!
