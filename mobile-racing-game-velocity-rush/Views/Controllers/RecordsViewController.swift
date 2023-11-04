@@ -21,7 +21,7 @@ private enum Constants {
     
 }
 
-class RecordsViewController: UIViewController {
+final class RecordsViewController: UIViewController {
     // MARK: Interface
     private var road: RoadView!
     private var tableView: UITableView!
@@ -51,7 +51,6 @@ class RecordsViewController: UIViewController {
     // MARK: - Private
     private func setupPresenter() {
         recordsPresenter.setRecordsInputDataDelegate(with: self)
-//        gameSettingsPresenter.setGameSettingsInputDelegate(with: self)
         gameSettingsOutputDelegate = gameSettingsPresenter
         recordsOutputDelegate = recordsPresenter
     }
@@ -207,16 +206,6 @@ extension RecordsViewController: GameSettingsInputDataDelegate {
     
 }
 
-//extension RecordsViewController: GameSettingsInputDelegate {
-//    func setupInitialState() {
-//        displayData()
-//    }
-//
-//    func displayData() {
-//        road.setHindrances(index: config.hindranceIndex)
-//    }
-//
-//}
 
 extension RecordsViewController: RecordsInputDataDelegate {
     func setupData(with records: [RecordModel]) {
