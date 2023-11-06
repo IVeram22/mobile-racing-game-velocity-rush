@@ -92,6 +92,11 @@
 		2AC6E1B32AF00D86009866C4 /* RecordsScreen(Delete Cell2).png in Resources */ = {isa = PBXBuildFile; fileRef = 2AC6E1B22AF00D86009866C4 /* RecordsScreen(Delete Cell2).png */; };
 		2AC6E1B52AF26C98009866C4 /* RecordsInputDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6E1B42AF26C98009866C4 /* RecordsInputDataDelegate.swift */; };
 		2AC6E1B72AF26EC4009866C4 /* GameSettingsInputDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6E1B62AF26EC4009866C4 /* GameSettingsInputDataDelegate.swift */; };
+		2AC6E22F2AF93FEB009866C4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6E22E2AF93FEB009866C4 /* MainViewController.swift */; };
+		2AC6E2312AF941C5009866C4 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6E2302AF941C5009866C4 /* MainRouter.swift */; };
+		2AC6E2342AF9447A009866C4 /* Merriweather-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2AC6E2332AF9447A009866C4 /* Merriweather-Light.ttf */; };
+		2AC6E2352AF9447A009866C4 /* Merriweather-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2AC6E2332AF9447A009866C4 /* Merriweather-Light.ttf */; };
+		2AC6E2362AF9447A009866C4 /* Merriweather-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2AC6E2332AF9447A009866C4 /* Merriweather-Light.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -204,6 +209,9 @@
 		2AC6E1B22AF00D86009866C4 /* RecordsScreen(Delete Cell2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RecordsScreen(Delete Cell2).png"; sourceTree = "<group>"; };
 		2AC6E1B42AF26C98009866C4 /* RecordsInputDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsInputDataDelegate.swift; sourceTree = "<group>"; };
 		2AC6E1B62AF26EC4009866C4 /* GameSettingsInputDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettingsInputDataDelegate.swift; sourceTree = "<group>"; };
+		2AC6E22E2AF93FEB009866C4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		2AC6E2302AF941C5009866C4 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		2AC6E2332AF9447A009866C4 /* Merriweather-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Light.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +257,7 @@
 			children = (
 				2A0365FA2AEBFD1D007915AC /* Delegates */,
 				2AC387302AD6BE5C005082DA /* ViewController.swift */,
+				2AC6E22E2AF93FEB009866C4 /* MainViewController.swift */,
 				2AC387752AD6F9A5005082DA /* RaceViewController.swift */,
 				2A9CB6482AE3AB8500F0B3C3 /* SettingsViewController.swift */,
 				2A9CB6822AE9876600F0B3C3 /* RecordsViewController.swift */,
@@ -485,6 +494,7 @@
 		2AC3875C2AD6BF75005082DA /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				2AC6E2322AF94327009866C4 /* Fonts */,
 				2AC3872C2AD6BE5C005082DA /* AppDelegate.swift */,
 				2AC3872E2AD6BE5C005082DA /* SceneDelegate.swift */,
 				2A9CB6CD2AEAC55600F0B3C3 /* Localizable.strings */,
@@ -569,6 +579,7 @@
 			isa = PBXGroup;
 			children = (
 				2AC3876A2AD6D1FA005082DA /* Router.swift */,
+				2AC6E2302AF941C5009866C4 /* MainRouter.swift */,
 				2AC3876C2AD6D2E9005082DA /* StartMenuRouter.swift */,
 				2A9CB6172AD973B100F0B3C3 /* GameOverRouter.swift */,
 				2A9CB6572AE65A8800F0B3C3 /* BackRouter.swift */,
@@ -628,6 +639,14 @@
 				2AC6E1B22AF00D86009866C4 /* RecordsScreen(Delete Cell2).png */,
 			);
 			path = screenshots;
+			sourceTree = "<group>";
+		};
+		2AC6E2322AF94327009866C4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2AC6E2332AF9447A009866C4 /* Merriweather-Light.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -744,6 +763,7 @@
 				2AC6E1A52AF00A53009866C4 /* SettingsScreen2.png in Resources */,
 				2AC387392AD6BE5D005082DA /* LaunchScreen.storyboard in Resources */,
 				2AC6E1A32AF00A35009866C4 /* SettingsScreen1.png in Resources */,
+				2AC6E2342AF9447A009866C4 /* Merriweather-Light.ttf in Resources */,
 				2A9CB6CB2AEAC55600F0B3C3 /* Localizable.strings in Resources */,
 				2AC6E1AD2AF00B68009866C4 /* RaceScreen(Game Over).png in Resources */,
 				2AC6E1AF2AF00D36009866C4 /* RecordsScreen(Data).png in Resources */,
@@ -756,6 +776,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AC6E2352AF9447A009866C4 /* Merriweather-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -763,6 +784,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AC6E2362AF9447A009866C4 /* Merriweather-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -788,6 +810,7 @@
 				2A9CB64C2AE3AD3F00F0B3C3 /* UserSettingsView.swift in Sources */,
 				2A0366042AEC1FD2007915AC /* CounterPresenter.swift in Sources */,
 				2A9CB6112AD969E500F0B3C3 /* PlayerControl.swift in Sources */,
+				2AC6E2312AF941C5009866C4 /* MainRouter.swift in Sources */,
 				2AC6E1952AED0730009866C4 /* EasyLevelModel.swift in Sources */,
 				2AC6E1B52AF26C98009866C4 /* RecordsInputDataDelegate.swift in Sources */,
 				2A9CB61B2AD997B200F0B3C3 /* CounterModel.swift in Sources */,
@@ -797,6 +820,7 @@
 				2A9CB65A2AE663CC00F0B3C3 /* BackButtonDelegate.swift in Sources */,
 				2A03660B2AECDD70007915AC /* CounterOutputDelegate.swift in Sources */,
 				2A9CB6D22AEAC69500F0B3C3 /* String+extensions.swift in Sources */,
+				2AC6E22F2AF93FEB009866C4 /* MainViewController.swift in Sources */,
 				2A9CB6692AE8FC5000F0B3C3 /* GameSettingsManager.swift in Sources */,
 				2AC6E1992AED075D009866C4 /* HardLevelModel.swift in Sources */,
 				2AC6E1B72AF26EC4009866C4 /* GameSettingsInputDataDelegate.swift in Sources */,

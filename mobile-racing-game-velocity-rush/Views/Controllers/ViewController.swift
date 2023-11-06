@@ -8,112 +8,107 @@
 import UIKit
 
 private enum Constants {
-    enum Menu {
-//        static let width: CGFloat = 231
-//        static let height: CGFloat = 165
+    static let withTimeInterval: TimeInterval = 2.0
+    static let withDuration: TimeInterval = 1.7
+    
+    enum GameNameLabel {
+        static let text: String = "Velocity\nRush"
+        static let font: UIFont? = UIFont(name: "Merriweather-Light", size: 64)
+        static let textColor: UIColor = .white
+        static let widthAnchor: CGFloat = 342
+        static let heightAnchor: CGFloat = 272
+        static let centerYAnchor: CGFloat = -31
+    }
+        
+    enum BackgroundLoadingLine {
+        static let startFrame: CGRect = CGRect(x: 51, y: 531, width: 291, height: 1)
+        static let backgroundColor: UIColor = UIColor(red: 0.44, green: 0.44, blue: 0.44, alpha: 1)
+    }
+    
+    enum LoadingLine {
+        static let startFrame: CGRect = CGRect(x: 51, y: 532, width: 1, height: 1)
+        static let endFrame: CGRect = CGRect(x: 51, y: 532, width: 291, height: 1)
+        static let backgroundColor: UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+    }
+    
+    enum LoadingPoint {
+        static let startFrame: CGRect = CGRect(x: 50, y: 530, width: 5, height: 5)
+        static let backgroundColor: UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+        static let shift: CGFloat = 291
+        static let radius: CGFloat = 2.5
     }
 
 }
 
 final class ViewController: UIViewController {
     // MARK: Interface
-    private var menu: StartMenuView!
-    private var road: RoadView!
+    private let gameNameLabel: UILabel = {
+        let label = UILabel(frame: .infinite)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.text = Constants.GameNameLabel.text
+        label.font = Constants.GameNameLabel.font
+        label.textColor = Constants.GameNameLabel.textColor
+        return label
+    }()
+    private let backgroundLoadingLine: UIView = {
+        let view = UIView(frame: Constants.BackgroundLoadingLine.startFrame)
+        view.backgroundColor = Constants.BackgroundLoadingLine.backgroundColor
+        return view
+    }()
+    private let loadingLine: UIView = {
+        let view = UIView(frame: Constants.LoadingLine.startFrame)
+        view.backgroundColor = Constants.LoadingLine.backgroundColor
+        return view
+    }()
+    private var loadingPoint: UIView = {
+        let view = UIView(frame: Constants.LoadingPoint.startFrame)
+        view.backgroundColor = Constants.LoadingPoint.backgroundColor
+        view.cornerRadius(with: Constants.LoadingPoint.radius)
+        return view
+    }()
     // MARK: Navigation
-    private let router: StartMenuRouter = Router.shared
-    // MARK: Presenter
-    private var config: GameSettingsModel!
-    private let presenter = GameSettingsPresenter()
-    weak private var gameSettingsOutputDelegate: GameSettingsOutputDelegate?
+    private let router: MainRouter = Router.shared
     
     // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupPresenter()
-        setupInterface()
+        view.backgroundColor = .black
+        
+        view.addSubview(gameNameLabel)
+        view.addSubview(backgroundLoadingLine)
+        view.addSubview(loadingLine)
+        view.addSubview(loadingPoint)
+        
+        NSLayoutConstraint.activate([
+            gameNameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            gameNameLabel.centerYAnchor.constraint(
+                equalTo: view.centerYAnchor,
+                constant: Constants.GameNameLabel.centerYAnchor),
+            gameNameLabel.widthAnchor.constraint(equalToConstant: Constants.GameNameLabel.widthAnchor),
+            gameNameLabel.heightAnchor.constraint(equalToConstant: Constants.GameNameLabel.heightAnchor),
+            
+            backgroundLoadingLine.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            backgroundLoadingLine.topAnchor.constraint(equalTo: gameNameLabel.bottomAnchor),
+            backgroundLoadingLine.widthAnchor.constraint(equalToConstant: Constants.LoadingPoint.shift),
+            backgroundLoadingLine.heightAnchor.constraint(equalToConstant: 1),
+        ])
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupBeforeAppearance()
+        Timer.scheduledTimer(withTimeInterval: Constants.withTimeInterval, repeats: false) { [self] _ in
+            router.openMainScreen(from: self)
+        }
     }
     
-    // MARK: - Private
-    private func setupPresenter() {
-        presenter.setGameSettingsInputDelegate(with: self)
-        presenter.setGameSettingsInputDataDelegate(with: self)
-        gameSettingsOutputDelegate = presenter
-    }
-    
-    private func setupInterface() {
-        addRoad()
-        view.addBlackBackground()
-        addStartMenu()
-    }
-    
-    private func setupBeforeAppearance() {
-        gameSettingsOutputDelegate?.getConfig()
-        road.runAllAnimation()
-    }
-    
-    private func addRoad() {
-        road = RoadView(frame: CGRect(
-            x: 0,
-            y: 0,
-            width: view.frame.width,
-            height: view.frame.height
-        ))
-        view.addSubview(road)
-    }
-    
-    private func addStartMenu() {
-        menu = StartMenuView(frame: CGRect(
-            x: 0,
-            y: 0,
-            width: view.frame.width,
-            height: view.frame.height
-        ))
-        menu.setViewControllerDelegate(with: self)
-        view.addSubview(menu)
-        NSLayoutConstraint.activate([
-            menu.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            menu.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            menu.widthAnchor.constraint(equalToConstant: view.frame.width),
-            menu.heightAnchor.constraint(equalToConstant: view.frame.height),
-        ])
-    }
-}
-
-// MARK: - Extensions
-extension ViewController: ViewControllerDelegate {
-    func startPlaying() {
-        router.startPlaying(from: self)
-    }
-    
-    func openSettings() {
-        router.openSettings(from: self)
-    }
-    
-    func seeRecords() {
-        router.seeRecords(from: self)
-    }
-    
-}
-
-extension ViewController: GameSettingsInputDataDelegate {
-    func setupConfig(with gameSettings: GameSettingsModel) {
-        config = gameSettings
-    }
-    
-}
-
-extension ViewController: GameSettingsInputDelegate {
-    func setupInitialState() {
-        displayData()
-    }
-    
-    func displayData() {
-        road.setHindrances(index: config.hindranceIndex)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIView.animate(withDuration: Constants.withDuration) { [self] in
+            loadingLine.frame = Constants.LoadingLine.endFrame
+            loadingPoint.frame.origin.x += Constants.LoadingPoint.shift
+        }
     }
     
 }
