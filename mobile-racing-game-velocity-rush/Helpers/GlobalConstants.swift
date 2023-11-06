@@ -11,7 +11,13 @@ enum GlobalConstants {
     enum Cars {
         static let width: CGFloat = 40
         static let height: CGFloat = 75
-        static let colors: [UIColor] = [ .red, .green, .orange, .black, .gray, .blue]
+        static let colors: [UIImage?] = [
+            UIImage(named: "PlayerCar0"),
+            UIImage(named: "PlayerCar1"),
+            UIImage(named: "PlayerCar2"),
+            UIImage(named: "PlayerCar3"),
+            UIImage(named: "PlayerCar4"),
+        ]
     }
     
     enum Hindrances {

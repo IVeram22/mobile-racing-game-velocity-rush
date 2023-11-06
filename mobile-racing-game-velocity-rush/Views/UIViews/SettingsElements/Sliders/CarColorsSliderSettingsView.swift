@@ -10,12 +10,12 @@ import UIKit
 final class CarColorsSliderSettingsView: SliderSettingsView {
     override func previousButtonTapped(_ sender: UIButton) {
         index = index - 1 < 0 ? GlobalConstants.Cars.colors.count - 1 : index - 1
-        mainElement.backgroundColor = GlobalConstants.Cars.colors[index]
+        mainElement.image = GlobalConstants.Cars.colors[index]
     }
     
     override func nextButtonTapped(_ sender: UIButton) {
         index = index + 1 == GlobalConstants.Cars.colors.count ? 0 : index + 1
-        mainElement.backgroundColor = GlobalConstants.Cars.colors[index]
+        mainElement.image = GlobalConstants.Cars.colors[index]
     }
     
     // MARK: - Public

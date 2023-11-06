@@ -28,7 +28,7 @@ final class LevelsSliderSettingsView: SliderSettingsView {
     
     // MARK: - Private
     private func createLevel() {
-        mainElement = UIView(frame: CGRect(
+        mainElement = UIImageView(frame: CGRect(
             x: 0,
             y: 0,
             width: GlobalConstants.Levels.width,

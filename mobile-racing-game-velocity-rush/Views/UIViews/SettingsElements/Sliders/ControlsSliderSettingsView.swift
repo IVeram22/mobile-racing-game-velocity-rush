@@ -28,7 +28,7 @@ final class ControlsSliderSettingsView: SliderSettingsView {
     
     // MARK: - Private
     private func createControl() {
-        mainElement = UIView(frame: CGRect(
+        mainElement = UIImageView(frame: CGRect(
             x: 0,
             y: 0,
             width: GlobalConstants.Controls.width,

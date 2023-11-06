@@ -15,10 +15,10 @@ private enum Constants {
     
 }
 
-final class PlayerCarView: UIView {
+final class PlayerCarView: UIImageView {
     init(frame: CGRect, with index: Int) {
         super.init(frame: frame)
-        backgroundColor = GlobalConstants.Cars.colors[index]
+        image = GlobalConstants.Cars.colors[index]
         dropShadow()
         cornerRadius()
     }
