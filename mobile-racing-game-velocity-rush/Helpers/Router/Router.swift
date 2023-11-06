@@ -31,31 +31,63 @@ final class Router {
     }
 }
 
+// MARK: - Extensions
+extension Router: MainRouter {
+    func openMainScreen(from viewController: UIViewController) {
+        open(
+            from: viewController,
+            to: MainViewController(),
+            type: .fade,
+            subtype: .fromBottom)
+    }
+    
+}
+
 extension Router: StartMenuRouter {
     func startPlaying(from viewController: UIViewController) {
-        open(from: viewController, to: RaceViewController(), type: .moveIn, subtype: .fromRight)
+        open(
+            from: viewController,
+            to: RaceViewController(),
+            type: .moveIn,
+            subtype: .fromRight)
     }
     
     func openSettings(from viewController: UIViewController) {
-        open(from: viewController, to: SettingsViewController(), type: .moveIn, subtype: .fromRight)
+        open(
+            from: viewController,
+            to: SettingsViewController(),
+            type: .moveIn,
+            subtype: .fromRight)
     }
     
     func seeRecords(from viewController: UIViewController) {
-        open(from: viewController, to: RecordsViewController(), type: .moveIn, subtype: .fromRight)
+        open(
+            from: viewController,
+            to: RecordsViewController(),
+            type: .moveIn,
+            subtype: .fromRight)
     }
     
 }
 
 extension Router: GameOverRouter {
     func restartGame(from viewController: UIViewController) {
-        open(from: viewController, to: RaceViewController(), type: .moveIn, subtype: .fromBottom)
+        open(
+            from: viewController,
+            to: RaceViewController(),
+            type: .moveIn,
+            subtype: .fromBottom)
     }
     
 }
 
 extension Router: BackRouter {
     func comeBack(from viewController: UIViewController) {
-        open(from: viewController, to: ViewController(), type: .reveal, subtype: .fromLeft)
+        open(
+            from: viewController,
+            to: MainViewController(),
+            type: .reveal,
+            subtype: .fromLeft)
     }
     
 }
