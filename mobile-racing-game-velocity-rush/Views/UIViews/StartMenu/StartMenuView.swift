@@ -8,21 +8,21 @@
 import UIKit
 
 private enum Constants {
-    static let widthAnchor: CGFloat = 131
-    static let heightAnchor: CGFloat = 35
-    static let topPadding: CGFloat = 15
-    
     enum StartButton {
-        static let backgroundColor: UIColor = .systemGreen
+        static let size: CGFloat = 136
+        static let centerXAnchorConstant: CGFloat = 27
     }
     
     enum SettingsButton {
-        static let backgroundColor: UIColor = .systemYellow
-        static let titleColor: UIColor = .black
+        static let size: CGFloat = 60
+        static let rightAnchor: CGFloat = -30
+        static let bottomAnchor: CGFloat = -53
     }
     
     enum RecordsButton {
-        static let backgroundColor: UIColor = .systemRed
+        static let size: CGFloat = 60
+        static let leftAnchor: CGFloat = 30
+        static let bottomAnchor: CGFloat = -53
     }
 
 }
@@ -31,26 +31,22 @@ final class StartMenuView: UIView {
     // MARK: Interface
     private let startGameButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Start game".localized, for: .normal)
-        button.backgroundColor = Constants.StartButton.backgroundColor
         button.setupDefault()
+        button.setImage(UIImage(named: "StartGame"), for: .normal)
         return button
     }()
     
     private let settingsButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Settings".localized, for: .normal)
-        button.backgroundColor = Constants.SettingsButton.backgroundColor
         button.setupDefault()
-        button.setTitleColor(Constants.SettingsButton.titleColor, for: .normal)
+        button.setImage(UIImage(named: "Settings"), for: .normal)
         return button
     }()
     
     private let recordsButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Records".localized, for: .normal)
-        button.backgroundColor = Constants.RecordsButton.backgroundColor
         button.setupDefault()
+        button.setImage(UIImage(named: "Records"), for: .normal)
         return button
     }()
     
@@ -92,20 +88,30 @@ final class StartMenuView: UIView {
         addSubview(recordsButton)
         
         NSLayoutConstraint.activate([
-            startGameButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            startGameButton.topAnchor.constraint(equalTo: topAnchor, constant: Constants.topPadding),
-            startGameButton.widthAnchor.constraint(equalToConstant: Constants.widthAnchor),
-            startGameButton.heightAnchor.constraint(equalToConstant: Constants.heightAnchor),
+            startGameButton.centerXAnchor.constraint(
+                equalTo: centerXAnchor,
+                constant: Constants.StartButton.centerXAnchorConstant),
+            startGameButton.centerYAnchor.constraint(equalTo: centerYAnchor),
+            startGameButton.widthAnchor.constraint(equalToConstant: Constants.StartButton.size),
+            startGameButton.heightAnchor.constraint(equalToConstant: Constants.StartButton.size),
             
-            settingsButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            settingsButton.topAnchor.constraint(equalTo: startGameButton.bottomAnchor, constant: Constants.topPadding),
-            settingsButton.widthAnchor.constraint(equalToConstant: Constants.widthAnchor),
-            settingsButton.heightAnchor.constraint(equalToConstant: Constants.heightAnchor),
-            
-            recordsButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            recordsButton.topAnchor.constraint(equalTo: settingsButton.bottomAnchor, constant: Constants.topPadding),
-            recordsButton.widthAnchor.constraint(equalToConstant: Constants.widthAnchor),
-            recordsButton.heightAnchor.constraint(equalToConstant: Constants.heightAnchor),
+            settingsButton.rightAnchor.constraint(
+                equalTo: rightAnchor,
+                constant: Constants.SettingsButton.rightAnchor),
+            settingsButton.bottomAnchor.constraint(
+                equalTo: bottomAnchor,
+                constant: Constants.SettingsButton.bottomAnchor),
+            settingsButton.widthAnchor.constraint(equalToConstant: Constants.SettingsButton.size),
+            settingsButton.heightAnchor.constraint(equalToConstant: Constants.SettingsButton.size),
+
+            recordsButton.leftAnchor.constraint(
+                equalTo: leftAnchor,
+                constant: Constants.RecordsButton.leftAnchor),
+            recordsButton.bottomAnchor.constraint(
+                equalTo: bottomAnchor,
+                constant: Constants.RecordsButton.bottomAnchor),
+            recordsButton.widthAnchor.constraint(equalToConstant: Constants.SettingsButton.size),
+            recordsButton.heightAnchor.constraint(equalToConstant: Constants.SettingsButton.size),
         ])
         
         addButtonsTargets()
