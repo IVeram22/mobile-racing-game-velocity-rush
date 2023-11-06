@@ -15,7 +15,7 @@ private enum Constants {
     
 }
 
-class BaseHindranceView: UIView {
+class BaseHindranceView: UIImageView {
     // MARK: Interface
     internal let trunk: UIView = {
         let view = UIView()

@@ -23,7 +23,7 @@ private enum Constants {
 
 class SliderSettingsView: UIView {
     // MARK: Interface
-    internal var mainElement = UIView()
+    internal var mainElement = UIImageView()
     
     private let titleLabel: UILabel = {
         let label = UILabel()
