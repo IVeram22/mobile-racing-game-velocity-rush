@@ -9,8 +9,8 @@ import UIKit
 
 private enum Constants {
     enum Menu {
-        static let width: CGFloat = 231
-        static let height: CGFloat = 165
+//        static let width: CGFloat = 231
+//        static let height: CGFloat = 165
     }
 
 }
@@ -70,16 +70,16 @@ final class ViewController: UIViewController {
         menu = StartMenuView(frame: CGRect(
             x: 0,
             y: 0,
-            width: Constants.Menu.width,
-            height: Constants.Menu.height
+            width: view.frame.width,
+            height: view.frame.height
         ))
         menu.setViewControllerDelegate(with: self)
         view.addSubview(menu)
         NSLayoutConstraint.activate([
             menu.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             menu.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            menu.widthAnchor.constraint(equalToConstant: Constants.Menu.width),
-            menu.heightAnchor.constraint(equalToConstant: Constants.Menu.height),
+            menu.widthAnchor.constraint(equalToConstant: view.frame.width),
+            menu.heightAnchor.constraint(equalToConstant: view.frame.height),
         ])
     }
 }
