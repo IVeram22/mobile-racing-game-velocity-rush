@@ -1,0 +1,31 @@
+<svg width="45" height="70" viewBox="0 0 45 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 30">
+<path id="Rectangle 1" d="M0 16C0 7.16347 7.16344 3.05176e-05 16 3.05176e-05H29C37.8366 3.05176e-05 45 7.16348 45 16V66C45 68.2092 43.2091 70 41 70H4C1.79086 70 0 68.2092 0 66V16Z" fill="#9A9A9A"/>
+<path id="Rectangle 14" d="M8.57197 18.711C8.26501 17.5741 9.00182 16.4194 10.1622 16.2189L17.8906 14.8831C21.2718 14.2987 24.7282 14.2987 28.1094 14.8831L35.8378 16.2189C36.9982 16.4194 37.735 17.5741 37.428 18.711L36.2117 23.2161C36.0883 23.6729 35.6617 23.9807 35.1893 23.9538L23 23.2593L10.8107 23.9538C10.3383 23.9807 9.91168 23.6729 9.78835 23.2161L8.57197 18.711Z" fill="#46474B"/>
+<path id="Rectangle 16" d="M9.94783 32.1262L9.24119 25.6896C9.23417 25.6257 9.21905 25.5645 9.1961 25.5072L8.0956 22.7578L7.02549 20L5.66199 33.544C5.59863 34.1733 6.23763 34.5158 6.93 34.2236L9.12411 33.2977C9.64351 33.0785 9.99716 32.5755 9.94783 32.1262Z" fill="#46474B"/>
+<path id="Rectangle 20" d="M36.9299 32.1262L37.6365 25.6896C37.6435 25.6257 37.6586 25.5645 37.6816 25.5072L38.7821 22.7578L39.8522 20L41.2157 33.544C41.2791 34.1733 40.6401 34.5158 39.9477 34.2236L37.7536 33.2977C37.2342 33.0785 36.8805 32.5755 36.9299 32.1262Z" fill="#46474B"/>
+<g id="Group 28">
+<rect id="Rectangle 39" x="4" y="66" width="9" height="3" rx="1" fill="#FF5454"/>
+<circle id="Ellipse 9" cx="5.5" cy="67.5" r="0.5" fill="#FF9E9E"/>
+<circle id="Ellipse 10" cx="7.5" cy="67.5" r="0.5" fill="#FF9E9E"/>
+<circle id="Ellipse 11" cx="9.5" cy="67.5" r="0.5" fill="#FF9E9E"/>
+<circle id="Ellipse 12" cx="11.5" cy="67.5" r="0.5" fill="#FF9E9E"/>
+</g>
+<g id="Group 29">
+<rect id="Rectangle 39_2" x="32" y="66" width="9" height="3" rx="1" fill="#FF5454"/>
+<circle id="Ellipse 9_2" cx="33.5" cy="67.5" r="0.5" fill="#FF9E9E"/>
+<circle id="Ellipse 10_2" cx="35.5" cy="67.5" r="0.5" fill="#FF9E9E"/>
+<circle id="Ellipse 11_2" cx="37.5" cy="67.5" r="0.5" fill="#FF9E9E"/>
+<circle id="Ellipse 12_2" cx="39.5" cy="67.5" r="0.5" fill="#FF9E9E"/>
+</g>
+<rect id="Rectangle 40" x="2" y="37" width="41" height="27" rx="2" fill="#695252"/>
+<rect id="Rectangle 41" x="4" y="39" width="11" height="10" rx="1" fill="#F5B789"/>
+<rect id="Rectangle 42" x="4" y="52" width="11" height="10" rx="1" fill="#F5B789"/>
+<rect id="Rectangle 43" x="17" y="52" width="11" height="10" rx="1" fill="#F5B789"/>
+<rect id="Rectangle 44" x="17" y="39" width="11" height="10" rx="1" fill="#F5B789"/>
+<rect id="Rectangle 45" x="30" y="39" width="11" height="10" rx="1" fill="#F5B789"/>
+<rect id="Rectangle 46" x="30" y="52" width="11" height="10" rx="1" fill="#F5B789"/>
+<rect id="Rectangle 47" x="12" width="6" height="1" fill="#FFEE54"/>
+<rect id="Rectangle 48" x="27" width="6" height="1" fill="#FFEE54"/>
+</g>
+</svg>
