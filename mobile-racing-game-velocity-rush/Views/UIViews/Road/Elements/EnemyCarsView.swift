@@ -131,18 +131,15 @@ final class EnemyCarsView: UIView {
     }
     
     private func add(x: CGFloat, y: CGFloat) -> UIView {
-        let car = UIView(frame: CGRect(
+        let car = UIImageView(frame: CGRect(
             x: x,
             y: y,
             width: GlobalConstants.Cars.width,
             height: GlobalConstants.Cars.height
         ))
-        car.backgroundColor = UIColor(
-            red: CGFloat.random(in: 0...1),
-            green: CGFloat.random(in: 0...1),
-            blue: CGFloat.random(in: 0...1),
-            alpha: 1.0
-        )
+        
+        car.image = UIImage(named: "EnemyCar\(Int.random(in: 0...8))")
+        
         return car
     }
     

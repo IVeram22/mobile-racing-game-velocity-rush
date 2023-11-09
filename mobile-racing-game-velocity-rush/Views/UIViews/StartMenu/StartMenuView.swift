@@ -10,7 +10,7 @@ import UIKit
 private enum Constants {
     enum StartButton {
         static let size: CGFloat = 136
-        static let centerXAnchorConstant: CGFloat = 27
+        static let centerXAnchorConstant: CGFloat = 17
     }
     
     enum SettingsButton {
