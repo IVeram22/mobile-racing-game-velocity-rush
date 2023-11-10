@@ -62,6 +62,10 @@ final class SettingsViewController: UIViewController {
         saveData()
     }
     
+    @objc private func hideKeyboard() {
+        userSettingsView.hideKeyboard()
+    }
+    
     // MARK: - Private
     private func setupPresenter() {
         presenter.setGameSettingsInputDelegate(with: self)
@@ -72,6 +76,7 @@ final class SettingsViewController: UIViewController {
     private func setupInterface() {
         addRoad()
         view.addBlackBackground()
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
         addScrollView()
         addUserSettingsView()
         addCarColorView()
@@ -237,6 +242,14 @@ final class SettingsViewController: UIViewController {
         gameSettingsOutputDelegate?.setConfig(with: config)
     }
     
+    private func showPicker(with sourceType: UIImagePickerController.SourceType) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = sourceType
+        imagePickerController.allowsEditing = true
+        imagePickerController.delegate = self
+        self.present(imagePickerController, animated: true)
+    }
+    
 }
 
 // MARK: - Extensions
@@ -263,22 +276,14 @@ extension SettingsViewController: SettingsViewControllerDelegate {
         
         actionSheet.addAction(UIAlertAction(title: "Camera".localized, style: .default, handler: { (action:UIAlertAction) in
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                let vc = UIImagePickerController()
-                vc.sourceType = .camera
-                vc.allowsEditing = true
-                vc.delegate = self
-                self.present(vc, animated: true)
+                self.showPicker(with: .camera)
             } else {
                 print("Camera is not available")
             }
         }))
         
         actionSheet.addAction(UIAlertAction(title: "Photo Library".localized, style: .default, handler: { (action:UIAlertAction) in
-            let vc = UIImagePickerController()
-            vc.sourceType = .photoLibrary
-            vc.allowsEditing = true
-            vc.delegate = self
-            self.present(vc, animated: true)
+            self.showPicker(with: .photoLibrary)
         }))
         
         actionSheet.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil))
