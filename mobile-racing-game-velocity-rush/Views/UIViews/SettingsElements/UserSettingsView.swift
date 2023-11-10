@@ -90,6 +90,10 @@ final class UserSettingsView: UIView {
         fotoImageView.image
     }
     
+    func hideKeyboard() {
+        nameTextField.resignFirstResponder()
+    }
+    
     // MARK: - Private
     private func setupInterface() {
         translatesAutoresizingMaskIntoConstraints = false
