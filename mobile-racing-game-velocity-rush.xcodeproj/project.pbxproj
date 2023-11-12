@@ -25,12 +25,7 @@
 		2A9CB6182AD973B100F0B3C3 /* GameOverRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6172AD973B100F0B3C3 /* GameOverRouter.swift */; };
 		2A9CB61B2AD997B200F0B3C3 /* CounterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB61A2AD997B200F0B3C3 /* CounterModel.swift */; };
 		2A9CB61D2AD99C5C00F0B3C3 /* HindranceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB61C2AD99C5C00F0B3C3 /* HindranceFactory.swift */; };
-		2A9CB6202AD9B07700F0B3C3 /* BaseHindranceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB61F2AD9B07700F0B3C3 /* BaseHindranceView.swift */; };
-		2A9CB6232AD9B1B400F0B3C3 /* SummerTreeHindranceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6222AD9B1B400F0B3C3 /* SummerTreeHindranceView.swift */; };
 		2A9CB6252AD9BA4000F0B3C3 /* HindrancesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6242AD9BA4000F0B3C3 /* HindrancesView.swift */; };
-		2A9CB6272ADA940E00F0B3C3 /* AutumnTreeHindranceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6262ADA940E00F0B3C3 /* AutumnTreeHindranceView.swift */; };
-		2A9CB6292ADA94CE00F0B3C3 /* SpringTreeHindranceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6282ADA94CE00F0B3C3 /* SpringTreeHindranceView.swift */; };
-		2A9CB62B2ADA957600F0B3C3 /* WinterTreeHindranceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB62A2ADA957600F0B3C3 /* WinterTreeHindranceView.swift */; };
 		2A9CB6492AE3AB8500F0B3C3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB6482AE3AB8500F0B3C3 /* SettingsViewController.swift */; };
 		2A9CB64C2AE3AD3F00F0B3C3 /* UserSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB64B2AE3AD3F00F0B3C3 /* UserSettingsView.swift */; };
 		2A9CB64E2AE3CA9200F0B3C3 /* SettingsViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB64D2AE3CA9200F0B3C3 /* SettingsViewControllerDelegate.swift */; };
@@ -135,12 +130,7 @@
 		2A9CB6172AD973B100F0B3C3 /* GameOverRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverRouter.swift; sourceTree = "<group>"; };
 		2A9CB61A2AD997B200F0B3C3 /* CounterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterModel.swift; sourceTree = "<group>"; };
 		2A9CB61C2AD99C5C00F0B3C3 /* HindranceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HindranceFactory.swift; sourceTree = "<group>"; };
-		2A9CB61F2AD9B07700F0B3C3 /* BaseHindranceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHindranceView.swift; sourceTree = "<group>"; };
-		2A9CB6222AD9B1B400F0B3C3 /* SummerTreeHindranceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummerTreeHindranceView.swift; sourceTree = "<group>"; };
 		2A9CB6242AD9BA4000F0B3C3 /* HindrancesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HindrancesView.swift; sourceTree = "<group>"; };
-		2A9CB6262ADA940E00F0B3C3 /* AutumnTreeHindranceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutumnTreeHindranceView.swift; sourceTree = "<group>"; };
-		2A9CB6282ADA94CE00F0B3C3 /* SpringTreeHindranceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringTreeHindranceView.swift; sourceTree = "<group>"; };
-		2A9CB62A2ADA957600F0B3C3 /* WinterTreeHindranceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinterTreeHindranceView.swift; sourceTree = "<group>"; };
 		2A9CB6482AE3AB8500F0B3C3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2A9CB64B2AE3AD3F00F0B3C3 /* UserSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsView.swift; sourceTree = "<group>"; };
 		2A9CB64D2AE3CA9200F0B3C3 /* SettingsViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewControllerDelegate.swift; sourceTree = "<group>"; };
@@ -366,23 +356,10 @@
 		2A9CB61E2AD99EED00F0B3C3 /* Hindrances */ = {
 			isa = PBXGroup;
 			children = (
-				2A9CB6212AD9B18900F0B3C3 /* Elements */,
 				2A9CB6242AD9BA4000F0B3C3 /* HindrancesView.swift */,
 				2A9CB61C2AD99C5C00F0B3C3 /* HindranceFactory.swift */,
 			);
 			path = Hindrances;
-			sourceTree = "<group>";
-		};
-		2A9CB6212AD9B18900F0B3C3 /* Elements */ = {
-			isa = PBXGroup;
-			children = (
-				2A9CB61F2AD9B07700F0B3C3 /* BaseHindranceView.swift */,
-				2A9CB6222AD9B1B400F0B3C3 /* SummerTreeHindranceView.swift */,
-				2A9CB6262ADA940E00F0B3C3 /* AutumnTreeHindranceView.swift */,
-				2A9CB6282ADA94CE00F0B3C3 /* SpringTreeHindranceView.swift */,
-				2A9CB62A2ADA957600F0B3C3 /* WinterTreeHindranceView.swift */,
-			);
-			path = Elements;
 			sourceTree = "<group>";
 		};
 		2A9CB64A2AE3AD1300F0B3C3 /* SettingsElements */ = {
@@ -798,7 +775,6 @@
 				2A9CB6562AE6578200F0B3C3 /* BackButton.swift in Sources */,
 				2A9CB5FF2AD7C83B00F0B3C3 /* AccelerometerControlView.swift in Sources */,
 				2A9CB6832AE9876600F0B3C3 /* RecordsViewController.swift in Sources */,
-				2A9CB6232AD9B1B400F0B3C3 /* SummerTreeHindranceView.swift in Sources */,
 				2A03660D2AECDD9D007915AC /* RecordsOutputDelegate.swift in Sources */,
 				2A9CB6492AE3AB8500F0B3C3 /* SettingsViewController.swift in Sources */,
 				2AC6E19E2AEEB200009866C4 /* RecordsViewControllerDelegate.swift in Sources */,
@@ -814,8 +790,6 @@
 				2AC6E1952AED0730009866C4 /* EasyLevelModel.swift in Sources */,
 				2AC6E1B52AF26C98009866C4 /* RecordsInputDataDelegate.swift in Sources */,
 				2A9CB61B2AD997B200F0B3C3 /* CounterModel.swift in Sources */,
-				2A9CB6202AD9B07700F0B3C3 /* BaseHindranceView.swift in Sources */,
-				2A9CB62B2ADA957600F0B3C3 /* WinterTreeHindranceView.swift in Sources */,
 				2AC3877C2AD703C9005082DA /* UIView+extensions.swift in Sources */,
 				2A9CB65A2AE663CC00F0B3C3 /* BackButtonDelegate.swift in Sources */,
 				2A03660B2AECDD70007915AC /* CounterOutputDelegate.swift in Sources */,
@@ -829,7 +803,6 @@
 				2A9CB6132AD96BFC00F0B3C3 /* BaseControlView.swift in Sources */,
 				2A9CB5FD2AD7C70D00F0B3C3 /* SwipesControlView.swift in Sources */,
 				2A9CB6612AE666E900F0B3C3 /* HindrancesSliderSettingsView.swift in Sources */,
-				2A9CB6272ADA940E00F0B3C3 /* AutumnTreeHindranceView.swift in Sources */,
 				2A03660F2AECDDB2007915AC /* RecordsInputDelegate.swift in Sources */,
 				2AC3876F2AD6D486005082DA /* ViewControllerDelegate.swift in Sources */,
 				2AC3872D2AD6BE5C005082DA /* AppDelegate.swift in Sources */,
@@ -843,7 +816,6 @@
 				2A9CB65F2AE6652700F0B3C3 /* LevelsSliderSettingsView.swift in Sources */,
 				2AC387742AD6DC1C005082DA /* WhiteDottedLinesView.swift in Sources */,
 				2A9CB67B2AE95F7500F0B3C3 /* RecordModel.swift in Sources */,
-				2A9CB6292ADA94CE00F0B3C3 /* SpringTreeHindranceView.swift in Sources */,
 				2AC3876D2AD6D2E9005082DA /* StartMenuRouter.swift in Sources */,
 				2AC387762AD6F9A5005082DA /* RaceViewController.swift in Sources */,
 				2A9CB6672AE8FB4E00F0B3C3 /* UserDefaults+extensions.swift in Sources */,
