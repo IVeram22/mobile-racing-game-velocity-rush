@@ -30,13 +30,13 @@ private enum Constants {
 }
 
 final class HindrancesView: UIView {
-    private var type: HindranceType!
+    private var index: Int!
     private var size: Int!
     var elements: [UIView] = []
     
-    init(frame: CGRect, type: HindranceType, size: Int = 5) {
+    init(frame: CGRect, index: Int, size: Int = 5) {
         super.init(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
-        self.type = type
+        self.index = index
         self.size = size
         addElements()
     }
@@ -77,11 +77,10 @@ final class HindrancesView: UIView {
                 width: Constants.width,
                 height: Constants.height
             )
+            let hidrance = HindranceFactory.getElementByIndex(with: index, frame: frame)
             
-            let view: UIView = HindranceFactory.createHindrance(type: type, frame: frame)
-            
-            addSubview(view)
-            elements.append(view)
+            addSubview(hidrance)
+            elements.append(hidrance)
             
             isLeft.toggle()
         }
